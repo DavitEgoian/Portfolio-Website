@@ -4,6 +4,7 @@ import SplashCursor from './SplashCursor';
 import Magnet from './Magnet';
 import ShinyText from './ShinyText';
 
+
 function App() {
   return (
     <div className="App">
