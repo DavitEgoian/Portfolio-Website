@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import VariableProximity from './VariableProximity';
 
 
-
 function App() {
     const containerRef = useRef(null);
   return (
@@ -37,12 +36,11 @@ function App() {
                 radius={100}
                 falloff='linear'
               />
-              <a href='http://google.com' className='resetButtonHref'>
+              <a href='/resume' className='resetButtonHref'>
                   <div className="resumeButton">
                     <p>My Resume</p>
                   </div>
               </a>
-
             </div>
 
           </div>
