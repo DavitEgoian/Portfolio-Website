@@ -36,11 +36,6 @@ function App() {
                 radius={100}
                 falloff='linear'
               />
-              <a href='/resume' className='resetButtonHref'>
-                  <div className="resumeButton">
-                    <p>My Resume</p>
-                  </div>
-              </a>
             </div>
 
           </div>

@@ -1,12 +1,12 @@
 *{
   background-color: #0b0b0d;
 }
+
 .App {
   text-align: center;
   font-family: 'Satoshi', sans-serif;
 
 }
-
 
 .App-logo {
   height: 40vmin;
@@ -33,22 +33,11 @@
 .App-link {
   color: #61dafb;
 }
-.resumeButton{
-  color:white !important;
-  border: 2px solid white;
-  width: 10rem;
-  border-radius: 9999px;
-  margin:auto;
-  margin-top: 2rem;
-  padding: 0.1em 1em;
-  font-weight: 800;
 
-}
 .resetButtonHref{
   text-decoration: none;
-
-
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

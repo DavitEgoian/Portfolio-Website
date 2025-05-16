@@ -1,7 +1,7 @@
 {
   "homepage": "https://davitegoian.tech",
-  "name": "cursor_splash",
-  "version": "0.1.0",
+  "name": "Portfolio-Website",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
