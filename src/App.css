@@ -46,3 +46,51 @@
     transform: rotate(360deg);
   }
 }
+
+.cards-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  row-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.custom-spotlight-card {
+  color: white;
+  aspect-ratio: 16 / 9;
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .custom-spotlight-card {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .custom-spotlight-card {
+    width: 50%;
+  }
+}
+.custom-spotlight-card img{
+  background-color: transparent;
+  width:35px;
+}
+.custom-spotlight-card h3{
+  background-color: transparent;
+}
+.custom-spotlight-card p{
+  background-color: transparent;
+}
