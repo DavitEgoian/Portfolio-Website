@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.02518384.css",
-    "main.js": "/static/js/main.0a08c124.js",
-    "static/js/453.ccbd38de.chunk.js": "/static/js/453.ccbd38de.chunk.js",
+    "main.css": "/static/css/main.2427389f.css",
+    "main.js": "/static/js/main.42998e28.js",
+    "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
+    "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
+    "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
+    "static/media/data-science-icon.png": "/static/media/data-science-icon.1d4035544a4fc6b2394c.png",
+    "static/media/machine-learning-icon.jpg": "/static/media/machine-learning-icon.48be5986ae85f73de977.jpg",
     "index.html": "/index.html",
-    "main.02518384.css.map": "/static/css/main.02518384.css.map",
-    "main.0a08c124.js.map": "/static/js/main.0a08c124.js.map",
-    "453.ccbd38de.chunk.js.map": "/static/js/453.ccbd38de.chunk.js.map"
+    "main.2427389f.css.map": "/static/css/main.2427389f.css.map",
+    "main.42998e28.js.map": "/static/js/main.42998e28.js.map",
+    "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02518384.css",
-    "static/js/main.0a08c124.js"
+    "static/css/main.2427389f.css",
+    "static/js/main.42998e28.js"
   ]
 }
