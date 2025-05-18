@@ -84,13 +84,16 @@
     width: 50%;
   }
 }
+
 .custom-spotlight-card img{
   background-color: transparent;
   width:35px;
 }
+
 .custom-spotlight-card h3{
   background-color: transparent;
 }
+
 .custom-spotlight-card p{
   background-color: transparent;
 }
