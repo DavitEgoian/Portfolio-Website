@@ -7,6 +7,10 @@ import dataScienceIcon from "./images/data-science-icon.png";
 import machineLearningIcon from "./images/machine-learning-icon.jpg";
 import explainableAiIcon from "./images/explainable-AI-icon.png";
 import featureEngineeringIcon from "./images/feature-engineering-icon.png";
+import React from 'react';
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import "@splidejs/splide/dist/css/splide.min.css";
 
 function App() {
   const containerRef = useRef(null);
