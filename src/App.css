@@ -98,3 +98,61 @@
 .custom-spotlight-card p{
   background-color: transparent;
 }
+
+.container {
+  --mask:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0)   0%,
+      rgba(0,0,0,1)  10%,
+      rgba(0,0,0,1)  90%,
+      rgba(0,0,0,0) 100%
+    ) no-repeat center/100% 100%;
+
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+
+  width: 90%;
+  margin: auto;
+}
+
+
+@media (max-width: 1700px) {
+  .cards-container {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .custom-spotlight-card {
+  aspect-ratio: 9 / 3;
+  }
+}
+
+@media (max-width: 1200px){
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .custom-spotlight-card {
+    width:60%;
+    aspect-ratio: 9 / 3;
+  }
+}
+
+@media (max-width: 850px){
+  .cards-container{
+    width: 80%;
+  }
+  .custom-spotlight-card{
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px){
+  .cards-container{
+    width: 80%;
+  }
+  .custom-spotlight-card{
+    width: 100%;
+      aspect-ratio: 2 / 1;
+
+  }
+}
