@@ -38,6 +38,7 @@ import pytorchLogo from './images/tech-stack-logos/pyTorch-logo.png'
 import scikitLearnLogo from './images/tech-stack-logos/scikit-learn-logo.png'
 import scipySeekLogo from './images/tech-stack-logos/scipy-seek-logo.png'
 import travisCILogo from './images/tech-stack-logos/travisCI-logo.png'
+import jenkinLogo from './images/tech-stack-logos/jenkin-logo.png'
 
 const imageStyle = {
     width: '80px',
@@ -193,105 +194,104 @@ function App() {
         <div className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden" style={{overflowX: 'hidden', paddingTop: '5rem', paddingBottom: '5rem'}}>
             <Splide
                 options={{
-                    type: "loop", // Loop back to the beginning when reaching the end
+                    type: "loop",
                     autoScroll: {
-                        pauseOnHover: false, // Do not pause scrolling when hovering over the carousel
-                        pauseOnFocus: false, // Do not pause scrolling when the carousel is focused
-                        rewind: true, // Rewind to start when the end is reached
-                        speed: 1 // Scrolling speed
+                        pauseOnHover: false,
+                        pauseOnFocus: false,
+                        rewind: true,
+                        speed: 2
                     },
-                    arrows: false, // Hide navigation arrows
-                    pagination: false, // Hide pagination dots
-                    fixedWidth: '145px', // Fixed width for each slide
-                    gap: '2px', // Gap between slides
+                    arrows: false,
+                    pagination: false,
+                    fixedWidth: '145px',
+                    gap: '2px',
                 }}
-                extensions={{ AutoScroll }} // Use the AutoScroll extension
+                extensions={{ AutoScroll }}
             >
-                <SplideSlide>
-                    <img src={pythonLogo} alt="Python Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={anacondaLogo} alt="Anaconda Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={apacheSparkLogo} alt="Apache Spark Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={djangoLogo} alt="Django Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={flaskLogo} alt="Flask Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={mongoDBLogo} alt="MongoDB Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={mySQLLogo} alt="MySQL Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={circleCILogo} alt="CircleCI Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={dockerLogo} alt="Docker Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={gitLogo} alt="Git Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={githubActionLogo} alt="GitHub Action Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={gitLabLogo} alt="GitLab Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={grafanaLogo} alt="Grafana Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={kerasLogo} alt="Keras Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={kubernetesLogo} alt="Kubernetes Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={matplotlibLogo} alt="MatplotLib Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={new4jLogo} alt="New4j Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={numpyLogo} alt="NumPy Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={pandasLogo} alt="Pandas Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={plotlyLogo} alt="Plotly Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={postmanLogo} alt="Postman Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={powerBILogo} alt="PowerBI Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={prometheusLogo} alt="Prometheus Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={pytorchLogo} alt="Pytorch Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={scikitLearnLogo} alt="Scikit-Learn Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={scipySeekLogo} alt="ScipySeek Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={pytorchLogo} alt="Pytorch Logo" style={imageStyle} />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={travisCILogo} alt="TravisCI Logo" style={imageStyle} />
-                </SplideSlide>
-
+              <SplideSlide>
+                <img src={gitLogo} alt="Git Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={pythonLogo} alt="Python Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={anacondaLogo} alt="Anaconda Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={numpyLogo} alt="NumPy Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={pandasLogo} alt="Pandas Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={matplotlibLogo} alt="Matplotlib Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={plotlyLogo} alt="Plotly Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={scipySeekLogo} alt="SciPy Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={postmanLogo} alt="Postman Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={flaskLogo} alt="Flask Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={djangoLogo} alt="Django Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={mySQLLogo} alt="MySQL Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={mongoDBLogo} alt="MongoDB Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={new4jLogo} alt="Neo4j Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={apacheSparkLogo} alt="Apache Spark Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={dockerLogo} alt="Docker Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={kubernetesLogo} alt="Kubernetes Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={jenkinLogo} alt="Jenkins Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={travisCILogo} alt="Travis CI Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={circleCILogo} alt="CircleCI Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={githubActionLogo} alt="GitHub Actions Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={gitLabLogo} alt="GitLab CI/CD Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={scikitLearnLogo} alt="Scikit-Learn Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={kerasLogo} alt="Keras Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={pytorchLogo} alt="PyTorch Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={prometheusLogo} alt="Prometheus Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={grafanaLogo} alt="Grafana Logo" style={imageStyle} />
+              </SplideSlide>
+              <SplideSlide>
+                <img src={powerBILogo} alt="Power BI Logo" style={imageStyle} />
+              </SplideSlide>
             </Splide>
         </div>
         </div>
