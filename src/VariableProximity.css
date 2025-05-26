@@ -18,3 +18,9 @@
   white-space: nowrap;
   border: 0;
 }
+
+@media (max-width: 600px) {
+  .variable-proximity{
+    font-size:40px;
+  }
+}
