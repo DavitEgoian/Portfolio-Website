@@ -1,46 +1,22 @@
+import React, { useRef } from "react";
 import "./App.css";
 import TextPressure from "./TextPressure";
-import React, { useRef } from "react";
 import VariableProximity from "./VariableProximity";
 import SpotlightCard from "./SpotlightCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
+
+import techLogos from "./data/techLogos";
+
 import dataScienceIcon from "./images/cards_container_icons/data-science-icon.png";
 import machineLearningIcon from "./images/cards_container_icons/machine-learning-icon.jpg";
 import explainableAiIcon from "./images/cards_container_icons/explainable-AI-icon.png";
 import featureEngineeringIcon from "./images/cards_container_icons/feature-engineering-icon.png";
-import pythonLogo from "./images/tech-stack-logos/python-logo.png";
-import anacondaLogo from "./images/tech-stack-logos/anaconda-logo.png";
-import apacheSparkLogo from "./images/tech-stack-logos/apache-spark-logo.png";
-import djangoLogo from "./images/tech-stack-logos/django-logo.png";
-import flaskLogo from "./images/tech-stack-logos/flask-logo.png";
-import mongoDBLogo from "./images/tech-stack-logos/mongoDB-logo.png";
-import mySQLLogo from "./images/tech-stack-logos/mySQL-logo.png";
-import circleCILogo from "./images/tech-stack-logos/circleCI-logo.png";
-import dockerLogo from "./images/tech-stack-logos/docker-logo.png";
-import gitLogo from "./images/tech-stack-logos/git-logo.png";
-import githubActionLogo from "./images/tech-stack-logos/github-actions-logo.png";
-import gitLabLogo from "./images/tech-stack-logos/gitlab-logo.png";
-import grafanaLogo from "./images/tech-stack-logos/grafana-logo.png";
-import kerasLogo from "./images/tech-stack-logos/keras-logo.png";
-import kubernetesLogo from "./images/tech-stack-logos/kubernetes-logo.png";
-import matplotlibLogo from "./images/tech-stack-logos/matplotlib-logo.png";
-import new4jLogo from "./images/tech-stack-logos/new4j-logo.png";
-import numpyLogo from "./images/tech-stack-logos/numPy-logo.png";
-import pandasLogo from "./images/tech-stack-logos/pandas-logo.png";
-import plotlyLogo from "./images/tech-stack-logos/plotly-logo.png";
-import postmanLogo from "./images/tech-stack-logos/postman-logo.png";
-import powerBILogo from "./images/tech-stack-logos/power_BI_logo.png";
-import prometheusLogo from "./images/tech-stack-logos/prometheus-logo.png";
-import pytorchLogo from "./images/tech-stack-logos/pyTorch-logo.png";
-import scikitLearnLogo from "./images/tech-stack-logos/scikit-learn-logo.png";
-import scipySeekLogo from "./images/tech-stack-logos/scipy-seek-logo.png";
-import travisCILogo from "./images/tech-stack-logos/travisCI-logo.png";
-import jenkinLogo from "./images/tech-stack-logos/jenkin-logo.png";
 
 function App() {
   const containerRef = useRef(null);
+
   return (
     <div className="App">
       <div
@@ -54,106 +30,81 @@ function App() {
       >
         <TextPressure
           text="Hello!"
-          flex={true}
+          flex
           alpha={false}
           stroke={false}
-          width={true}
-          weight={true}
-          italic={true}
+          width
+          weight
+          italic
           textColor="#ffffff"
           strokeColor="#ff0000"
           minFontSize={36}
-        />{" "}
+        />
         <br />
-        <div
-          ref={containerRef}
-          style={{
-            position: "relative",
-          }}
-        >
+        <div ref={containerRef} style={{ position: "relative" }}>
           <VariableProximity
             label={
               "I build intelligent systems that balance\n " +
               "accuracy," +
               " scalability and interpretability."
             }
-            className={"variable-proximity-demo"}
+            className="variable-proximity-demo"
             fromFontVariationSettings="'wght' 400, 'opsz' 9"
             toFontVariationSettings="'wght' 1000, 'opsz' 40"
             containerRef={containerRef}
             radius={100}
             falloff="linear"
           />
-        </div>{" "}
-      </div>{" "}
-      <h1 className="section-title">
-        {" "}
-        WHAT I DO{" "}
-      </h1>{" "}
+        </div>
+      </div>
+
+      <h1 className="section-title">WHAT I DO</h1>
       <div className="cards-container">
-        <SpotlightCard
-          className="custom-spotlight-card"
-          spotlightColor="rgb(163, 116, 255)"
-        >
-          <img src={dataScienceIcon} alt="data-science-icon" />
-          <h3> Data Science </h3>{" "}
-          <p>
-            {" "}
-            Advanced statistical modeling, A / B testing & interactive data
-            visualization for business insights.{" "}
-          </p>{" "}
-        </SpotlightCard>{" "}
-        <SpotlightCard
-          className="custom-spotlight-card"
-          spotlightColor="rgb(163, 116, 255)"
-        >
-          <img src={machineLearningIcon} alt="machine-learning-icon" />
-          <h3> Machine Learning </h3>{" "}
-          <p>
-            {" "}
-            Algorithm selection, cross - validation & hyperparameter tuning to
-            maximize predictive power.{" "}
-          </p>{" "}
-        </SpotlightCard>{" "}
-        <SpotlightCard
-          className="custom-spotlight-card"
-          spotlightColor="rgb(163, 116, 255)"
-        >
-          <img src={featureEngineeringIcon} alt="feature-engineering-icon" />
-          <h3> Feature Engineering </h3>{" "}
-          <p>
-            {" "}
-            Automated feature creation, selection & dimensionality reduction to
-            supercharge your models.{" "}
-          </p>{" "}
-        </SpotlightCard>{" "}
-        <SpotlightCard
-          className="custom-spotlight-card"
-          spotlightColor="rgb(163, 116, 255)"
-        >
-          <img src={explainableAiIcon} alt="explainable-Ai-icon" />
-          <h3> Explainable AI </h3>{" "}
-          <p>
-            {" "}
-            Model interpretability with SHAP / LIME, bias detection &
-            transparent decision - making pipelines.{" "}
-          </p>{" "}
-        </SpotlightCard>{" "}
-      </div>{" "}
-      <h1 className="section-title">
-          MY TECH STACK
-      </h1>
+        {[
+          {
+            icon: dataScienceIcon,
+            title: "Data Science",
+            description:
+              "Advanced statistical modeling, A/B testing & interactive data visualization for business insights.",
+          },
+          {
+            icon: machineLearningIcon,
+            title: "Machine Learning",
+            description:
+              "Algorithm selection, cross-validation & hyperparameter tuning to maximize predictive power.",
+          },
+          {
+            icon: featureEngineeringIcon,
+            title: "Feature Engineering",
+            description:
+              "Automated feature creation, selection & dimensionality reduction to supercharge your models.",
+          },
+          {
+            icon: explainableAiIcon,
+            title: "Explainable AI",
+            description:
+              "Model interpretability with SHAP/LIME, bias detection & transparent decision-making pipelines.",
+          },
+        ].map(({ icon, title, description }) => (
+          <SpotlightCard
+            key={title}
+            className="custom-spotlight-card"
+            spotlightColor="rgb(163, 116, 255)"
+          >
+            <img src={icon} alt={`${title.toLowerCase()}-icon`} />
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </SpotlightCard>
+        ))}
+      </div>
+
+      <h1 className="section-title">MY TECH STACK</h1>
       <p className="section-desc">
-      My expertise spans{" "}
-      <span className="highlight-yellow">
-        Data Science and AI technologies{" "}
-      </span>
-      , enabling me to deliver <br />
-      <span className="highlight-teal">
-        Machine Learning-driver{" "}
-      </span>
-      solutions across various platforms.
+        My expertise spans{' '}
+        <span className="highlight-yellow">Data Science and AI technologies</span>, enabling me to deliver<br />
+        <span className="highlight-teal">Machine Learning-driven solutions across various platforms.</span>
       </p>
+
       <div className="relative flex h-full bg-black">
         <div
           className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden"
@@ -177,133 +128,18 @@ function App() {
               fixedWidth: "145px",
               gap: "2px",
             }}
-            extensions={{
-              AutoScroll,
-            }}
+            extensions={{ AutoScroll }}
           >
-            {" "}
-            {[
-              {
-                src: gitLogo,
-                alt: "Git Logo",
-              },
-              {
-                src: pythonLogo,
-                alt: "Python Logo",
-              },
-              {
-                src: anacondaLogo,
-                alt: "Anaconda Logo",
-              },
-              {
-                src: numpyLogo,
-                alt: "NumPy Logo",
-              },
-              {
-                src: pandasLogo,
-                alt: "Pandas Logo",
-              },
-              {
-                src: matplotlibLogo,
-                alt: "Matplotlib Logo",
-              },
-              {
-                src: plotlyLogo,
-                alt: "Plotly Logo",
-              },
-              {
-                src: scipySeekLogo,
-                alt: "SciPy Logo",
-              },
-              {
-                src: postmanLogo,
-                alt: "Postman Logo",
-              },
-              {
-                src: flaskLogo,
-                alt: "Flask Logo",
-              },
-              {
-                src: djangoLogo,
-                alt: "Django Logo",
-              },
-              {
-                src: mySQLLogo,
-                alt: "MySQL Logo",
-              },
-              {
-                src: mongoDBLogo,
-                alt: "MongoDB Logo",
-              },
-              {
-                src: new4jLogo,
-                alt: "Neo4j Logo",
-              },
-              {
-                src: apacheSparkLogo,
-                alt: "Apache Spark Logo",
-              },
-              {
-                src: dockerLogo,
-                alt: "Docker Logo",
-              },
-              {
-                src: kubernetesLogo,
-                alt: "Kubernetes Logo",
-              },
-              {
-                src: jenkinLogo,
-                alt: "Jenkins Logo",
-              },
-              {
-                src: travisCILogo,
-                alt: "Travis CI Logo",
-              },
-              {
-                src: circleCILogo,
-                alt: "CircleCI Logo",
-              },
-              {
-                src: githubActionLogo,
-                alt: "GitHub Actions Logo",
-              },
-              {
-                src: gitLabLogo,
-                alt: "GitLab CI/CD Logo",
-              },
-              {
-                src: scikitLearnLogo,
-                alt: "Scikit-Learn Logo",
-              },
-              {
-                src: kerasLogo,
-                alt: "Keras Logo",
-              },
-              {
-                src: pytorchLogo,
-                alt: "PyTorch Logo",
-              },
-              {
-                src: prometheusLogo,
-                alt: "Prometheus Logo",
-              },
-              {
-                src: grafanaLogo,
-                alt: "Grafana Logo",
-              },
-              {
-                src: powerBILogo,
-                alt: "Power BI Logo",
-              },
-            ].map(({ src, alt }) => (
+            {techLogos.map(({ src, alt }) => (
               <SplideSlide key={alt}>
                 <img src={src} alt={alt} className="tech-logo" />
               </SplideSlide>
-            ))}{" "}
-          </Splide>{" "}
-        </div>{" "}
-      </div>{" "}
+            ))}
+          </Splide>
+        </div>
+      </div>
     </div>
   );
 }
+
 export default App;
