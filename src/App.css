@@ -160,3 +160,20 @@
 
 	}
 }
+
+.tech-logo {
+  width: 80px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .tech-logo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-logo {
+    width: 45px;
+  }
+}
