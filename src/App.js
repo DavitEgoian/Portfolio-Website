@@ -86,14 +86,7 @@ function App() {
           />
         </div>{" "}
       </div>{" "}
-      <h1
-        style={{
-          marginTop: "8rem",
-          fontSize: "2.5rem",
-          fontWeight: "900",
-          color: "rgb(163, 116, 255)",
-        }}
-      >
+      <h1 className="section-title">
         {" "}
         WHAT I DO{" "}
       </h1>{" "}
@@ -147,43 +140,20 @@ function App() {
           </p>{" "}
         </SpotlightCard>{" "}
       </div>{" "}
-      <h1
-        style={{
-          marginTop: "8rem",
-          fontSize: "2.5rem",
-          fontWeight: "900",
-          color: "rgb(163, 116, 255)",
-        }}
-      >
-        {" "}
-        MY TECH STACK{" "}
-      </h1>{" "}
-      <p
-        style={{
-          fontSize: "2rem",
-          color: "white",
-          lineHeight: 1.3,
-          margin: 0,
-        }}
-      >
-        My expertise spans{" "}
-        <span
-          style={{
-            color: "rgb(255, 208, 116)",
-          }}
-        >
-          Data Science and AI technologies{" "}
-        </span>
-        , enabling me to deliver <br />
-        <span
-          style={{
-            color: "rgb(23, 241, 209)",
-          }}
-        >
-          Machine Learning - driver{" "}
-        </span>{" "}
-        solutions across various platforms.{" "}
-      </p>{" "}
+      <h1 className="section-title">
+          MY TECH STACK
+      </h1>
+      <p className="section-desc">
+      My expertise spans{" "}
+      <span className="highlight-yellow">
+        Data Science and AI technologies{" "}
+      </span>
+      , enabling me to deliver <br />
+      <span className="highlight-teal">
+        Machine Learning-driver{" "}
+      </span>
+      solutions across various platforms.
+      </p>
       <div className="relative flex h-full bg-black">
         <div
           className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden"
