@@ -8,11 +8,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 import techLogos from "./data/techLogos";
-
-import dataScienceIcon from "./images/cards_container_icons/data-science-icon.png";
-import machineLearningIcon from "./images/cards_container_icons/machine-learning-icon.jpg";
-import explainableAiIcon from "./images/cards_container_icons/explainable-AI-icon.png";
-import featureEngineeringIcon from "./images/cards_container_icons/feature-engineering-icon.png";
+import cardsData from "./data/cardsData";
 
 function App() {
   const containerRef = useRef(null);
@@ -60,32 +56,7 @@ function App() {
 
       <h1 className="section-title">WHAT I DO</h1>
       <div className="cards-container">
-        {[
-          {
-            icon: dataScienceIcon,
-            title: "Data Science",
-            description:
-              "Advanced statistical modeling, A/B testing & interactive data visualization for business insights.",
-          },
-          {
-            icon: machineLearningIcon,
-            title: "Machine Learning",
-            description:
-              "Algorithm selection, cross-validation & hyperparameter tuning to maximize predictive power.",
-          },
-          {
-            icon: featureEngineeringIcon,
-            title: "Feature Engineering",
-            description:
-              "Automated feature creation, selection & dimensionality reduction to supercharge your models.",
-          },
-          {
-            icon: explainableAiIcon,
-            title: "Explainable AI",
-            description:
-              "Model interpretability with SHAP/LIME, bias detection & transparent decision-making pipelines.",
-          },
-        ].map(({ icon, title, description }) => (
+        {cardsData.map(({ icon, title, desc }) => (
           <SpotlightCard
             key={title}
             className="custom-spotlight-card"
@@ -93,7 +64,7 @@ function App() {
           >
             <img src={icon} alt={`${title.toLowerCase()}-icon`} />
             <h3>{title}</h3>
-            <p>{description}</p>
+            <p>{desc}</p>
           </SpotlightCard>
         ))}
       </div>
