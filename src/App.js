@@ -109,6 +109,8 @@ function App() {
           </Splide>
         </div>
       </div>
+      <h1 className="section-title">CONNECT WITH ME</h1>
+
     </div>
   );
 }
