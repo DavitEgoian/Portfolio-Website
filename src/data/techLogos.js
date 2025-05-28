@@ -26,6 +26,13 @@ import pytorchLogo from "../images/tech-stack-logos/pyTorch-logo.png";
 import prometheusLogo from "../images/tech-stack-logos/prometheus-logo.png";
 import grafanaLogo from "../images/tech-stack-logos/grafana-logo.png";
 import powerBILogo from "../images/tech-stack-logos/power_BI_logo.png";
+import html5Logo from '../images/tech-stack-logos/html5-logo.png';
+import css3Logo from '../images/tech-stack-logos/css3-logo.png';
+import javascriptLogo from '../images/tech-stack-logos/javaScript-logo.png';
+import reactLogo from '../images/tech-stack-logos/react-logo.png';
+import csharpLogo from '../images/tech-stack-logos/cSharp-logo.png';
+import dotnet from '../images/tech-stack-logos/microsoftdotnet-logo.png'
+
 
 const techLogos = [
   { src: gitLogo, alt: "Git Logo" },
@@ -55,7 +62,13 @@ const techLogos = [
   { src: pytorchLogo, alt: "PyTorch Logo" },
   { src: prometheusLogo, alt: "Prometheus Logo" },
   { src: grafanaLogo, alt: "Grafana Logo" },
-  { src: powerBILogo, alt: "Power BI Logo" }
+  { src: powerBILogo, alt: "Power BI Logo" },
+  { src: html5Logo, alt: 'HTML5 Logo'},
+  { src: css3Logo, alt: 'CSS3 Logo'},
+  { src: javascriptLogo, alt: 'JavaScript Logo'},
+  { src: reactLogo, alt: 'React Logo'},
+  { src: csharpLogo, alt: 'C# Logo'},
+  { src: dotnet, alt: 'Microsoft .NET Logo'}
 ];
 
 export default techLogos;
