@@ -57,6 +57,10 @@
 	grid-template-columns: repeat(4, 1fr);
 }
 
+.cards-container p{
+	color: #afafb7;
+}
+
 .custom-spotlight-card {
 	color: white;
 	aspect-ratio: 16 / 9;
