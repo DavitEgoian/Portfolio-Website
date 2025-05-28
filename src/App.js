@@ -9,6 +9,8 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 import techLogos from "./data/techLogos";
 import cardsData from "./data/cardsData";
+import socialLogos from "./data/socialLogos";
+
 
 function App() {
   const containerRef = useRef(null);
@@ -110,7 +112,21 @@ function App() {
         </div>
       </div>
       <h1 className="section-title">CONNECT WITH ME</h1>
-
+      <div className="relative flex h-full bg-black">
+        <div
+          className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden"
+          style={{
+            overflowX: "hidden",
+            paddingTop: "5rem",
+            paddingBottom: "5rem",
+          }}>
+              {socialLogos.map(({ src, alt }) => (
+              <SplideSlide key={alt}>
+                <img src={src} alt={alt} className="tech-logo" />
+              </SplideSlide>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }
