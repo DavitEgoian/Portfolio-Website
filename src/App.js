@@ -112,13 +112,12 @@ function App() {
         </div>
       </div>
       <h1 className="section-title">CONNECT WITH ME</h1>
-      <div className="relative flex h-full bg-black">
+      <div >
         <div
-          className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden"
           style={{
-            overflowX: "hidden",
             paddingTop: "5rem",
             paddingBottom: "5rem",
+            margin: "auto"
           }}>
               {socialLogos.map(({ src, alt }) => (
               <SplideSlide key={alt}>
