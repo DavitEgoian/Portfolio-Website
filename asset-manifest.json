@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.0a609a75.css",
-    "main.js": "/static/js/main.f3d93d80.js",
+    "main.css": "/static/css/main.15b99890.css",
+    "main.js": "/static/js/main.fe9c5480.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
     "static/media/prometheus-logo.png": "/static/media/prometheus-logo.c80f83eb0f5b431b9818.png",
     "static/media/scipy-seek-logo.png": "/static/media/scipy-seek-logo.49a4051ec5c33a9f7ec1.png",
     "static/media/jenkin-logo.png": "/static/media/jenkin-logo.70ce30d130f736b76880.png",
+    "static/media/html5-logo.png": "/static/media/html5-logo.2cd5d05c9660ec55992e.png",
     "static/media/matplotlib-logo.png": "/static/media/matplotlib-logo.108848d4569ad2010a41.png",
     "static/media/flask-logo.png": "/static/media/flask-logo.38a342bb05ecadbd0a2a.png",
     "static/media/grafana-logo.png": "/static/media/grafana-logo.25214b8f31c8e562fa9d.png",
@@ -19,18 +20,20 @@
     "static/media/new4j-logo.png": "/static/media/new4j-logo.9fc490501f57ae60b742.png",
     "static/media/mongoDB-logo.png": "/static/media/mongoDB-logo.b723bb18907da666f951.png",
     "static/media/scikit-learn-logo.png": "/static/media/scikit-learn-logo.6e8fb972f2cbb25af1f6.png",
+    "static/media/github-logo.png": "/static/media/github-logo.cc7d438083610e33e8f7.png",
     "static/media/github-actions-logo.png": "/static/media/github-actions-logo.9dfaddbea6a12a1ad4dc.png",
     "static/media/git-logo.png": "/static/media/git-logo.8d37adcd9121c2aba1e0.png",
     "static/media/numPy-logo.png": "/static/media/numPy-logo.ad6ce4268be9e06f8cb4.png",
     "static/media/docker-logo.png": "/static/media/docker-logo.4e29864a43ac93d4f457.png",
+    "static/media/react-logo.png": "/static/media/react-logo.98ff38735baa4c1b0381.png",
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "index.html": "/index.html",
-    "main.0a609a75.css.map": "/static/css/main.0a609a75.css.map",
-    "main.f3d93d80.js.map": "/static/js/main.f3d93d80.js.map",
+    "main.15b99890.css.map": "/static/css/main.15b99890.css.map",
+    "main.fe9c5480.js.map": "/static/js/main.fe9c5480.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a609a75.css",
-    "static/js/main.f3d93d80.js"
+    "static/css/main.15b99890.css",
+    "static/js/main.fe9c5480.js"
   ]
 }
