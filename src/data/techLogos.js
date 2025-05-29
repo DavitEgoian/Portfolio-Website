@@ -21,7 +21,6 @@ import circleCILogo from "../images/tech-stack-logos/circleCI-logo.png";
 import githubActionLogo from "../images/tech-stack-logos/github-actions-logo.png";
 import gitLabLogo from "../images/tech-stack-logos/gitlab-logo.png";
 import scikitLearnLogo from "../images/tech-stack-logos/scikit-learn-logo.png";
-import kerasLogo from "../images/tech-stack-logos/keras-logo.png";
 import pytorchLogo from "../images/tech-stack-logos/pyTorch-logo.png";
 import prometheusLogo from "../images/tech-stack-logos/prometheus-logo.png";
 import grafanaLogo from "../images/tech-stack-logos/grafana-logo.png";
@@ -58,7 +57,6 @@ const techLogos = [
   { src: githubActionLogo, alt: "GitHub Actions Logo" },
   { src: gitLabLogo, alt: "GitLab CI/CD Logo" },
   { src: scikitLearnLogo, alt: "Scikit-Learn Logo" },
-  { src: kerasLogo, alt: "Keras Logo" },
   { src: pytorchLogo, alt: "PyTorch Logo" },
   { src: prometheusLogo, alt: "Prometheus Logo" },
   { src: grafanaLogo, alt: "Grafana Logo" },
