@@ -236,3 +236,17 @@
     font-size: 1.6rem;
   }
 }
+
+.social-media-div{
+  display: flex;
+  justify-content: center;   /* horizontally center all logos */
+  align-items: center;       /* vertically align them (if they have varying heights) */
+  flex-wrap: wrap;           /* wrap to the next line if they overflow */
+  gap: 1rem;                 /* optional spacing between each logo */
+}
+
+.social-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 3rem;
+}
