@@ -8,25 +8,25 @@ const cardsData = [
     icon: dataScienceIcon,
     title: "Data Science",
     desc:
-      "Advanced statistical modeling, A/B testing & interactive data visualization for business insights."
+      "Advanced statistical modeling, A/B testing and interactive data visualization for business insights."
   },
   {
     icon: machineLearningIcon,
     title: "Machine Learning",
     desc:
-      "Algorithm selection, cross-validation & hyperparameter tuning to maximize predictive power."
+      "Algorithm selection, cross-validation and hyperparameter tuning to maximize predictive power."
   },
   {
     icon: featureEngineeringIcon,
     title: "Feature Engineering",
     desc:
-      "Automated feature creation, selection & dimensionality reduction to supercharge your models."
+      "Automated feature creation, selection and dimensionality reduction to supercharge your models."
   },
   {
     icon: explainableAiIcon,
     title: "Explainable AI",
     desc:
-      "Model interpretability with SHAP/LIME, bias detection & transparent decision-making pipelines."
+      "Model interpretability with SHAP/LIME, bias detection and transparent decision-making pipelines."
   }
 ];
 
