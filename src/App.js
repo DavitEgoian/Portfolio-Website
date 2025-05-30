@@ -44,7 +44,7 @@ function App() {
             label={
               "I build intelligent systems that balance\n " +
               "accuracy," +
-              " scalability and interpretability."
+              " scalability, and interpretability."
             }
             className="variable-proximity-demo"
             fromFontVariationSettings="'wght' 400, 'opsz' 9"
