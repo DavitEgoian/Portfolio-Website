@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.15b99890.css",
-    "main.js": "/static/js/main.fe9c5480.js",
+    "main.css": "/static/css/main.edafe41c.css",
+    "main.js": "/static/js/main.2781206c.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
@@ -17,7 +17,6 @@
     "static/media/data-science-icon.png": "/static/media/data-science-icon.1d4035544a4fc6b2394c.png",
     "static/media/power_BI_logo.png": "/static/media/power_BI_logo.48de42c1ecd7f72d44f3.png",
     "static/media/machine-learning-icon.jpg": "/static/media/machine-learning-icon.48be5986ae85f73de977.jpg",
-    "static/media/new4j-logo.png": "/static/media/new4j-logo.9fc490501f57ae60b742.png",
     "static/media/mongoDB-logo.png": "/static/media/mongoDB-logo.b723bb18907da666f951.png",
     "static/media/scikit-learn-logo.png": "/static/media/scikit-learn-logo.6e8fb972f2cbb25af1f6.png",
     "static/media/github-logo.png": "/static/media/github-logo.cc7d438083610e33e8f7.png",
@@ -28,12 +27,12 @@
     "static/media/react-logo.png": "/static/media/react-logo.98ff38735baa4c1b0381.png",
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "index.html": "/index.html",
-    "main.15b99890.css.map": "/static/css/main.15b99890.css.map",
-    "main.fe9c5480.js.map": "/static/js/main.fe9c5480.js.map",
+    "main.edafe41c.css.map": "/static/css/main.edafe41c.css.map",
+    "main.2781206c.js.map": "/static/js/main.2781206c.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15b99890.css",
-    "static/js/main.fe9c5480.js"
+    "static/css/main.edafe41c.css",
+    "static/js/main.2781206c.js"
   ]
 }
