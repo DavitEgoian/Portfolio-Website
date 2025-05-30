@@ -8,7 +8,6 @@ import plotlyLogo from "../images/tech-stack-logos/plotly-logo.png";
 import scipySeekLogo from "../images/tech-stack-logos/scipy-seek-logo.png";
 import postmanLogo from "../images/tech-stack-logos/postman-logo.png";
 import flaskLogo from "../images/tech-stack-logos/flask-logo.png";
-import djangoLogo from "../images/tech-stack-logos/django-logo.png";
 import mySQLLogo from "../images/tech-stack-logos/mySQL-logo.png";
 import mongoDBLogo from "../images/tech-stack-logos/mongoDB-logo.png";
 import apacheSparkLogo from "../images/tech-stack-logos/apache-spark-logo.png";
@@ -27,7 +26,6 @@ import html5Logo from '../images/tech-stack-logos/html5-logo.png';
 import css3Logo from '../images/tech-stack-logos/css3-logo.png';
 import javascriptLogo from '../images/tech-stack-logos/javaScript-logo.png';
 import reactLogo from '../images/tech-stack-logos/react-logo.png';
-import csharpLogo from '../images/tech-stack-logos/cSharp-logo.png';
 import dotnet from '../images/tech-stack-logos/microsoftdotnet-logo.png'
 
 
@@ -42,7 +40,6 @@ const techLogos = [
   { src: scipySeekLogo, alt: "SciPy Logo" },
   { src: postmanLogo, alt: "Postman Logo" },
   { src: flaskLogo, alt: "Flask Logo" },
-  { src: djangoLogo, alt: "Django Logo" },
   { src: mySQLLogo, alt: "MySQL Logo" },
   { src: mongoDBLogo, alt: "MongoDB Logo" },
   { src: apacheSparkLogo, alt: "Apache Spark Logo" },
@@ -61,7 +58,6 @@ const techLogos = [
   { src: css3Logo, alt: 'CSS3 Logo'},
   { src: javascriptLogo, alt: 'JavaScript Logo'},
   { src: reactLogo, alt: 'React Logo'},
-  { src: csharpLogo, alt: 'C# Logo'},
   { src: dotnet, alt: 'Microsoft .NET Logo'}
 ];
 
