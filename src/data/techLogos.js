@@ -11,7 +11,6 @@ import flaskLogo from "../images/tech-stack-logos/flask-logo.png";
 import djangoLogo from "../images/tech-stack-logos/django-logo.png";
 import mySQLLogo from "../images/tech-stack-logos/mySQL-logo.png";
 import mongoDBLogo from "../images/tech-stack-logos/mongoDB-logo.png";
-import new4jLogo from "../images/tech-stack-logos/new4j-logo.png";
 import apacheSparkLogo from "../images/tech-stack-logos/apache-spark-logo.png";
 import dockerLogo from "../images/tech-stack-logos/docker-logo.png";
 import kubernetesLogo from "../images/tech-stack-logos/kubernetes-logo.png";
@@ -47,7 +46,6 @@ const techLogos = [
   { src: djangoLogo, alt: "Django Logo" },
   { src: mySQLLogo, alt: "MySQL Logo" },
   { src: mongoDBLogo, alt: "MongoDB Logo" },
-  { src: new4jLogo, alt: "Neo4j Logo" },
   { src: apacheSparkLogo, alt: "Apache Spark Logo" },
   { src: dockerLogo, alt: "Docker Logo" },
   { src: kubernetesLogo, alt: "Kubernetes Logo" },
