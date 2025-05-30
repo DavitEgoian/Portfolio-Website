@@ -15,7 +15,6 @@ import apacheSparkLogo from "../images/tech-stack-logos/apache-spark-logo.png";
 import dockerLogo from "../images/tech-stack-logos/docker-logo.png";
 import kubernetesLogo from "../images/tech-stack-logos/kubernetes-logo.png";
 import jenkinLogo from "../images/tech-stack-logos/jenkin-logo.png";
-import travisCILogo from "../images/tech-stack-logos/travisCI-logo.png";
 import circleCILogo from "../images/tech-stack-logos/circleCI-logo.png";
 import githubActionLogo from "../images/tech-stack-logos/github-actions-logo.png";
 import gitLabLogo from "../images/tech-stack-logos/gitlab-logo.png";
@@ -50,7 +49,6 @@ const techLogos = [
   { src: dockerLogo, alt: "Docker Logo" },
   { src: kubernetesLogo, alt: "Kubernetes Logo" },
   { src: jenkinLogo, alt: "Jenkins Logo" },
-  { src: travisCILogo, alt: "Travis CI Logo" },
   { src: circleCILogo, alt: "CircleCI Logo" },
   { src: githubActionLogo, alt: "GitHub Actions Logo" },
   { src: gitLabLogo, alt: "GitLab CI/CD Logo" },
