@@ -26,7 +26,6 @@ import html5Logo from '../images/tech-stack-logos/html5-logo.png';
 import css3Logo from '../images/tech-stack-logos/css3-logo.png';
 import javascriptLogo from '../images/tech-stack-logos/javaScript-logo.png';
 import reactLogo from '../images/tech-stack-logos/react-logo.png';
-import dotnet from '../images/tech-stack-logos/microsoftdotnet-logo.png'
 
 
 const techLogos = [
@@ -58,7 +57,6 @@ const techLogos = [
   { src: css3Logo, alt: 'CSS3 Logo'},
   { src: javascriptLogo, alt: 'JavaScript Logo'},
   { src: reactLogo, alt: 'React Logo'},
-  { src: dotnet, alt: 'Microsoft .NET Logo'}
 ];
 
 export default techLogos;
