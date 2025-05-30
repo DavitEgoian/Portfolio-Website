@@ -6,27 +6,27 @@ import explainableAiIcon from "../images/cards_container_icons/explainable-AI-ic
 const cardsData = [
   {
     icon: dataScienceIcon,
-    title: "Data Science",
+    title: "Data Science & Analytics",
     desc:
-      "Advanced statistical modeling, A/B testing and interactive data visualization for business insights."
+      "Advanced statistical modeling, A/B testing, and interactive data visualization to inform strategic business decisions."
   },
   {
     icon: machineLearningIcon,
-    title: "Machine Learning",
+    title: "Deep Learning & ML",
     desc:
-      "Algorithm selection, cross-validation and hyperparameter tuning to maximize predictive power."
+      "Algorithm selection, cross-validation and hyperparameter tuning with PyTorch to maximize predictive power."
   },
   {
     icon: featureEngineeringIcon,
-    title: "Feature Engineering",
+    title: "MLOps & Feature Engineering",
     desc:
-      "Automated feature creation, selection and dimensionality reduction to supercharge your models."
+      "Automated feature creation, selection, and dimensionality reduction to boost model performance."
   },
   {
     icon: explainableAiIcon,
-    title: "Explainable AI",
+    title: "Ethical AI & Explainability",
     desc:
-      "Model interpretability with SHAP/LIME, bias detection and transparent decision-making pipelines."
+      "Bias detection, fairness checks and model interpretability with SHAP/LIME to ensure transparent, ethical decision-making."
   }
 ];
 
