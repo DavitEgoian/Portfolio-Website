@@ -32,7 +32,7 @@ import fastAPILogo from '../images/tech-stack-logos/fastapi-logo.png';
 import jupyterLabLogo from '../images/tech-stack-logos/jupyterLab-logo.png';
 import lightGMBLogo from '../images/tech-stack-logos/lightGBM-logo.png';
 import mlFlowLogo from '../images/tech-stack-logos/mlflow-logo.png';
-import PrefectLogo from '../images/tech-stack-logos/prefect-logo.png';
+import prefectLogo from '../images/tech-stack-logos/prefect-logo.png';
 
 const techLogos = [
   { src: gitLogo, alt: "Git Logo" },
@@ -69,8 +69,8 @@ const techLogos = [
   { src: jupyterLabLogo, alt: 'Jupyter Lab Logo'},
   { src: lightGMBLogo, alt: 'Light GMB Logo'},
   { src: mlFlowLogo, alt: 'MLFLow Logo'},
-  { src: PrefectLogo, alt: 'Prefect Logo'},
-  
+  { src: prefectLogo, alt: 'Prefect Logo'},
+
 ];
 
 export default techLogos;
