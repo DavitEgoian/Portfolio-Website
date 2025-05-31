@@ -26,7 +26,7 @@ import html5Logo from '../images/tech-stack-logos/html5-logo.png';
 import css3Logo from '../images/tech-stack-logos/css3-logo.png';
 import javascriptLogo from '../images/tech-stack-logos/javaScript-logo.png';
 import reactLogo from '../images/tech-stack-logos/react-logo.png';
-
+import amazonS3 from '../images/tech-stack-logos/amazon-S3-logo.png';
 
 const techLogos = [
   { src: gitLogo, alt: "Git Logo" },
@@ -57,6 +57,7 @@ const techLogos = [
   { src: css3Logo, alt: 'CSS3 Logo'},
   { src: javascriptLogo, alt: 'JavaScript Logo'},
   { src: reactLogo, alt: 'React Logo'},
+  { src: amazonS3, alt: 'Amazon S3 Logo'}
 ];
 
 export default techLogos;
