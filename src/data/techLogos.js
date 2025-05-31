@@ -33,6 +33,7 @@ import jupyterLabLogo from '../images/tech-stack-logos/jupyterLab-logo.png';
 import lightGMBLogo from '../images/tech-stack-logos/lightGBM-logo.png';
 import mlFlowLogo from '../images/tech-stack-logos/mlflow-logo.png';
 import prefectLogo from '../images/tech-stack-logos/prefect-logo.png';
+import redisLogo from '../images/tech-stack-logos/redis-logo.png';
 
 const techLogos = [
   { src: gitLogo, alt: "Git Logo" },
@@ -70,7 +71,7 @@ const techLogos = [
   { src: lightGMBLogo, alt: 'Light GMB Logo'},
   { src: mlFlowLogo, alt: 'MLFLow Logo'},
   { src: prefectLogo, alt: 'Prefect Logo'},
-
+  { src: redisLogo, alt: 'Redis Logo'}
 ];
 
 export default techLogos;
