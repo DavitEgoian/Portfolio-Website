@@ -29,6 +29,7 @@ import reactLogo from '../images/tech-stack-logos/react-logo.png';
 import amazonS3Logo from '../images/tech-stack-logos/amazon-S3-logo.png';
 import awsLogo from '../images/tech-stack-logos/aws-logo.png';
 import fastAPILogo from '../images/tech-stack-logos/fastapi-logo.png';
+import jupyterLabLogo from '../images/tech-stack-logos/jupyterLab-logo.png';
 
 const techLogos = [
   { src: gitLogo, alt: "Git Logo" },
@@ -61,7 +62,9 @@ const techLogos = [
   { src: reactLogo, alt: 'React Logo'},
   { src: amazonS3Logo, alt: 'Amazon S3 Logo'},
   { src: awsLogo, alt: 'AWS Logo'},
-  { src: fastAPILogo, alt: 'FastAPI Logo'}
+  { src: fastAPILogo, alt: 'FastAPI Logo'},
+  { src: jupyterLabLogo, alt: 'Jupyter Lab Logo'},
+  
 ];
 
 export default techLogos;
