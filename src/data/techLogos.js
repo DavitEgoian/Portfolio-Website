@@ -26,7 +26,6 @@ import html5Logo from '../images/tech-stack-logos/html5-logo.png';
 import css3Logo from '../images/tech-stack-logos/css3-logo.png';
 import javascriptLogo from '../images/tech-stack-logos/javaScript-logo.png';
 import reactLogo from '../images/tech-stack-logos/react-logo.png';
-import amazonS3Logo from '../images/tech-stack-logos/amazon-S3-logo.png';
 import awsLogo from '../images/tech-stack-logos/aws-logo.png';
 import fastAPILogo from '../images/tech-stack-logos/fastapi-logo.png';
 import jupyterLabLogo from '../images/tech-stack-logos/jupyterLab-logo.png';
@@ -56,7 +55,6 @@ const techLogos = [
   { src: reactLogo, alt: "React Logo" },
   { src: mySQLLogo, alt: "MySQL Logo" },
   { src: mongoDBLogo, alt: "MongoDB Logo" },
-  { src: amazonS3Logo, alt: "Amazon S3 Logo" },
   { src: apacheSparkLogo, alt: "Apache Spark Logo" },
   { src: dockerLogo, alt: "Docker Logo" },
   { src: kubernetesLogo, alt: "Kubernetes Logo" },
