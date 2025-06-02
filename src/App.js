@@ -4,17 +4,18 @@ import TextPressure from "./TextPressure";
 import VariableProximity from "./VariableProximity";
 import SpotlightCard from "./SpotlightCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
-
 import techLogos from "./data/techLogos";
 import cardsData from "./data/cardsData";
 import socialLogos from "./data/socialLogos";
 
 
+
 function App() {
   const containerRef = useRef(null);
-
+  
   return (
     <div className="App">
       <div
@@ -103,9 +104,10 @@ function App() {
             }}
             extensions={{ AutoScroll }}
           >
-            {techLogos.map(({ src, alt }) => (
+            {techLogos.map(({ src, alt, name }) => (
               <SplideSlide key={alt}>
                 <img src={src} alt={alt} className="tech-logo" />
+                <p className="tech-name">{name}</p>
               </SplideSlide>
             ))}
           </Splide>
