@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.edafe41c.css",
-    "main.js": "/static/js/main.d5ee5b6e.js",
+    "main.css": "/static/css/main.7c0ca31b.css",
+    "main.js": "/static/js/main.39e9c1fb.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
     "static/media/prometheus-logo.png": "/static/media/prometheus-logo.c80f83eb0f5b431b9818.png",
-    "static/media/scikit-learn-logo.png": "/static/media/scikit-learn-logo.5c90e1de5e535bdaac90.png",
+    "static/media/scikit-learn-logo.png": "/static/media/scikit-learn-logo.60b882eea987e841713f.png",
     "static/media/scipy-seek-logo.png": "/static/media/scipy-seek-logo.49a4051ec5c33a9f7ec1.png",
     "static/media/jenkin-logo.png": "/static/media/jenkin-logo.70ce30d130f736b76880.png",
     "static/media/html5-logo.png": "/static/media/html5-logo.2cd5d05c9660ec55992e.png",
@@ -32,12 +32,12 @@
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
-    "main.edafe41c.css.map": "/static/css/main.edafe41c.css.map",
-    "main.d5ee5b6e.js.map": "/static/js/main.d5ee5b6e.js.map",
+    "main.7c0ca31b.css.map": "/static/css/main.7c0ca31b.css.map",
+    "main.39e9c1fb.js.map": "/static/js/main.39e9c1fb.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.edafe41c.css",
-    "static/js/main.d5ee5b6e.js"
+    "static/css/main.7c0ca31b.css",
+    "static/js/main.39e9c1fb.js"
   ]
 }
