@@ -95,7 +95,7 @@ function App() {
                 pauseOnHover: false,
                 pauseOnFocus: false,
                 rewind: true,
-                speed: 2,
+                speed: 3,
               },
               arrows: false,
               pagination: false,
