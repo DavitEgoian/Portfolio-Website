@@ -47,6 +47,7 @@ const techLogos = [
   { src: numpyLogo, alt: "NumPy Logo", name: "NumPy" },
   { src: pandasLogo, alt: "Pandas Logo", name: "Pandas" },
   { src: matplotlibLogo, alt: "Matplotlib Logo", name: "Matplotlib" },
+  { src: seabornLogo, alt: 'Seaborn Logo', name: 'Seaborn'},
   { src: scipySeekLogo, alt: "SciPy Logo", name: "SciPy" },
   { src: plotlyLogo, alt: "Plotly Logo", name: "Plotly" },
   { src: scikitLearnLogo, alt: "Scikit-Learn Logo", name: "Scikit-Learn" },
