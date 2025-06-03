@@ -4,6 +4,7 @@ import anacondaLogo from "../images/tech-stack-logos/anaconda-logo.png";
 import numpyLogo from "../images/tech-stack-logos/numPy-logo.png";
 import pandasLogo from "../images/tech-stack-logos/pandas-logo.png";
 import matplotlibLogo from "../images/tech-stack-logos/matplotlib-logo.png";
+import seabornLogo from '../images/tech-stack-logos/seaborn-logo.png'
 import plotlyLogo from "../images/tech-stack-logos/plotly-logo.png";
 import scipySeekLogo from "../images/tech-stack-logos/scipy-seek-logo.png";
 import postmanLogo from "../images/tech-stack-logos/postman-logo.png";
