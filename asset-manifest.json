@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7c0ca31b.css",
-    "main.js": "/static/js/main.39e9c1fb.js",
+    "main.js": "/static/js/main.5aa2e32c.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
@@ -15,6 +15,7 @@
     "static/media/grafana-logo.png": "/static/media/grafana-logo.25214b8f31c8e562fa9d.png",
     "static/media/circleCI-logo.png": "/static/media/circleCI-logo.f19f9bf07e67010b1ef4.png",
     "static/media/gitlab-logo.png": "/static/media/gitlab-logo.845a1f13061b75219850.png",
+    "static/media/seaborn-logo.png": "/static/media/seaborn-logo.a17c74219f9db8cc94ad.png",
     "static/media/data-science-icon.png": "/static/media/data-science-icon.1d4035544a4fc6b2394c.png",
     "static/media/plotly-logo.png": "/static/media/plotly-logo.d2487a688c27dff2ef48.png",
     "static/media/power_BI_logo.png": "/static/media/power_BI_logo.48de42c1ecd7f72d44f3.png",
@@ -33,11 +34,11 @@
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
     "main.7c0ca31b.css.map": "/static/css/main.7c0ca31b.css.map",
-    "main.39e9c1fb.js.map": "/static/js/main.39e9c1fb.js.map",
+    "main.5aa2e32c.js.map": "/static/js/main.5aa2e32c.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7c0ca31b.css",
-    "static/js/main.39e9c1fb.js"
+    "static/js/main.5aa2e32c.js"
   ]
 }
