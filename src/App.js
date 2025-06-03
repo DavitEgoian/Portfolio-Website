@@ -4,7 +4,6 @@ import TextPressure from "./TextPressure";
 import VariableProximity from "./VariableProximity";
 import SpotlightCard from "./SpotlightCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
 import techLogos from "./data/techLogos";
