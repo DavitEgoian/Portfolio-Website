@@ -55,6 +55,7 @@ function App() {
           />
         </div>
       </div>
+      <h1 className="section-title">ABOUT ME</h1>
 
       <h1 className="section-title">WHAT I DO</h1>
       <div className="cards-container">
