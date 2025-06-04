@@ -4,7 +4,7 @@ import anacondaLogo from "../images/tech-stack-logos/anaconda-logo.png";
 import numpyLogo from "../images/tech-stack-logos/numPy-logo.png";
 import pandasLogo from "../images/tech-stack-logos/pandas-logo.png";
 import matplotlibLogo from "../images/tech-stack-logos/matplotlib-logo.png";
-import seabornLogo from '../images/tech-stack-logos/seaborn-logo.png'
+import seabornLogo from "../images/tech-stack-logos/seaborn-logo.png";
 import plotlyLogo from "../images/tech-stack-logos/plotly-logo.png";
 import scipySeekLogo from "../images/tech-stack-logos/scipy-seek-logo.png";
 import postmanLogo from "../images/tech-stack-logos/postman-logo.png";
@@ -23,18 +23,18 @@ import pytorchLogo from "../images/tech-stack-logos/pyTorch-logo.png";
 import prometheusLogo from "../images/tech-stack-logos/prometheus-logo.png";
 import grafanaLogo from "../images/tech-stack-logos/grafana-logo.png";
 import powerBILogo from "../images/tech-stack-logos/power_BI_logo.png";
-import html5Logo from '../images/tech-stack-logos/html5-logo.png';
-import css3Logo from '../images/tech-stack-logos/css3-logo.png';
-import javascriptLogo from '../images/tech-stack-logos/javaScript-logo.png';
-import reactLogo from '../images/tech-stack-logos/react-logo.png';
-import awsLogo from '../images/tech-stack-logos/aws-logo.png';
-import fastAPILogo from '../images/tech-stack-logos/fastapi-logo.png';
-import jupyterLabLogo from '../images/tech-stack-logos/jupyterLab-logo.png';
-import lightGMBLogo from '../images/tech-stack-logos/lightGBM-logo.png';
-import mlFlowLogo from '../images/tech-stack-logos/mlflow-logo.png';
-import prefectLogo from '../images/tech-stack-logos/prefect-logo.png';
-import redisLogo from '../images/tech-stack-logos/redis-logo.png';
-import tableauLogo from '../images/tech-stack-logos/tableau-logo.png';
+import html5Logo from "../images/tech-stack-logos/html5-logo.png";
+import css3Logo from "../images/tech-stack-logos/css3-logo.png";
+import javascriptLogo from "../images/tech-stack-logos/javaScript-logo.png";
+import reactLogo from "../images/tech-stack-logos/react-logo.png";
+import awsLogo from "../images/tech-stack-logos/aws-logo.png";
+import fastAPILogo from "../images/tech-stack-logos/fastapi-logo.png";
+import jupyterLabLogo from "../images/tech-stack-logos/jupyterLab-logo.png";
+import lightGMBLogo from "../images/tech-stack-logos/lightGBM-logo.png";
+import mlFlowLogo from "../images/tech-stack-logos/mlflow-logo.png";
+import prefectLogo from "../images/tech-stack-logos/prefect-logo.png";
+import redisLogo from "../images/tech-stack-logos/redis-logo.png";
+import tableauLogo from "../images/tech-stack-logos/tableau-logo.png";
 
 const techLogos = [
   { src: gitLogo, alt: "Git Logo", name: "Git" },
@@ -47,7 +47,7 @@ const techLogos = [
   { src: numpyLogo, alt: "NumPy Logo", name: "NumPy" },
   { src: pandasLogo, alt: "Pandas Logo", name: "Pandas" },
   { src: matplotlibLogo, alt: "Matplotlib Logo", name: "Matplotlib" },
-  { src: seabornLogo, alt: 'Seaborn Logo', name: 'Seaborn'},
+  { src: seabornLogo, alt: "Seaborn Logo", name: "Seaborn" },
   { src: scipySeekLogo, alt: "SciPy Logo", name: "SciPy" },
   { src: plotlyLogo, alt: "Plotly Logo", name: "Plotly" },
   { src: scikitLearnLogo, alt: "Scikit-Learn Logo", name: "Scikit-Learn" },
@@ -73,7 +73,7 @@ const techLogos = [
   { src: prometheusLogo, alt: "Prometheus Logo", name: "Prometheus" },
   { src: grafanaLogo, alt: "Grafana Logo", name: "Grafana" },
   { src: powerBILogo, alt: "Power BI Logo", name: "Power BI" },
-  { src: tableauLogo, alt: "Tableau Logo", name: "Tableau" }
+  { src: tableauLogo, alt: "Tableau Logo", name: "Tableau" },
 ];
 
 export default techLogos;

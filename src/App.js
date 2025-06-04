@@ -10,11 +10,9 @@ import techLogos from "./data/techLogos";
 import cardsData from "./data/cardsData";
 import socialLogos from "./data/socialLogos";
 
-
-
 function App() {
   const containerRef = useRef(null);
-  
+
   return (
     <div className="App">
       <div
@@ -57,6 +55,7 @@ function App() {
       </div>
       <h1 className="section-title">ABOUT ME</h1>
 
+      <p className="section-desc"></p>
       <h1 className="section-title">WHAT I DO</h1>
       <div className="cards-container">
         {cardsData.map(({ icon, title, desc }) => (
@@ -74,9 +73,15 @@ function App() {
 
       <h1 className="section-title">MY TECH STACK</h1>
       <p className="section-desc">
-        My expertise spans{' '}
-        <span className="highlight-yellow">Data Science and AI technologies</span>, enabling me to deliver<br />
-        <span className="highlight-teal">Machine Learning-driven solutions across various platforms.</span>
+        My expertise spans{" "}
+        <span className="highlight-yellow">
+          Data Science and AI technologies
+        </span>
+        , enabling me to deliver
+        <br />
+        <span className="highlight-teal">
+          Machine Learning-driven solutions across various platforms.
+        </span>
       </p>
 
       <div className="relative flex h-full bg-black">
@@ -119,17 +124,14 @@ function App() {
           style={{
             paddingTop: "5rem",
             paddingBottom: "5rem",
-            margin: "auto"
-          }}>
-              {socialLogos.map(({ src, alt, href }) => (
-                <a key={href}
-                 href={href}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                >
-                  <img src={src} alt={alt} className="social-logo" />
-                </a>
-            ))}
+            margin: "auto",
+          }}
+        >
+          {socialLogos.map(({ src, alt, href }) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+              <img src={src} alt={alt} className="social-logo" />
+            </a>
+          ))}
         </div>
       </div>
     </div>

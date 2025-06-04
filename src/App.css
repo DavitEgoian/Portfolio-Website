@@ -1,97 +1,98 @@
 * {
-	background-color: #0b0b0d;
-	scroll-behavior: smooth;
+  background-color: #0b0b0d;
+  scroll-behavior: smooth;
 }
 
 .App {
-	text-align: center;
-	font-family: 'Satoshi', sans-serif;
-
+  text-align: center;
+  font-family: "Satoshi", sans-serif;
 }
 
 .App-logo {
-	height: 40vmin;
-	pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-	color: #61dafb;
+  color: #61dafb;
 }
 
 .resetButtonHref {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
 
-	to {
-		transform: rotate(360deg);
-	}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .cards-container {
-	width: 90%;
-	margin: auto;
-	display: grid;
-	row-gap: 2rem;
-	grid-template-columns: repeat(4, 1fr);
+  width: 90%;
+  margin: auto;
+  display: grid;
+  row-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.cards-container p{
-	color: #afafb7;
+.cards-container p {
+  color: #afafb7;
 }
 
 .custom-spotlight-card {
-	color: white;
-	aspect-ratio: 16 / 9;
-	width: 80%;
-	justify-self: center;
-	align-self: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  color: white;
+  aspect-ratio: 16 / 9;
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-spotlight-card img {
-	background-color: transparent;
-	width: 35px;
+  background-color: transparent;
+  width: 35px;
 }
 
 .custom-spotlight-card h3 {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .custom-spotlight-card p {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .container {
-	--mask:
-		linear-gradient(to right,
-			rgba(0, 0, 0, 0) 0%,
-			rgba(0, 0, 0, 1) 10%,
-			rgba(0, 0, 0, 1) 90%,
-			rgba(0, 0, 0, 0) 100%) no-repeat center/100% 100%;
+  --mask: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    no-repeat center/100% 100%;
 
-	-webkit-mask: var(--mask);
-	mask: var(--mask);
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 
-	width: 90%;
-	margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
 .tech-logo {
@@ -100,10 +101,9 @@
 }
 
 .tech-name {
-	color: white;
-	padding-top: 15px;
+  color: white;
+  padding-top: 15px;
 }
-
 
 .section-title {
   margin-top: 8rem;
@@ -128,12 +128,12 @@
   color: rgb(23, 241, 209);
 }
 
-.social-media-div{
+.social-media-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;       
-  gap: 1rem;               
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .social-logo {
@@ -143,31 +143,31 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @media (max-width: 1700px) {
-	.cards-container {
-		width: 80%;
-		grid-template-columns: repeat(2, 1fr);
-	}
+  .cards-container {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-	.custom-spotlight-card {
-		aspect-ratio: 9 / 3;
-	}
+  .custom-spotlight-card {
+    aspect-ratio: 9 / 3;
+  }
 }
 
 @media (max-width: 1400px) {
-	.cards-container {
-		grid-template-columns: repeat(1, 1fr);
-	}
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-	.custom-spotlight-card {
-		width: 60%;
-		aspect-ratio: 9 / 3;
-	}
+  .custom-spotlight-card {
+    width: 60%;
+    aspect-ratio: 9 / 3;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -178,24 +178,24 @@
 }
 
 @media (max-width: 900px) {
-	.cards-container {
-		grid-template-columns: repeat(2, 1fr);
-		width: 100%;
-	}
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
 
-	.custom-spotlight-card {
-		width: 50%;
-	}
+  .custom-spotlight-card {
+    width: 50%;
+  }
 }
 
 @media (max-width: 850px) {
-	.cards-container {
-		width: 80%;
-	}
+  .cards-container {
+    width: 80%;
+  }
 
-	.custom-spotlight-card {
-		width: 100%;
-	}
+  .custom-spotlight-card {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -212,19 +212,19 @@
 }
 
 @media (max-width: 500px) {
-	.cards-container {
-		width: 80%;
-	}
-	.custom-spotlight-card {
-		width: 100%;
-		aspect-ratio: 2 / 1;
-	}
-	.cards-container {
-		grid-template-columns: 1fr;
-	}
-	.custom-spotlight-card {
-		width: 50%;
-	}
+  .cards-container {
+    width: 80%;
+  }
+  .custom-spotlight-card {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .custom-spotlight-card {
+    width: 50%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -233,7 +233,7 @@
   }
   .section-desc {
     font-size: 1.6rem;
-  }  
+  }
   .tech-logo {
     width: 45px;
   }

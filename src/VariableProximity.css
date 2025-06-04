@@ -3,7 +3,7 @@
 .variable-proximity {
   font-family: "Roboto Flex", sans-serif;
   color: white;
-  font-size:60px;
+  font-size: 60px;
   width: 70% !important;
 }
 
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 600px) {
-  .variable-proximity{
-    font-size:40px;
+  .variable-proximity {
+    font-size: 40px;
   }
 }

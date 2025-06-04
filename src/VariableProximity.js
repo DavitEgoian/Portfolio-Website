@@ -66,9 +66,10 @@ const VariableProximity = forwardRef((props, ref) => {
   const parsedSettings = useMemo(() => {
     const parseSettings = (settingsStr) =>
       new Map(
-        settingsStr.split(",")
-          .map(s => s.trim())
-          .map(s => {
+        settingsStr
+          .split(",")
+          .map((s) => s.trim())
+          .map((s) => {
             const [name, value] = s.split(" ");
             return [name.replace(/['"]/g, ""), parseFloat(value)];
           })
@@ -90,10 +91,13 @@ const VariableProximity = forwardRef((props, ref) => {
   const calculateFalloff = (distance) => {
     const norm = Math.min(Math.max(1 - distance / radius, 0), 1);
     switch (falloff) {
-      case "exponential": return norm ** 2;
-      case "gaussian": return Math.exp(-((distance / (radius / 2)) ** 2) / 2);
+      case "exponential":
+        return norm ** 2;
+      case "gaussian":
+        return Math.exp(-((distance / (radius / 2)) ** 2) / 2);
       case "linear":
-      default: return norm;
+      default:
+        return norm;
     }
   };
 
@@ -128,7 +132,8 @@ const VariableProximity = forwardRef((props, ref) => {
       const falloffValue = calculateFalloff(distance);
       const newSettings = parsedSettings
         .map(({ axis, fromValue, toValue }) => {
-          const interpolatedValue = fromValue + (toValue - fromValue) * falloffValue;
+          const interpolatedValue =
+            fromValue + (toValue - fromValue) * falloffValue;
           return `'${axis}' ${interpolatedValue}`;
         })
         .join(", ");
@@ -159,7 +164,9 @@ const VariableProximity = forwardRef((props, ref) => {
             return (
               <motion.span
                 key={currentLetterIndex}
-                ref={(el) => { letterRefs.current[currentLetterIndex] = el; }}
+                ref={(el) => {
+                  letterRefs.current[currentLetterIndex] = el;
+                }}
                 style={{
                   display: "inline-block",
                   fontVariationSettings:
