@@ -144,6 +144,7 @@ function App() {
           ))}
         </div>
       </div>
+      <h1 className="section-title">MY EDUCATION</h1>
     </div>
   );
 }
