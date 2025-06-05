@@ -139,7 +139,7 @@ function App() {
             margin: "auto",
           }}
         >
-          {socialLogos.map(({ src, alt, href, name }) => (
+          {socialLogos.map(({ src, alt, href }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <img src={src} alt={alt} className="social-logo" />
             </a>
