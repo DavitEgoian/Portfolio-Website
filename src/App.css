@@ -145,6 +145,145 @@
   margin: 0 3rem;
 }
 
+.timeline:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 2px;
+  top: -20px;
+  background: #fff;
+  z-index: 1;
+}
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  width: 1000px;
+  padding: 50px 0;
+}
+
+.timeline ul {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline ul li {
+  list-style: none;
+  box-sizing: border-box;
+  line-height: normal;
+  position: relative;
+  width: 50%;
+  padding: 40px 70px;
+}
+.timeline ul li p {
+  color: white;
+}
+.timeline ul li .right_content h2 {
+  color: rgb(116, 208, 255);
+  padding: 0px 2px 18px 0px;
+}
+.timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+
+.timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+
+.left_content {
+  padding-bottom: 20px;
+}
+
+.timeline ul li:nth-child(odd):before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(116, 208, 255, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
+  right: -6px;
+  top: 24px;
+  z-index: 1;
+}
+
+.timeline ul li:nth-child(even):before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(116, 208, 255, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
+  left: -6px;
+  top: 24px;
+}
+
+.timeline ul li:nth-child(odd) .left_content {
+  position: absolute;
+  top: -5px;
+  right: -165px;
+  margin: 0;
+  padding: 0px 16px;
+
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(116, 208, 255, 0.3);
+  border-radius: 18px;
+}
+
+.timeline ul li:nth-child(even) .left_content {
+  position: absolute;
+  top: -5px;
+  left: -165px;
+  margin: 0;
+  padding: 0px 16px;
+
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(116, 208, 255, 0.3);
+  border-radius: 18px;
+}
+
+@media (max-width: 1000px) {
+  .timeline {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline {
+    width: 100%;
+  }
+  .timeline:before {
+    left: 20px;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even) {
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  .timeline ul li:nth-child(odd):before {
+    top: -18px;
+    left: 16px;
+  }
+  .timeline ul li:nth-child(even):before {
+    top: -18px;
+    left: 16px;
+  }
+
+  .timeline ul li:nth-child(odd) .left_content,
+  .timeline ul li:nth-child(even) .left_content {
+    top: -30px;
+    left: 50px;
+    right: inherit;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
