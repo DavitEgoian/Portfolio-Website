@@ -139,7 +139,7 @@ function App() {
             margin: "auto",
           }}
         >
-          {socialLogos.map(({ src, alt, href }) => (
+          {socialLogos.map(({ src, alt, href, name }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <img src={src} alt={alt} className="social-logo" />
             </a>
@@ -149,11 +149,14 @@ function App() {
       <h1 className="section-title">MY EDUCATION</h1>
       <div className="timeline">
         <ul>
-          {educationTimeline.map(({ title, desc, date }) => (
+          {educationTimeline.map(({ title, highlighted, desc, date }) => (
             <li>
               <div className="right_content">
                 <h2>{title}</h2>
-                <p>{desc} </p>
+                <p className="desc-paragraph">
+                  <span className="highlight-blue">{highlighted}</span>
+                  {desc}{" "}
+                </p>
               </div>
               <div className="left_content">
                 <h3>{date}</h3>
@@ -166,11 +169,14 @@ function App() {
       <h1 className="section-title">MY EXPERIENCE</h1>
       <div className="timeline">
         <ul>
-          {experienceTimeline.map(({ title, desc, date }) => (
+          {experienceTimeline.map(({ title, highlighted, desc, date }) => (
             <li>
               <div className="right_content">
                 <h2>{title}</h2>
-                <p>{desc} </p>
+                <p className="desc-paragraph">
+                  <span className="highlight-blue">{highlighted}</span>
+                  {desc}{" "}
+                </p>
               </div>
               <div className="left_content">
                 <h3>{date}</h3>
