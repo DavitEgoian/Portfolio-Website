@@ -130,6 +130,12 @@
 .highlight-teal {
   color: rgb(23, 241, 209);
 }
+.highlight-blue {
+  color: rgba(116, 208, 255, 1);
+}
+/* .desc-paragraph {
+  display: flex;
+} */
 
 .social-media-div {
   display: flex;
