@@ -162,6 +162,7 @@ function App() {
           <div style={{ clear: "both" }} />
         </ul>
       </div>
+      <h1 className="section-title">MY EXPERIENCE</h1>
     </div>
   );
 }
