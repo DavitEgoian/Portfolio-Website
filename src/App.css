@@ -226,7 +226,7 @@
 .timeline ul li:nth-child(odd) .left_content {
   position: absolute;
   top: -5px;
-  right: -165px;
+  right: -250px;
   margin: 0;
   padding: 0px 16px;
 
@@ -238,7 +238,7 @@
 .timeline ul li:nth-child(even) .left_content {
   position: absolute;
   top: -5px;
-  left: -165px;
+  left: -250px;
   margin: 0;
   padding: 0px 16px;
 
