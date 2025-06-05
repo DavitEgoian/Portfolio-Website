@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e83c6b4.css",
-    "main.js": "/static/js/main.78f2bbcb.js",
+    "main.css": "/static/css/main.c484f1d2.css",
+    "main.js": "/static/js/main.ab7ace41.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
@@ -12,6 +12,7 @@
     "static/media/html5-logo.png": "/static/media/html5-logo.2cd5d05c9660ec55992e.png",
     "static/media/matplotlib-logo.png": "/static/media/matplotlib-logo.108848d4569ad2010a41.png",
     "static/media/tableau-logo.png": "/static/media/tableau-logo.28bdbd92ebc4021f09b6.png",
+    "static/media/kaggle-logo.png": "/static/media/kaggle-logo.508a25a21a93c5af4895.png",
     "static/media/grafana-logo.png": "/static/media/grafana-logo.25214b8f31c8e562fa9d.png",
     "static/media/circleCI-logo.png": "/static/media/circleCI-logo.f19f9bf07e67010b1ef4.png",
     "static/media/gitlab-logo.png": "/static/media/gitlab-logo.845a1f13061b75219850.png",
@@ -28,17 +29,18 @@
     "static/media/github-actions-logo.png": "/static/media/github-actions-logo.9dfaddbea6a12a1ad4dc.png",
     "static/media/git-logo.png": "/static/media/git-logo.8d37adcd9121c2aba1e0.png",
     "static/media/jupyterLab-logo.png": "/static/media/jupyterLab-logo.7428ab6646dc92e1118c.png",
+    "static/media/discord-logo.png": "/static/media/discord-logo.aa3c48b2cf369fab8bd5.png",
     "static/media/numPy-logo.png": "/static/media/numPy-logo.ad6ce4268be9e06f8cb4.png",
     "static/media/react-logo.png": "/static/media/react-logo.98ff38735baa4c1b0381.png",
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
-    "main.6e83c6b4.css.map": "/static/css/main.6e83c6b4.css.map",
-    "main.78f2bbcb.js.map": "/static/js/main.78f2bbcb.js.map",
+    "main.c484f1d2.css.map": "/static/css/main.c484f1d2.css.map",
+    "main.ab7ace41.js.map": "/static/js/main.ab7ace41.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e83c6b4.css",
-    "static/js/main.78f2bbcb.js"
+    "static/css/main.c484f1d2.css",
+    "static/js/main.ab7ace41.js"
   ]
 }
