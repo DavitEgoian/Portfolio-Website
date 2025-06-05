@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2852a838.css",
-    "main.js": "/static/js/main.e88a0946.js",
+    "main.js": "/static/js/main.64059f4b.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
@@ -29,18 +29,17 @@
     "static/media/github-actions-logo.png": "/static/media/github-actions-logo.9dfaddbea6a12a1ad4dc.png",
     "static/media/git-logo.png": "/static/media/git-logo.8d37adcd9121c2aba1e0.png",
     "static/media/jupyterLab-logo.png": "/static/media/jupyterLab-logo.7428ab6646dc92e1118c.png",
-    "static/media/discord-logo.png": "/static/media/discord-logo.aa3c48b2cf369fab8bd5.png",
     "static/media/numPy-logo.png": "/static/media/numPy-logo.ad6ce4268be9e06f8cb4.png",
     "static/media/react-logo.png": "/static/media/react-logo.98ff38735baa4c1b0381.png",
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
     "main.2852a838.css.map": "/static/css/main.2852a838.css.map",
-    "main.e88a0946.js.map": "/static/js/main.e88a0946.js.map",
+    "main.64059f4b.js.map": "/static/js/main.64059f4b.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2852a838.css",
-    "static/js/main.e88a0946.js"
+    "static/js/main.64059f4b.js"
   ]
 }
