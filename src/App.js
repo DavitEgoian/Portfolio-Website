@@ -10,6 +10,7 @@ import techLogos from "./data/techLogos";
 import cardsData from "./data/cardsData";
 import socialLogos from "./data/socialLogos";
 import educationTimeline from "./data/educationTimeline";
+import experienceTimeline from "./data/experienceTimeline";
 
 function App() {
   const containerRef = useRef(null);
@@ -163,6 +164,22 @@ function App() {
         </ul>
       </div>
       <h1 className="section-title">MY EXPERIENCE</h1>
+      <div className="timeline">
+        <ul>
+          {experienceTimeline.map(({ title, desc, date }) => (
+            <li>
+              <div className="right_content">
+                <h2>{title}</h2>
+                <p>{desc} </p>
+              </div>
+              <div className="left_content">
+                <h3>{date}</h3>
+              </div>
+            </li>
+          ))}
+          <div style={{ clear: "both" }} />
+        </ul>
+      </div>
     </div>
   );
 }
