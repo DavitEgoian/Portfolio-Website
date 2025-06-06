@@ -131,7 +131,7 @@
   color: rgb(20, 230, 200);
 }
 .highlight-blue {
-  color: rgba(116, 208, 255, 1);
+  color: rgb(80, 150, 255);
 }
 /* .desc-paragraph {
   display: flex;
@@ -185,7 +185,7 @@
   color: white;
 }
 .timeline ul li .right_content h2 {
-  color: rgb(116, 208, 255);
+  color: rgb(80, 150, 255);
   padding: 0px 2px 18px 0px;
 }
 .timeline ul li:nth-child(odd) {
@@ -209,7 +209,7 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  background: rgba(116, 208, 255, 1);
+  background: rgba(80, 150, 255, 1);
   border-radius: 50%;
   box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
   right: -6px;
@@ -222,7 +222,7 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  background: rgba(116, 208, 255, 1);
+  background: rgba(80, 150, 255, 1);
   border-radius: 50%;
   box-shadow: 0 0 0 3px rgba(58, 112, 239, 0.2);
   left: -6px;
@@ -237,7 +237,7 @@
   padding: 0px 16px;
 
   color: #fff;
-  box-shadow: 0 0 0 3px rgba(116, 208, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(80, 150, 255, 0.3);
   border-radius: 18px;
 }
 
@@ -249,7 +249,7 @@
   padding: 0px 16px;
 
   color: #fff;
-  box-shadow: 0 0 0 3px rgba(116, 208, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(80, 150, 255, 0.3);
   border-radius: 18px;
 }
 
