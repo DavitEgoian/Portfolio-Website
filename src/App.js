@@ -130,22 +130,6 @@ function App() {
           </Splide>
         </div>
       </div>
-      <h1 className="section-title">CONNECT WITH ME</h1>
-      <div className="social-media-div">
-        <div
-          style={{
-            paddingTop: "5rem",
-            paddingBottom: "5rem",
-            margin: "auto",
-          }}
-        >
-          {socialLogos.map(({ src, alt, href }) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
-              <img src={src} alt={alt} className="social-logo" />
-            </a>
-          ))}
-        </div>
-      </div>
       <h1 className="section-title">MY EDUCATION</h1>
       <div className="timeline">
         <ul>
@@ -185,6 +169,22 @@ function App() {
           ))}
           <div style={{ clear: "both" }} />
         </ul>
+      </div>
+      <h1 className="section-title">CONNECT WITH ME</h1>
+      <div className="social-media-div">
+        <div
+          style={{
+            paddingTop: "5rem",
+            paddingBottom: "5rem",
+            margin: "auto",
+          }}
+        >
+          {socialLogos.map(({ src, alt, href }) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer">
+              <img src={src} alt={alt} className="social-logo" />
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
