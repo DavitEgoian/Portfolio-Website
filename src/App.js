@@ -186,6 +186,7 @@ function App() {
           ))}
         </div>
       </div>
+      <h1 className="section-title">LICENSES & CERTIFICATIONS</h1>
       <h1 className="section-title">MY PROJECTS</h1>
     </div>
   );
