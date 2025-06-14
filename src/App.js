@@ -175,6 +175,27 @@ function App() {
       </div>
 
       <h1 className="section-title">LICENSES & CERTIFICATIONS</h1>
+      <div className="timeline">
+        <ul>
+          {certificationTimeline.map(
+            ({ name, issueOrganization, desc, issueDate }) => (
+              <li>
+                <div className="right_content">
+                  <h2>{name}</h2>
+                  <p className="desc-paragraph">
+                    <span className="highlight-blue">{issueOrganization}</span>
+                    {desc} <a href="#">View Certificate</a>
+                  </p>
+                </div>
+                <div className="left_content">
+                  <h3>{issueDate}</h3>
+                </div>
+              </li>
+            )
+          )}
+          <div style={{ clear: "both" }} />
+        </ul>
+      </div>
 
       <h1 className="section-title">CONNECT WITH ME</h1>
       <div className="social-media-div">
