@@ -11,6 +11,7 @@ import cardsData from "./data/cardsData";
 import socialLogos from "./data/socialLogos";
 import educationTimeline from "./data/educationTimeline";
 import experienceTimeline from "./data/experienceTimeline";
+import certificationTimeline from "./data/certificationTimeline";
 
 function App() {
   const containerRef = useRef(null);
