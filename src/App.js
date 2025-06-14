@@ -130,6 +130,8 @@ function App() {
           </Splide>
         </div>
       </div>
+      {/* <h1 className="section-title">MY PROJECTS</h1> */}
+
       <h1 className="section-title">MY EDUCATION</h1>
       <div className="timeline">
         <ul>
@@ -170,6 +172,9 @@ function App() {
           <div style={{ clear: "both" }} />
         </ul>
       </div>
+
+      <h1 className="section-title">LICENSES & CERTIFICATIONS</h1>
+
       <h1 className="section-title">CONNECT WITH ME</h1>
       <div className="social-media-div">
         <div
@@ -186,8 +191,6 @@ function App() {
           ))}
         </div>
       </div>
-      <h1 className="section-title">LICENSES & CERTIFICATIONS</h1>
-      <h1 className="section-title">MY PROJECTS</h1>
     </div>
   );
 }
