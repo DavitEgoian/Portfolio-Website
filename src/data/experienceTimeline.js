@@ -1,5 +1,11 @@
 const educationTimeline = [
   {
+    title: "Test Automation Intern",
+    highlighted: "TBC",
+    desc: " — Developing Java‑based test automation scripts for functional testing, API validation, workflow automation, and test optimization across Selenium WebDriver, TestNG, REST Assured, and Maven.",
+    date: "June 2025 - Present",
+  },
+  {
     title: "Python Internship",
     highlighted: "UniLab",
     desc: " — Developing Python scripts for data processing, API integration, workflow automation, and code optimization across HTML/CSS, Flask, databases, and Docker.",
