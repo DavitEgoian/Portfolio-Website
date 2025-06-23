@@ -187,7 +187,7 @@ function App() {
                     {desc} <a href="#">View Certificate</a>
                   </p>
                 </div>
-                <div className="left_content">
+                <div className="left_content date_only">
                   <h3>{issueDate}</h3>
                 </div>
               </li>
