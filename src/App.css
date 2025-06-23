@@ -185,6 +185,12 @@
   color: rgb(140, 205, 235);
   padding: 0px 2px 18px 0px;
 }
+.timeline ul li .right_content a {
+  display: block;
+  color: rgba(255, 255, 255, 0.397);
+  text-decoration: none;
+  margin-top: 20px;
+}
 .timeline ul li:nth-child(odd) {
   float: left;
   text-align: right;
@@ -238,6 +244,14 @@
   border-radius: 18px;
 }
 
+.timeline ul li:nth-child(odd) .date_only {
+  position: absolute;
+  top: -5px;
+  right: -150px;
+  margin: 0;
+  padding: 0px 16px;
+}
+
 .timeline ul li:nth-child(even) .left_content {
   position: absolute;
   top: -5px;
@@ -248,6 +262,10 @@
   color: #fff;
   box-shadow: 0 0 0 3px rgb(140, 205, 235, 0.3);
   border-radius: 18px;
+}
+
+.timeline ul li:nth-child(even) .date_only {
+  left: -150px;
 }
 
 @media (max-width: 1000px) {
