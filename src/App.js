@@ -178,13 +178,13 @@ function App() {
       <div className="timeline">
         <ul>
           {certificationTimeline.map(
-            ({ name, issueOrganization, desc, issueDate }) => (
+            ({ name, issueOrganization, desc, issueDate, link }) => (
               <li>
                 <div className="right_content">
                   <h2>{name}</h2>
                   <p className="desc-paragraph">
                     <span className="highlight-blue">{issueOrganization}</span>
-                    {desc} <a href="#">View Certificate</a>
+                    {desc} <a href={link}>View Certificate</a>
                   </p>
                 </div>
                 <div className="left_content date_only">
