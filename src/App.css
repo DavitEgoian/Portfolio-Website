@@ -340,17 +340,6 @@
   }
 }
 
-@media (max-width: 900px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
-
-  .custom-spotlight-card {
-    width: 50%;
-  }
-}
-
 @media (max-width: 850px) {
   .cards-container {
     width: 80%;
@@ -400,4 +389,125 @@
   .tech-logo {
     width: 45px;
   }
+}
+
+@media (max-width: 1200px) {
+  .timeline ul li {
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+
+  .section-desc {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .social-logo {
+    margin: 0 1.5rem;
+    width: 60px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-spotlight-card {
+    width: 85%;
+    aspect-ratio: 4/3;
+  }
+
+  .timeline ul li {
+    width: 100%;
+    float: none;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .timeline ul li .right_content,
+  .timeline ul li .left_content {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .social-logo {
+    margin: 0 1rem;
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-desc {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .splide__slide {
+    min-width: 100px !important;
+  }
+
+  .tech-logo {
+    width: 50px;
+  }
+
+  .social-media-div {
+    gap: 0.5rem;
+  }
+
+  .social-logo {
+    margin: 0 0.8rem;
+    width: 45px;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-desc {
+    font-size: 1.1rem;
+  }
+
+  .tech-logo {
+    width: 40px;
+  }
+
+  .social-logo {
+    width: 40px;
+    margin: 0 0.5rem;
+  }
+}
+
+/* Smooth transitions for layout changes */
+.cards-container,
+.timeline ul,
+.social-media-div {
+  transition: all 0.4s ease;
+}
+
+.tech-logo,
+.social-logo {
+  transition: transform 0.3s ease;
+}
+
+.tech-logo:hover,
+.social-logo:hover {
+  transform: scale(1.1);
 }
