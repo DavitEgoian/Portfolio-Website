@@ -1,6 +1,6 @@
 const educationTimeline = [
   {
-    title: "Test Automation Tra",
+    title: "Test Automation Trainee",
     highlighted: "TBC",
     desc: " — Developing Java-based test automation scripts for functional testing, API validation, workflow automation, and test optimization across Selenium WebDriver, TestNG, REST Assured, and Maven.",
     date: "June 2025 - Present",
