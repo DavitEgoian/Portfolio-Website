@@ -6,7 +6,7 @@ const educationTimeline = [
     date: "June 2025 - Present",
   },
   {
-    title: "Python Internship",
+    title: "Python Intern",
     highlighted: "UniLab",
     desc: " — Developing Python scripts for data processing, API integration, workflow automation, and code optimization across HTML/CSS, Flask, databases, and Docker.",
     date: "May 2025 - Present",
