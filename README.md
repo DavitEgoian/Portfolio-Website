@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![Portfolio Screenshot](screenshot.png)
+![Portfolio Screenshot](screenshot.jpg)
 
 This portfolio website showcases my skills, experience, and projects with a modern, interactive design featuring custom animations and responsive layouts.
 
