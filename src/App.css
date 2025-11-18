@@ -373,29 +373,42 @@
 
 @media (max-width: 500px) {
   .cards-container {
-    width: 80%;
+    width: 90%;
   }
   .custom-spotlight-card {
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 16/9;
   }
   .cards-container {
     grid-template-columns: 1fr;
-  }
-  .custom-spotlight-card {
-    width: 50%;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
     margin-top: 2rem;
+    font-size: 1.8rem;
   }
   .section-desc {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
   }
   .tech-logo {
-    width: 45px;
+    width: 50px;
+  }
+  .timeline ul li {
+    padding-left: 30px;
+  }
+  .timeline:before {
+    left: 10px;
+  }
+  .timeline ul li:nth-child(odd):before,
+  .timeline ul li:nth-child(even):before {
+    left: 6px;
+  }
+  .timeline ul li:nth-child(odd) .left_content,
+  .timeline ul li:nth-child(even) .left_content {
+    left: 30px;
   }
 }
 
@@ -433,16 +446,12 @@
   }
 
   .custom-spotlight-card {
-    width: 85%;
-    aspect-ratio: 4/3;
+    width: 100%;
+    aspect-ratio: 16/9;
   }
 
   .timeline ul li {
-    width: 100%;
-    float: none;
-    text-align: center;
-    padding: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
   .timeline ul li .right_content,
