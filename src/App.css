@@ -293,6 +293,7 @@
     width: 100%;
     text-align: left;
     padding-left: 50px;
+    padding-top: 30px;
   }
 
   .timeline ul li:nth-child(odd):before {
@@ -453,6 +454,38 @@
   .social-logo {
     margin: 0 1rem;
     width: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-desc,
+  .about-me-section-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .custom-spotlight-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .custom-spotlight-card p,
+  .cards-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .tech-name {
+    font-size: 0.95rem;
+  }
+
+  .timeline ul li .right_content h2 {
+    font-size: 1.25rem;
+  }
+
+  .timeline ul li .right_content p,
+  .timeline ul li .left_content h3 {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
 
