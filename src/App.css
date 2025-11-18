@@ -176,7 +176,12 @@
   line-height: normal;
   position: relative;
   width: 50%;
-  padding: 40px 70px;
+  padding: 50px 70px;
+  margin-bottom: 100px;
+}
+
+.timeline ul li:last-child {
+  margin-bottom: 0;
 }
 .timeline ul li p {
   color: white;
@@ -195,12 +200,14 @@
   float: left;
   text-align: right;
   clear: both;
+  padding: 0px 35px 50px 70px;
 }
 
 .timeline ul li:nth-child(even) {
   float: right;
   text-align: left;
   clear: both;
+  padding: 0px 70px 50px 35px;
 }
 
 .left_content {
@@ -235,7 +242,7 @@
 .timeline ul li:nth-child(odd) .left_content {
   position: absolute;
   top: -5px;
-  right: -250px;
+  right: -240px;
   margin: 0;
   padding: 0px 16px;
 
@@ -433,7 +440,8 @@
     width: 100%;
     float: none;
     text-align: center;
-    padding: 20px;
+    padding: 100px;
+    margin-bottom: 100px;
   }
 
   .timeline ul li .right_content,

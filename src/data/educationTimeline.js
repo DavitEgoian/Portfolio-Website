@@ -4,7 +4,7 @@ const educationTimeline = [
     highlighted:
       "Bachelor of Computer Science, Data Science and Artificial Intelligence",
     desc: " - Algorithms, Probability Theory and Statistics, Artificial Neural Networks, and Foundations of Artificial Intelligence for Scalable Intelligent Systems.",
-    date: "Sep 2024 - Jul 2028",
+    date: "Sep 2024 - Present",
   },
   {
     title: "TBC Bank",
