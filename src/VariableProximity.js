@@ -1,5 +1,4 @@
 import { forwardRef, useMemo, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
 import "./VariableProximity.css";
 
 function useAnimationFrame(callback) {
@@ -162,20 +161,19 @@ const VariableProximity = forwardRef((props, ref) => {
           {word.split("").map((letter) => {
             const currentLetterIndex = letterIndex++;
             return (
-              <motion.span
+              <span
                 key={currentLetterIndex}
                 ref={(el) => {
                   letterRefs.current[currentLetterIndex] = el;
                 }}
                 style={{
                   display: "inline-block",
-                  fontVariationSettings:
-                    interpolatedSettingsRef.current[currentLetterIndex],
+                  fontVariationSettings: fromFontVariationSettings,
                 }}
                 aria-hidden="true"
               >
                 {letter}
-              </motion.span>
+              </span>
             );
           })}
           {wordIndex < words.length - 1 && (

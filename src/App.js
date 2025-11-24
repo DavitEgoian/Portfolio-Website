@@ -77,7 +77,7 @@ function App() {
             className="custom-spotlight-card"
             spotlightColor="rgb(163, 116, 255)"
           >
-            <img src={icon} alt={`${title.toLowerCase()}-icon`} />
+            <img src={icon} alt={`${title.toLowerCase()}-icon`} loading="lazy" />
             <h3>{title}</h3>
             <p>{desc}</p>
           </SpotlightCard>
@@ -124,7 +124,7 @@ function App() {
           >
             {techLogos.map(({ src, alt, name }) => (
               <SplideSlide key={alt}>
-                <img src={src} alt={alt} className="tech-logo" />
+                <img src={src} alt={alt} className="tech-logo" loading="lazy" />
                 <p className="tech-name">{name}</p>
               </SplideSlide>
             ))}
@@ -136,8 +136,8 @@ function App() {
       <h1 className="section-title">MY EDUCATION</h1>
       <div className="timeline">
         <ul>
-          {educationTimeline.map(({ title, highlighted, desc, date }) => (
-            <li>
+          {educationTimeline.map(({ title, highlighted, desc, date }, index) => (
+            <li key={index}>
               <div className="right_content">
                 <h2>{title}</h2>
                 <p className="desc-paragraph">
@@ -156,8 +156,8 @@ function App() {
       <h1 className="section-title">MY EXPERIENCE</h1>
       <div className="timeline">
         <ul>
-          {experienceTimeline.map(({ title, highlighted, desc, date }) => (
-            <li>
+          {experienceTimeline.map(({ title, highlighted, desc, date }, index) => (
+            <li key={index}>
               <div className="right_content">
                 <h2>{title}</h2>
                 <p className="desc-paragraph">
@@ -178,8 +178,8 @@ function App() {
       <div className="timeline">
         <ul>
           {certificationTimeline.map(
-            ({ name, issueOrganization, desc, issueDate, link }) => (
-              <li>
+            ({ name, issueOrganization, desc, issueDate, link }, index) => (
+              <li key={index}>
                 <div className="right_content">
                   <h2>{name}</h2>
                   <p className="desc-paragraph">
@@ -208,7 +208,7 @@ function App() {
         >
           {socialLogos.map(({ src, alt, href }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
-              <img src={src} alt={alt} className="social-logo" />
+              <img src={src} alt={alt} className="social-logo" loading="lazy" />
             </a>
           ))}
         </div>
