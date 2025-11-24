@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9802afca.css",
-    "main.js": "/static/js/main.5bdb5d20.js",
+    "main.css": "/static/css/main.8a62d358.css",
+    "main.js": "/static/js/main.65862b50.js",
     "static/js/453.a5b25d5b.chunk.js": "/static/js/453.a5b25d5b.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
@@ -34,12 +34,12 @@
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
-    "main.9802afca.css.map": "/static/css/main.9802afca.css.map",
-    "main.5bdb5d20.js.map": "/static/js/main.5bdb5d20.js.map",
+    "main.8a62d358.css.map": "/static/css/main.8a62d358.css.map",
+    "main.65862b50.js.map": "/static/js/main.65862b50.js.map",
     "453.a5b25d5b.chunk.js.map": "/static/js/453.a5b25d5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9802afca.css",
-    "static/js/main.5bdb5d20.js"
+    "static/css/main.8a62d358.css",
+    "static/js/main.65862b50.js"
   ]
 }
