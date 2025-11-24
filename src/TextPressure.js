@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 const TextPressure = ({
   text = "Compressa",
@@ -27,6 +27,7 @@ const TextPressure = ({
 
   const mouseRef = useRef({ x: 0, y: 0 });
   const cursorRef = useRef({ x: 0, y: 0 });
+  const isTouchRef = useRef(false);
 
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
@@ -41,6 +42,8 @@ const TextPressure = ({
   };
 
   useEffect(() => {
+    isTouchRef.current = window.matchMedia("(pointer: coarse)").matches;
+
     const handleMouseMove = (e) => {
       cursorRef.current.x = e.clientX;
       cursorRef.current.y = e.clientY;
@@ -70,7 +73,7 @@ const TextPressure = ({
     };
   }, []);
 
-  const setSize = () => {
+  const setSize = useCallback(() => {
     if (!containerRef.current || !titleRef.current) return;
 
     const { width: containerW, height: containerH } =
@@ -93,18 +96,28 @@ const TextPressure = ({
         setLineHeight(yRatio);
       }
     });
-  };
+  }, [chars.length, minFontSize, scale]);
 
   useEffect(() => {
     setSize();
     window.addEventListener("resize", setSize);
     return () => window.removeEventListener("resize", setSize);
-    // eslint-disable-next-line
-  }, [scale, text]);
+  }, [setSize]);
 
   useEffect(() => {
     let rafId;
     const animate = () => {
+      if (isTouchRef.current && containerRef.current) {
+        const { left, top, width, height } =
+          containerRef.current.getBoundingClientRect();
+        const time = Date.now() / 1000;
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
+        // Simulate cursor movement in a figure-8 pattern
+        cursorRef.current.x = centerX + (width / 3) * Math.sin(time * 1.5);
+        cursorRef.current.y = centerY + (height / 6) * Math.sin(time * 3);
+      }
+
       mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
       mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
 
