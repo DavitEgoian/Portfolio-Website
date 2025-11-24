@@ -61,6 +61,18 @@ const VariableProximity = forwardRef((props, ref) => {
   const interpolatedSettingsRef = useRef([]);
   const mousePositionRef = useMousePositionRef(containerRef);
   const lastPositionRef = useRef({ x: null, y: null });
+  const isMobileRef = useRef(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      isMobileRef.current =
+        window.matchMedia("(pointer: coarse)").matches ||
+        window.innerWidth < 768;
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const parsedSettings = useMemo(() => {
     const parseSettings = (settingsStr) =>
@@ -101,7 +113,7 @@ const VariableProximity = forwardRef((props, ref) => {
   };
 
   useAnimationFrame(() => {
-    if (!containerRef?.current) return;
+    if (!containerRef?.current || isMobileRef.current) return;
     const containerRect = containerRef.current.getBoundingClientRect();
     const { x, y } = mousePositionRef.current;
     if (lastPositionRef.current.x === x && lastPositionRef.current.y === y) {

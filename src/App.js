@@ -40,7 +40,16 @@ function App() {
           minFontSize={36}
         />
         <br />
-        <div ref={containerRef} style={{ position: "relative" }}>
+        <div
+          ref={containerRef}
+          style={{
+            position: "relative",
+            marginTop: "2rem",
+            marginBottom: "2rem",
+            paddingLeft: "1.5rem",
+            paddingRight: "1.5rem",
+          }}
+        >
           <VariableProximity
             label={
               "I build intelligent systems that balance\n " +
