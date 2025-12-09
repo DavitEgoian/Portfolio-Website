@@ -1,3 +1,5 @@
+import { desc } from "framer-motion/client";
+
 const educationTimeline = [
   {
     title: "Georgian National University",
@@ -5,6 +7,12 @@ const educationTimeline = [
       "Bachelor of Computer Science, Data Science and Artificial Intelligence",
     desc: " - Algorithms, Probability Theory and Statistics, Artificial Neural Networks, and Foundations of Artificial Intelligence for Scalable Intelligent Systems.",
     date: "Sep 2024 - Present",
+  },
+  {
+    title: "BTU • Business and Technology University",
+    highlighted: "AI Camp for Students - XR and Future Technologies",
+    desc: " — Immersive technologies, including Augmented Reality (AR), Virtual Reality (VR), and Mixed Reality (MR), exploring their applications in various industries.",
+    date: "Oct 2025 - Oct 2025",
   },
   {
     title: "TBC Bank",
