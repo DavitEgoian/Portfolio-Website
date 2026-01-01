@@ -2,36 +2,36 @@
 
 ![Portfolio Screenshot](screenshot.jpg)
 
-This portfolio website showcases my skills, experience, and projects with a modern, interactive design featuring custom animations and responsive layouts.
+A modern, interactive portfolio website designed to showcase skills, experience, and projects through custom animations and responsive layouts.
 
 ## ✨ Key Features
 
-- **Dynamic Typography Effects**
-  - Interactive text with variable font properties
-  - Mouse proximity-based text transformations
-- **Interactive Spotlight Cards**
-  - Hover effects with dynamic spotlight positioning
-  - Customizable spotlight colors
-- **Responsive Design**
-  - Fully responsive layout for all device sizes
-  - Smooth transitions between layouts
-- **Timeline Sections**
-  - Education, experience and certification timelines
-  - Responsive timeline layout with elegant styling
-- **Technology Showcase**
-  - Auto-scrolling tech stack carousel
-  - Interactive logo hover effects
-- **Social Media Integration**
-  - Animated social media logos with hover effects
+- **Dynamic Typography**
+  - Variable font properties for interactive text
+  - Proximity-based transformations on mouse hover
+- **Spotlight Cards**
+  - Dynamic spotlight positioning on hover
+  - Fully customizable spotlight colors
+- **Adaptive Layout**
+  - Seamlessly responsive across all device sizes
+  - Smooth transitions between viewports
+- **Interactive Timelines**
+  - Visual history for education, experience, and certifications
+  - Elegantly styled, responsive timeline components
+- **Tech Stack Showcase**
+  - Auto-scrolling carousel for technologies
+  - Interactive hover effects on logos
+- **Social Integration**
+  - Animated links with engaging hover effects
 
 ## 🛠 Technologies Used
 
-- React (v18+)
-- Framer Motion (for animations)
-- Splide.js (for carousel)
-- CSS3 (with advanced features like masks and gradients)
-- Variable Fonts
-- Flexbox & CSS Grid
+- **React v18+** – Core framework
+- **Framer Motion** – Advanced animations
+- **Splide.js** – Touch-friendly carousels
+- **CSS3** – Masks, gradients, and variables
+- **Variable Fonts** – Dynamic typography
+- **Flexbox & Grid** – Modern layouts
 
 ## 🚀 Getting Started
 
@@ -86,7 +86,7 @@ npm test
 
 ## 🔧 Customization
 
-To customize the portfolio with your information:
+Personalize the portfolio with your own content:
 
 1. Update the data files in `/src/data` with your:
    - Education history
