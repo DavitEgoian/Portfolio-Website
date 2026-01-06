@@ -1,5 +1,3 @@
-import { link } from "framer-motion/client";
-
 const certificationTimeline = [
   {
     name: "AI Engineer for Data Scientists Associate",
