@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <main>
       <div
         style={{
           position: "static",
@@ -116,6 +117,7 @@ function App() {
           }}
         >
           <Splide
+            tag="div"
             options={{
               type: "loop",
               autoScroll: {
@@ -128,8 +130,11 @@ function App() {
               pagination: false,
               fixedWidth: "145px",
               gap: "2px",
+              slideFocus: false,
+              isNavigation: false,
             }}
             extensions={{ AutoScroll }}
+            aria-label="Technology stack carousel"
           >
             {techLogos.map(({ src, alt, name }) => (
               <SplideSlide key={alt}>
@@ -155,12 +160,12 @@ function App() {
                 </p>
               </div>
               <div className="left_content">
-                <h3>{date}</h3>
+                <span className="timeline-date">{date}</span>
               </div>
             </li>
           ))}
-          <div style={{ clear: "both" }} />
         </ul>
+        <div style={{ clear: "both" }} />
       </div>
       <h1 className="section-title">MY EXPERIENCE</h1>
       <div className="timeline">
@@ -175,12 +180,12 @@ function App() {
                 </p>
               </div>
               <div className="left_content">
-                <h3>{date}</h3>
+                <span className="timeline-date">{date}</span>
               </div>
             </li>
           ))}
-          <div style={{ clear: "both" }} />
         </ul>
+        <div style={{ clear: "both" }} />
       </div>
 
       <h1 className="section-title">LICENSES & CERTIFICATIONS</h1>
@@ -193,17 +198,17 @@ function App() {
                   <h2>{name}</h2>
                   <p className="desc-paragraph">
                     <span className="highlight-blue">{issueOrganization}</span>
-                    {desc} <a href={link}>View Certificate</a>
+                    {desc} <a href={link} aria-label={`View ${name} Certificate`}>View Certificate</a>
                   </p>
                 </div>
                 <div className="left_content date_only">
-                  <h3>{issueDate}</h3>
+                  <span className="timeline-date">{issueDate}</span>
                 </div>
               </li>
             )
           )}
-          <div style={{ clear: "both" }} />
         </ul>
+        <div style={{ clear: "both" }} />
       </div>
 
       <h1 className="section-title">CONNECT WITH ME</h1>
@@ -222,6 +227,7 @@ function App() {
           ))}
         </div>
       </div>
+      </main>
     </div>
   );
 }

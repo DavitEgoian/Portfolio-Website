@@ -214,6 +214,13 @@
   padding-bottom: 20px;
 }
 
+.timeline-date {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
 .timeline ul li:nth-child(odd):before {
   content: "";
   position: absolute;
@@ -492,7 +499,8 @@
   }
 
   .timeline ul li .right_content p,
-  .timeline ul li .left_content h3 {
+  .timeline ul li .left_content h3,
+  .timeline ul li .left_content .timeline-date {
     font-size: 1rem;
     line-height: 1.5;
   }
