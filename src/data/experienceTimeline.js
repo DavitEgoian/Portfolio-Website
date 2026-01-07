@@ -1,20 +1,26 @@
 const educationTimeline = [
   {
+    title: "Associate Member",
+    highlighted: "Georgian AI Association",
+    desc: " — Promoting AI education and adoption in Georgia. Actively sharing knowledge and supporting community initiatives to help grow the local tech ecosystem.",
+    date: "Dec 2025 - Present",
+  },
+  {
     title: "Test Automation Trainee",
     highlighted: "TBC Bank",
-    desc: " — Developing Java-based test automation scripts for functional testing, API validation, workflow automation, and test optimization across Selenium WebDriver, TestNG, REST Assured, and Maven.",
+    desc: " — Built Java automation scripts for functional and API testing. Streamlined testing workflows using Selenium, TestNG, and REST Assured.",
     date: "Jun 2025 - Nov 2025",
   },
   {
     title: "Python Intern",
     highlighted: "UniLab",
-    desc: " — Developing Python scripts for data processing, API integration, workflow automation, and code optimization across HTML/CSS, Flask, databases, and Docker.",
+    desc: " — Created Python scripts for data processing and API integration. Worked on workflow automation and optimization using Flask, Docker, and databases.",
     date: "May 2025 - Sep 2025",
   },
   {
     title: "AI & Data Science Club Member",
     highlighted: "Georgian AI Association",
-    desc: " — Collaborating on AI/ML workshops using Python and Pandas for modeling and feature engineering, and participating in hackathons to apply Scikit-Learn.",
+    desc: " — Collaborated in AI/ML workshops and hackathons. Applied Python, Pandas, and Scikit-Learn for data modeling and feature engineering.",
     date: "Apr 2025 - Jul 2025",
   },
 ];
