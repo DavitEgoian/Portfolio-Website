@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5ece52ca.css",
-    "main.js": "/static/js/main.873c9a89.js",
+    "main.js": "/static/js/main.c6f1aaf9.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
     "static/media/prometheus-logo.png": "/static/media/prometheus-logo.c80f83eb0f5b431b9818.png",
@@ -34,10 +34,10 @@
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
     "main.5ece52ca.css.map": "/static/css/main.5ece52ca.css.map",
-    "main.873c9a89.js.map": "/static/js/main.873c9a89.js.map"
+    "main.c6f1aaf9.js.map": "/static/js/main.c6f1aaf9.js.map"
   },
   "entrypoints": [
     "static/css/main.5ece52ca.css",
-    "static/js/main.873c9a89.js"
+    "static/js/main.c6f1aaf9.js"
   ]
 }
