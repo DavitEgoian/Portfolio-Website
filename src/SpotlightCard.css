@@ -8,6 +8,7 @@
   --mouse-x: 50%;
   --mouse-y: 50%;
   --spotlight-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.05);
 }
 
 .card-spotlight::before {
@@ -29,7 +30,12 @@
 
 .card-spotlight:hover::before,
 .card-spotlight:focus-within::before {
-  opacity: 0.6;
+  opacity: 1;
+}
+
+.card-spotlight:hover {
+  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .custom-spotlight-card {
   display: block;
