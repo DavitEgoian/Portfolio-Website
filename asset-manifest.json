@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.866373f1.css",
-    "main.js": "/static/js/main.c6f1aaf9.js",
+    "main.css": "/static/css/main.16c17e29.css",
+    "main.js": "/static/js/main.7f6ac610.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
     "static/media/prometheus-logo.png": "/static/media/prometheus-logo.c80f83eb0f5b431b9818.png",
@@ -33,11 +33,11 @@
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
-    "main.866373f1.css.map": "/static/css/main.866373f1.css.map",
-    "main.c6f1aaf9.js.map": "/static/js/main.c6f1aaf9.js.map"
+    "main.16c17e29.css.map": "/static/css/main.16c17e29.css.map",
+    "main.7f6ac610.js.map": "/static/js/main.7f6ac610.js.map"
   },
   "entrypoints": [
-    "static/css/main.866373f1.css",
-    "static/js/main.c6f1aaf9.js"
+    "static/css/main.16c17e29.css",
+    "static/js/main.7f6ac610.js"
   ]
 }
