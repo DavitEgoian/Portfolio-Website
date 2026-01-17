@@ -87,7 +87,7 @@ function App() {
             className="custom-spotlight-card"
             spotlightColor="rgb(163, 116, 255)"
           >
-            <img src={icon} alt={`${title.toLowerCase()}-icon`} loading="lazy" />
+            <img src={icon} alt={`${title.toLowerCase()}-icon`} loading="lazy" decoding="async" />
             <h3>{title}</h3>
             <p>{desc}</p>
           </SpotlightCard>
@@ -138,7 +138,7 @@ function App() {
           >
             {techLogos.map(({ src, alt, name }) => (
               <SplideSlide key={alt}>
-                <img src={src} alt={alt} className="tech-logo" loading="lazy" />
+                <img src={src} alt={alt} className="tech-logo" loading="lazy" decoding="async" />
                 <p className="tech-name">{name}</p>
               </SplideSlide>
             ))}
@@ -222,7 +222,7 @@ function App() {
         >
           {socialLogos.map(({ src, alt, href }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
-              <img src={src} alt={alt} className="social-logo" loading="lazy" />
+              <img src={src} alt={alt} className="social-logo" loading="lazy" decoding="async" />
             </a>
           ))}
         </div>

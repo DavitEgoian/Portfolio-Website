@@ -36,6 +36,7 @@
 .custom-spotlight-card img {
   background-color: transparent;
   width: 35px;
+  height: auto;
 }
 
 .custom-spotlight-card h3 {
@@ -521,12 +522,10 @@
   transition: all 0.4s ease;
 }
 
-.tech-logo,
 .social-logo {
   transition: transform 0.3s ease;
 }
 
-.tech-logo:hover,
 .social-logo:hover {
   transform: scale(1.1);
 }
