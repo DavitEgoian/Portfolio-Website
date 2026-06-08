@@ -1,5 +1,11 @@
 const educationTimeline = [
   {
+    title: "IT Business Analysis",
+    highlighted: "TBC Bank",
+    desc: " — Analyzing business needs, documenting requirements, mapping processes, and bridging communication between stakeholders and technical teams.",
+    date: "Apr 2025 - Present",
+  },
+  {
     title: "Associate Member",
     highlighted: "Georgian AI Association",
     desc: " — Promoting AI education and adoption in Georgia. Actively sharing knowledge and supporting community initiatives to help grow the local tech ecosystem.",
