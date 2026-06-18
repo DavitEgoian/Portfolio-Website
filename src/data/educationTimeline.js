@@ -1,5 +1,3 @@
-import { desc } from "framer-motion/client";
-
 const educationTimeline = [
   {
     title: "Georgian National University",
