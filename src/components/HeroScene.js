@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import XpWindow from "./xp/XpWindow";
-import { XpComputerIcon } from "./xp/XpIcons";
+import { XP_ICONS } from "../data/xpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,13 +100,13 @@ function HeroScene() {
       <div ref={pinRef} className="scene__pin">
         <XpWindow
           title="Welcome to Davit Egoian — Portfolio Edition"
-          icon={<XpComputerIcon />}
+          iconSrc={XP_ICONS.myComputer}
           className="hero__window"
           active
         >
           <div className="hero__content">
             <div ref={logoRef} className="hero__xp-logo" aria-hidden="true">
-              <XpComputerIcon />
+              <img src={XP_ICONS.myComputer} alt="" width={64} height={64} draggable={false} />
             </div>
 
             <p className="hero__meta">

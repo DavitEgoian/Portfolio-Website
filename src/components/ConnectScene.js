@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import socialLogos from "../data/socialLogos";
 import XpWindow from "./xp/XpWindow";
-import { XpMessengerIcon } from "./xp/XpIcons";
+import { XP_ICONS } from "../data/xpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +62,7 @@ function ConnectScene() {
       <div ref={pinRef} className="scene__pin">
         <XpWindow
           title="Windows Messenger"
-          icon={<XpMessengerIcon />}
+          iconSrc={XP_ICONS.msnMessenger}
           className="connect__window"
         >
           <div className="connect__buddy-list" aria-hidden="true">

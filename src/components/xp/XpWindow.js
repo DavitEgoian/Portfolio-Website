@@ -1,3 +1,5 @@
+import XpIcon from "../../data/xpIcons";
+
 function XpWindowControls() {
   return (
     <div className="xp-window__controls" aria-hidden="true">
@@ -10,7 +12,7 @@ function XpWindowControls() {
 
 function XpWindow({
   title,
-  icon,
+  iconSrc,
   children,
   className = "",
   active = false,
@@ -19,7 +21,11 @@ function XpWindow({
   return (
     <div className={`xp-window ${active ? "is-active" : ""} ${className}`.trim()}>
       <div className="xp-window__titlebar">
-        {icon && <span className="xp-window__icon">{icon}</span>}
+        {iconSrc && (
+          <span className="xp-window__icon">
+            <XpIcon src={iconSrc} size={16} />
+          </span>
+        )}
         <span className="xp-window__title">{title}</span>
         <XpWindowControls />
       </div>

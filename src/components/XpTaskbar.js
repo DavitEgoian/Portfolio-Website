@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
-import { XpStartLogo } from "./xp/XpIcons";
+import { DESKTOP_SHORTCUTS, XP_ICONS } from "../data/xpIcons";
+import XpIcon from "../data/xpIcons";
+import { scrollToSection } from "../utils/scrollToSection";
 
-const SECTIONS = [
-  { id: "hero", label: "Welcome Tour" },
-  { id: "about", label: "About Me - Notepad" },
-  { id: "services", label: "My Projects" },
-  { id: "stack", label: "Control Panel" },
-  { id: "journey", label: "Internet Explorer" },
-  { id: "connect", label: "MSN Messenger" },
-];
+const TASKBAR_PROGRAMS = DESKTOP_SHORTCUTS.filter(
+  (shortcut) => !shortcut.shortcutKey
+);
 
 function XpTaskbar() {
   const [active, setActive] = useState("hero");
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    const observers = SECTIONS.map(({ id }) => {
+    const sectionIds = [...new Set(TASKBAR_PROGRAMS.map(({ id }) => id))];
+    const observers = sectionIds.map((id) => {
       const element = document.getElementById(id);
       if (!element) return null;
 
@@ -49,38 +47,31 @@ function XpTaskbar() {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="xp-taskbar" aria-label="Windows taskbar">
       <button type="button" className="xp-taskbar__start">
-        <XpStartLogo />
+        <XpIcon src={XP_ICONS.startLogo} size={20} className="xp-icon--start" />
         <span>start</span>
       </button>
 
       <div className="xp-taskbar__programs">
-        {SECTIONS.map(({ id, label }) => (
+        {TASKBAR_PROGRAMS.map((shortcut) => (
           <button
-            key={id}
+            key={shortcut.id}
             type="button"
-            className={`xp-taskbar__program ${active === id ? "is-active" : ""}`}
-            onClick={() => scrollTo(id)}
-            aria-current={active === id ? "true" : undefined}
+            className={`xp-taskbar__program ${active === shortcut.id ? "is-active" : ""}`}
+            onClick={() => scrollToSection(shortcut.id)}
+            aria-current={active === shortcut.id ? "true" : undefined}
           >
-            {label}
+            <XpIcon src={shortcut.icon} size={16} />
+            <span>{shortcut.windowTitle}</span>
           </button>
         ))}
       </div>
 
       <div className="xp-taskbar__tray">
-        <span className="xp-taskbar__tray-icon" title="Volume" aria-hidden="true">
-          🔊
-        </span>
-        <span className="xp-taskbar__tray-icon" title="Network" aria-hidden="true">
-          📶
-        </span>
+        <XpIcon src={XP_ICONS.applicationWindow} size={16} title="Volume" />
+        <XpIcon src={XP_ICONS.internetExplorer} size={16} title="Network" />
         <time className="xp-taskbar__clock">{time}</time>
       </div>
     </footer>

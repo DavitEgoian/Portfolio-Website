@@ -5,7 +5,7 @@ import educationTimeline from "../data/educationTimeline";
 import experienceTimeline from "../data/experienceTimeline";
 import certificationTimeline from "../data/certificationTimeline";
 import XpWindow from "./xp/XpWindow";
-import { XpIeIcon } from "./xp/XpIcons";
+import { XP_ICONS } from "../data/xpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +90,7 @@ function TimelineScene() {
     <section id="journey" ref={sectionRef} className="scene scene--journey">
       <XpWindow
         title="Internet Explorer — Favorites"
-        icon={<XpIeIcon />}
+        iconSrc={XP_ICONS.internetExplorer}
         className="journey__window"
         menu
       >

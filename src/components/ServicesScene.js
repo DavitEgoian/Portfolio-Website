@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import cardsData from "../data/cardsData";
 import XpWindow from "./xp/XpWindow";
-import { XpFolderIcon } from "./xp/XpIcons";
+import { XP_ICONS } from "../data/xpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +64,7 @@ function ServicesScene() {
     <section id="services" ref={sectionRef} className="scene scene--services">
       <XpWindow
         title="My Projects"
-        icon={<XpFolderIcon />}
+        iconSrc={XP_ICONS.folder}
         className="services__window"
       >
         <div className="services__header">

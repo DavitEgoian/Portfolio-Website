@@ -63,6 +63,7 @@ body {
 .app__main {
   position: relative;
   z-index: 2;
+  padding-left: 7.5rem;
   padding-bottom: calc(var(--xp-taskbar-height) + 1rem);
 }
 
@@ -192,10 +193,11 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  bottom: var(--xp-taskbar-height);
+  z-index: 20;
   padding: 0.75rem;
-  width: 100px;
-  pointer-events: none;
+  width: 7.5rem;
+  pointer-events: auto;
 }
 
 .xp-desktop__icons {
@@ -204,6 +206,10 @@ body {
   padding: 0;
   display: grid;
   gap: 1rem;
+}
+
+.xp-desktop__hint {
+  display: none;
 }
 
 .xp-desktop__icon {
@@ -218,15 +224,36 @@ body {
   font-family: var(--xp-font);
   font-size: 11px;
   text-shadow: 1px 1px 2px #000;
-  cursor: pointer;
-  pointer-events: auto;
+  cursor: default;
   text-align: center;
   line-height: 1.2;
 }
 
 .xp-desktop__icon:hover {
-  background: rgba(49, 106, 197, 0.45);
-  border: 1px dotted rgba(255, 255, 255, 0.6);
+  background: rgba(49, 106, 197, 0.35);
+  border: 1px dotted rgba(255, 255, 255, 0.5);
+}
+
+.xp-desktop__icon.is-selected,
+.xp-desktop__icon.is-active {
+  background: rgba(49, 106, 197, 0.55);
+  border: 1px dotted #fff;
+}
+
+.xp-desktop__icon-img {
+  image-rendering: auto;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.45));
+}
+
+.xp-icon {
+  display: block;
+  object-fit: contain;
+  image-rendering: auto;
+  flex-shrink: 0;
+}
+
+.xp-icon--start {
+  filter: brightness(1.15);
 }
 
 .xp-desktop__icon span {
@@ -305,8 +332,9 @@ body {
 .xp-taskbar__program {
   display: flex;
   align-items: center;
+  gap: 0.35rem;
   padding: 0 0.6rem;
-  max-width: 160px;
+  max-width: 180px;
   border: 1px solid transparent;
   border-radius: 2px;
   background: transparent;
@@ -347,9 +375,8 @@ body {
   flex-shrink: 0;
 }
 
-.xp-taskbar__tray-icon {
-  font-size: 12px;
-  opacity: 0.9;
+.xp-taskbar__tray .xp-icon {
+  opacity: 0.95;
 }
 
 .xp-taskbar__clock {
@@ -909,6 +936,10 @@ body {
 /* Responsive */
 
 @media (max-width: 768px) {
+  .app__main {
+    padding-left: 0;
+  }
+
   .xp-desktop {
     display: none;
   }

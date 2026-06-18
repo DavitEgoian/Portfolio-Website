@@ -1,39 +1,96 @@
-import {
-  XpComputerIcon,
-  XpFolderIcon,
-  XpIeIcon,
-  XpMessengerIcon,
-  XpMyDocsIcon,
-  XpNotepadIcon,
-  XpRecycleIcon,
-} from "./xp/XpIcons";
-
-const DESKTOP_ICONS = [
-  { label: "My Computer", icon: <XpComputerIcon />, id: "hero" },
-  { label: "My Documents", icon: <XpMyDocsIcon />, id: "about" },
-  { label: "My Projects", icon: <XpFolderIcon />, id: "services" },
-  { label: "Control Panel", icon: <XpNotepadIcon />, id: "stack" },
-  { label: "Internet Explorer", icon: <XpIeIcon />, id: "journey" },
-  { label: "MSN Messenger", icon: <XpMessengerIcon />, id: "connect" },
-  { label: "Recycle Bin", icon: <XpRecycleIcon />, id: "connect" },
-];
+import { useCallback, useEffect, useState } from "react";
+import { DESKTOP_SHORTCUTS } from "../data/xpIcons";
+import XpIcon from "../data/xpIcons";
+import { scrollToSection } from "../utils/scrollToSection";
 
 function XpDesktop() {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const [selectedKey, setSelectedKey] = useState("hero");
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const sectionIds = [...new Set(DESKTOP_SHORTCUTS.map(({ id }) => id))];
+    const observers = sectionIds.map((id) => {
+      const element = document.getElementById(id);
+      if (!element) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.35 }
+      );
+
+      observer.observe(element);
+      return observer;
+    });
+
+    return () => observers.forEach((observer) => observer?.disconnect());
+  }, []);
+
+  const openShortcut = useCallback((shortcut) => {
+    setSelectedKey(shortcut.shortcutKey || shortcut.id);
+    scrollToSection(shortcut.id);
+  }, []);
+
+  const handleIconClick = (shortcut) => {
+    setSelectedKey(shortcut.shortcutKey || shortcut.id);
+  };
+
+  const handleDesktopClick = (event) => {
+    if (event.target === event.currentTarget) {
+      setSelectedKey(null);
+    }
+  };
+
+  const handleKeyDown = (event, shortcut) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      openShortcut(shortcut);
+    }
   };
 
   return (
-    <div className="xp-desktop" aria-hidden="true">
+    <div
+      className="xp-desktop"
+      onClick={handleDesktopClick}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") setSelectedKey(null);
+      }}
+      role="presentation"
+    >
+      <p className="xp-desktop__hint">Double-click icons to open</p>
       <ul className="xp-desktop__icons">
-        {DESKTOP_ICONS.map(({ label, icon, id }) => (
-          <li key={label}>
-            <button type="button" className="xp-desktop__icon" onClick={() => scrollTo(id)}>
-              {icon}
-              <span>{label}</span>
-            </button>
-          </li>
-        ))}
+        {DESKTOP_SHORTCUTS.map((shortcut) => {
+          const key = shortcut.shortcutKey || shortcut.id;
+          const isSelected = selectedKey === key;
+          const isActive = activeSection === shortcut.id && !shortcut.shortcutKey;
+
+          return (
+            <li key={key}>
+              <button
+                type="button"
+                className={`xp-desktop__icon ${isSelected ? "is-selected" : ""} ${
+                  isActive ? "is-active" : ""
+                }`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleIconClick(shortcut);
+                }}
+                onDoubleClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  openShortcut(shortcut);
+                }}
+                onKeyDown={(event) => handleKeyDown(event, shortcut)}
+                aria-label={`Open ${shortcut.label}`}
+                aria-current={isSelected ? "true" : undefined}
+              >
+                <XpIcon src={shortcut.icon} size={48} className="xp-desktop__icon-img" />
+                <span>{shortcut.label}</span>
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

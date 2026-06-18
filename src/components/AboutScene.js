@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import XpWindow from "./xp/XpWindow";
-import { XpNotepadIcon } from "./xp/XpIcons";
+import { XP_ICONS } from "../data/xpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -122,7 +122,7 @@ function AboutScene() {
       <div ref={pinRef} className="scene__pin">
         <XpWindow
           title="about_me.txt — Notepad"
-          icon={<XpNotepadIcon />}
+          iconSrc={XP_ICONS.notepad}
           className="about__window"
           menu
         >

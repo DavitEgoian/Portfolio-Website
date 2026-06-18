@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import techLogos from "../data/techLogos";
 import XpWindow from "./xp/XpWindow";
-import { XpNotepadIcon } from "./xp/XpIcons";
+import { XP_ICONS } from "../data/xpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +66,7 @@ function TechScene() {
       <div ref={pinRef} className="scene__pin">
         <XpWindow
           title="Control Panel — Installed Programs"
-          icon={<XpNotepadIcon />}
+          iconSrc={XP_ICONS.controlPanel}
           className="stack__window"
           menu
         >
