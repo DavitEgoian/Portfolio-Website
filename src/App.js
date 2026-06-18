@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
-import AmbientCanvas from "./components/AmbientCanvas";
-import Navigation from "./components/Navigation";
+import XpDesktop from "./components/XpDesktop";
+import XpTaskbar from "./components/XpTaskbar";
 import ScrollProgress from "./components/ScrollProgress";
 import HeroScene from "./components/HeroScene";
 import AboutScene from "./components/AboutScene";
@@ -28,12 +28,17 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <div className="app__grain" aria-hidden="true" />
-      <div className="app__grid" aria-hidden="true" />
-      <AmbientCanvas />
+    <div
+      className="app xp-desktop-shell"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/bliss.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <XpDesktop />
       <ScrollProgress />
-      <Navigation />
 
       <main className="app__main">
         <HeroScene />
@@ -43,6 +48,8 @@ function App() {
         <TimelineScene />
         <ConnectScene />
       </main>
+
+      <XpTaskbar />
     </div>
   );
 }

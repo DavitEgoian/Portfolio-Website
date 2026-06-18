@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import XpWindow from "./xp/XpWindow";
+import { XpNotepadIcon } from "./xp/XpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,7 +98,7 @@ function AboutScene() {
 
       timeline.fromTo(
         headingRef.current,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.4 },
         0
       );
@@ -105,8 +107,8 @@ function AboutScene() {
         if (!word) return;
         timeline.fromTo(
           word,
-          { opacity: 0.12, y: 16, filter: "blur(4px)" },
-          { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.08 },
+          { opacity: 0.15, backgroundColor: "transparent" },
+          { opacity: 1, backgroundColor: "#316ac5", color: "#fff", duration: 0.08 },
           0.15 + index * 0.025
         );
       });
@@ -117,31 +119,40 @@ function AboutScene() {
 
   return (
     <section id="about" ref={sectionRef} className="scene scene--about">
-      <div ref={pinRef} className="scene__pin about__pin">
-        <div className="section-label">
-          <span>01</span>
-          <span>ABOUT</span>
-        </div>
-
-        <h2 ref={headingRef} className="about__heading">
-          Signal decoded from the noise.
-        </h2>
-
-        <p className="about__copy">
-          {ABOUT_WORDS.map((word, index) => (
-            <span
-              key={`${word}-${index}`}
-              ref={(element) => {
-                wordsRef.current[index] = element;
-              }}
-              className={`about__word ${
-                HIGHLIGHT_WORDS.has(word.replace(/[,.]/g, "")) ? "is-highlight" : ""
-              }`}
-            >
-              {word}{" "}
-            </span>
-          ))}
-        </p>
+      <div ref={pinRef} className="scene__pin">
+        <XpWindow
+          title="about_me.txt — Notepad"
+          icon={<XpNotepadIcon />}
+          className="about__window"
+          menu
+        >
+          <div className="about__toolbar" aria-hidden="true">
+            <span>Font</span>
+            <span>Search</span>
+            <span>Help</span>
+          </div>
+          <h2 ref={headingRef} className="about__heading">
+            * About Davit Egoian *
+          </h2>
+          <p className="about__copy">
+            {ABOUT_WORDS.map((word, index) => (
+              <span
+                key={`${word}-${index}`}
+                ref={(element) => {
+                  wordsRef.current[index] = element;
+                }}
+                className={`about__word ${
+                  HIGHLIGHT_WORDS.has(word.replace(/[,.]/g, "")) ? "is-highlight" : ""
+                }`}
+              >
+                {word}{" "}
+              </span>
+            ))}
+          </p>
+          <div className="about__statusbar" aria-hidden="true">
+            Ln 1, Col 1
+          </div>
+        </XpWindow>
       </div>
     </section>
   );

@@ -4,37 +4,35 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import educationTimeline from "../data/educationTimeline";
 import experienceTimeline from "../data/experienceTimeline";
 import certificationTimeline from "../data/certificationTimeline";
+import XpWindow from "./xp/XpWindow";
+import { XpIeIcon } from "./xp/XpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const JOURNEY_SECTIONS = [
   {
     key: "education",
-    label: "EDUCATION",
-    items: educationTimeline.map(
-      ({ title, highlighted, desc, date }) => ({
-        title,
-        highlight: highlighted,
-        desc,
-        meta: date,
-      })
-    ),
+    label: "Education",
+    items: educationTimeline.map(({ title, highlighted, desc, date }) => ({
+      title,
+      highlight: highlighted,
+      desc,
+      meta: date,
+    })),
   },
   {
     key: "experience",
-    label: "EXPERIENCE",
-    items: experienceTimeline.map(
-      ({ title, highlighted, desc, date }) => ({
-        title,
-        highlight: highlighted,
-        desc,
-        meta: date,
-      })
-    ),
+    label: "Experience",
+    items: experienceTimeline.map(({ title, highlighted, desc, date }) => ({
+      title,
+      highlight: highlighted,
+      desc,
+      meta: date,
+    })),
   },
   {
     key: "certifications",
-    label: "CERTIFICATIONS",
+    label: "Certifications",
     items: certificationTimeline.map(
       ({ name, issueOrganization, desc, issueDate, link }) => ({
         title: name,
@@ -68,11 +66,10 @@ function TimelineScene() {
 
         gsap.fromTo(
           item,
-          { opacity: 0.15, x: 48, filter: "blur(4px)" },
+          { opacity: 0.2, x: 30 },
           {
             opacity: 1,
             x: 0,
-            filter: "blur(0px)",
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
@@ -91,20 +88,26 @@ function TimelineScene() {
 
   return (
     <section id="journey" ref={sectionRef} className="scene scene--journey">
-      <div className="journey__intro">
-        <div className="section-label">
-          <span>04</span>
-          <span>TRAJECTORY</span>
+      <XpWindow
+        title="Internet Explorer — Favorites"
+        icon={<XpIeIcon />}
+        className="journey__window"
+        menu
+      >
+        <div className="journey__toolbar" aria-hidden="true">
+          <span>← Back</span>
+          <span>→ Forward</span>
+          <span>🔄 Refresh</span>
+          <span>🏠 Home</span>
         </div>
-        <h2 className="journey__heading">Chronicle of growth</h2>
-        <p className="journey__sub">
-          Education, experience, and credentials—mapped as a living timeline.
+        <p className="journey__addressbar">
+          Address: <strong>https://davitegoian.tech/history</strong>
         </p>
-      </div>
+      </XpWindow>
 
       {JOURNEY_SECTIONS.map(({ key, label, items }) => (
         <div key={key} className="journey__group">
-          <h3 className="journey__group-label">{label}</h3>
+          <h3 className="journey__group-label">📁 {label}</h3>
           <div className="journey__stream">
             {items.map(({ title, highlight, desc, meta, link }) => {
               const currentIndex = itemIndex;
@@ -118,7 +121,6 @@ function TimelineScene() {
                   }}
                   className="journey__item"
                 >
-                  <div className="journey__marker" aria-hidden="true" />
                   <div className="journey__content">
                     <time className="journey__date">{meta}</time>
                     <h4>{title}</h4>
@@ -128,7 +130,7 @@ function TimelineScene() {
                     </p>
                     {link && (
                       <a href={link} target="_blank" rel="noopener noreferrer">
-                        View credential →
+                        View Certificate
                       </a>
                     )}
                   </div>

@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import socialLogos from "../data/socialLogos";
+import XpWindow from "./xp/XpWindow";
+import { XpMessengerIcon } from "./xp/XpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,8 +38,8 @@ function ConnectScene() {
 
       timeline.fromTo(
         headingRef.current,
-        { opacity: 0, y: 50, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.5 },
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.5 },
         0
       );
 
@@ -45,8 +47,8 @@ function ConnectScene() {
         if (!link) return;
         timeline.fromTo(
           link,
-          { opacity: 0, y: 40, rotateX: 25 },
-          { opacity: 1, y: 0, rotateX: 0, duration: 0.25 },
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.25 },
           0.35 + index * 0.15
         );
       });
@@ -57,42 +59,47 @@ function ConnectScene() {
 
   return (
     <section id="connect" ref={sectionRef} className="scene scene--connect">
-      <div ref={pinRef} className="scene__pin connect__pin">
-        <div className="section-label">
-          <span>05</span>
-          <span>CONNECT</span>
-        </div>
+      <div ref={pinRef} className="scene__pin">
+        <XpWindow
+          title="Windows Messenger"
+          icon={<XpMessengerIcon />}
+          className="connect__window"
+        >
+          <div className="connect__buddy-list" aria-hidden="true">
+            <p className="connect__buddy-header">Online (3)</p>
+          </div>
 
-        <h2 ref={headingRef} className="connect__heading">
-          Initialize contact protocol.
-        </h2>
-        <p className="connect__sub">
-          Open channels for collaboration, research, and building what&apos;s next.
-        </p>
+          <h2 ref={headingRef} className="connect__heading">
+            Send me a message!
+          </h2>
+          <p className="connect__sub">
+            Double-click a contact below to open their profile in a new window.
+          </p>
 
-        <div className="connect__links">
-          {socialLogos.map(({ src, alt, href, name }, index) => (
-            <a
-              key={href}
-              ref={(element) => {
-                linksRef.current[index] = element;
-              }}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="connect__card"
-            >
-              <img src={src} alt={alt} loading="lazy" decoding="async" />
-              <span>{name}</span>
-              <span className="connect__arrow">↗</span>
-            </a>
-          ))}
-        </div>
+          <div className="connect__links">
+            {socialLogos.map(({ src, alt, href, name }, index) => (
+              <a
+                key={href}
+                ref={(element) => {
+                  linksRef.current[index] = element;
+                }}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="connect__card"
+              >
+                <img src={src} alt={alt} loading="lazy" decoding="async" />
+                <span>{name}</span>
+                <span className="connect__status">● Online</span>
+              </a>
+            ))}
+          </div>
 
-        <footer className="connect__footer">
-          <span>© {new Date().getFullYear()} Davit Egoian</span>
-          <span>Engineered in Tbilisi · Deployed to the future</span>
-        </footer>
+          <footer className="connect__footer">
+            <span>© {new Date().getFullYear()} Davit Egoian</span>
+            <span>Built with nostalgia · Powered by scroll hijacking</span>
+          </footer>
+        </XpWindow>
       </div>
     </section>
   );

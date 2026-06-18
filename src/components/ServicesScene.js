@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import cardsData from "../data/cardsData";
+import XpWindow from "./xp/XpWindow";
+import { XpFolderIcon } from "./xp/XpIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +43,7 @@ function ServicesScene() {
 
       gsap.fromTo(
         headingRef.current,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
@@ -60,29 +62,31 @@ function ServicesScene() {
 
   return (
     <section id="services" ref={sectionRef} className="scene scene--services">
-      <div className="services__header">
-        <div className="section-label">
-          <span>02</span>
-          <span>CAPABILITIES</span>
+      <XpWindow
+        title="My Projects"
+        icon={<XpFolderIcon />}
+        className="services__window"
+      >
+        <div className="services__header">
+          <p ref={headingRef} className="services__addressbar">
+            Address: <strong>C:\Documents and Settings\Davit\My Projects</strong>
+          </p>
+          <p className="services__hint">Scroll to browse folders →</p>
         </div>
-        <h2 ref={headingRef} className="services__heading">
-          What I engineer
-        </h2>
-      </div>
+      </XpWindow>
 
       <div className="services__viewport">
         <div ref={trackRef} className="services__track">
           {cardsData.map(({ icon, title, desc }, index) => (
-            <article key={title} className="service-card">
-              <span className="service-card__index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+            <article key={title} className="service-card xp-folder-item">
               <div className="service-card__icon-wrap">
                 <img src={icon} alt="" loading="lazy" decoding="async" />
               </div>
               <h3>{title}</h3>
               <p>{desc}</p>
-              <div className="service-card__glow" aria-hidden="true" />
+              <span className="service-card__index">
+                Folder ({index + 1} of {cardsData.length})
+              </span>
             </article>
           ))}
         </div>

@@ -26,8 +26,11 @@ function ScrollProgress() {
   }, []);
 
   return (
-    <div className="scroll-progress" aria-hidden="true">
-      <div ref={barRef} className="scroll-progress__bar" />
+    <div className="xp-download" aria-hidden="true">
+      <span className="xp-download__label">Copying portfolio files...</span>
+      <div className="xp-download__track">
+        <div ref={barRef} className="xp-download__bar" />
+      </div>
     </div>
   );
 }

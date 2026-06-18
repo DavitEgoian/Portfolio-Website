@@ -1,12 +1,10 @@
 body {
   margin: 0;
-  font-family: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: "JetBrains Mono", source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
