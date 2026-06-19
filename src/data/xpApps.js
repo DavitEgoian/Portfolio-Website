@@ -40,8 +40,8 @@ export const XP_APPS = {
   },
   [APP_IDS.MY_PROJECTS]: {
     id: APP_IDS.MY_PROJECTS,
-    label: "WHAT I DO",
-    title: "WHAT I DO",
+    label: "What I do",
+    title: "What I do",
     icon: XP_ICONS.folder,
     component: ProjectsApp,
     menu: false,

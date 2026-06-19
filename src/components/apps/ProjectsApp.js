@@ -26,7 +26,7 @@ function ProjectsApp() {
         <span>Folders</span>
       </div>
       <p className="services__addressbar">
-        Address: <strong>C:\Documents and Settings\Davit\WHAT I DO</strong>
+        Address: <strong>C:\Documents and Settings\Davit\What I do</strong>
       </p>
 
       <div className="projects-app__grid">
