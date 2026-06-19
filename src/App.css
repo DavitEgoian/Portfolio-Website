@@ -799,9 +799,9 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid #aca899;
-  background: linear-gradient(180deg, #fff, #f0f0f0);
-  padding: 4px;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .service-card__icon,
@@ -813,6 +813,10 @@ body {
   max-height: 40px;
   object-fit: contain;
   object-position: center;
+}
+
+.xp-folder-item:not(.xp-folder-item--empty) .service-card__icon {
+  filter: brightness(0);
 }
 
 .service-card h3 {
