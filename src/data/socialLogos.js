@@ -8,12 +8,14 @@ const techLogos = [
     alt: "GitHub Logo",
     href: "https://github.com/davitegoian",
     name: "GitHub",
+    mono: true,
   },
   {
     src: kaggleLogo,
     alt: "Kaggle Logo",
     href: "https://www.kaggle.com/davitegoian",
     name: "Kaggle",
+    mono: true,
   },
   {
     src: linkedInLogo,

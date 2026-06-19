@@ -13,7 +13,7 @@ function MessengerApp() {
       </p>
 
       <div className="connect__links">
-        {socialLogos.map(({ src, alt, href, name }) => (
+        {socialLogos.map(({ src, alt, href, name, mono }) => (
           <a
             key={href}
             href={href}
@@ -21,7 +21,13 @@ function MessengerApp() {
             rel="noopener noreferrer"
             className="connect__card"
           >
-            <img src={src} alt={alt} loading="lazy" decoding="async" />
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              decoding="async"
+              className={mono ? "connect__card-icon--mono" : undefined}
+            />
             <span>{name}</span>
             <span className="connect__status">● Online</span>
           </a>

@@ -1095,6 +1095,9 @@ body {
   height: 32px;
   object-fit: contain;
   flex-shrink: 0;
+}
+
+.connect__card-icon--mono {
   filter: brightness(0);
 }
 
