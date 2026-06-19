@@ -53,8 +53,8 @@ function OrgLogo({ organization }) {
     <img
       src={src}
       alt=""
-      width={18}
-      height={18}
+      width={36}
+      height={36}
       className="journey__org-logo"
       loading="lazy"
       decoding="async"

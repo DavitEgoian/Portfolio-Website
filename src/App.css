@@ -1006,13 +1006,12 @@ body {
 
 .journey__org-logo {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
-  background: #fff;
-  border: 1px solid #c0c0c0;
-  padding: 1px;
-  box-shadow: inset 0 0 0 1px #fff;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .journey__content p {
