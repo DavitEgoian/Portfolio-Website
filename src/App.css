@@ -28,6 +28,14 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  overflow: hidden;
+}
+
 html {
   scroll-behavior: auto;
 }
@@ -37,7 +45,6 @@ body {
   font-family: var(--xp-font);
   font-size: 11px;
   color: var(--xp-text);
-  overflow-x: hidden;
   cursor: default;
   -webkit-font-smoothing: antialiased;
 }
@@ -48,7 +55,7 @@ body {
 
 .app {
   position: relative;
-  min-height: 100vh;
+  height: 100%;
   background-color: #3a6ea5;
 }
 
@@ -60,14 +67,47 @@ body {
   pointer-events: none;
 }
 
-.app__main {
-  position: relative;
-  z-index: 2;
-  padding-left: 7.5rem;
-  padding-bottom: calc(var(--xp-taskbar-height) + 1rem);
+/* Floating desktop windows */
+
+.xp-window-layer {
+  position: fixed;
+  inset: 0 0 var(--xp-taskbar-height) 7.5rem;
+  z-index: 10;
+  pointer-events: none;
 }
 
-/* XP Window chrome */
+.xp-desktop-window {
+  position: absolute;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.xp-desktop-window.is-focused {
+  z-index: 1;
+}
+
+.xp-desktop-window__frame {
+  max-width: none;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.xp-desktop-window__frame .xp-window__body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.xp-window__titlebar {
+  cursor: default;
+}
+
+.app-panel {
+  min-height: 100%;
+}
 
 .xp-window {
   border: 1px solid var(--xp-window-border);
@@ -77,8 +117,6 @@ body {
     inset 0 0 0 1px rgba(255, 255, 255, 0.3);
   background: var(--xp-window-bg);
   overflow: hidden;
-  max-width: min(920px, 94vw);
-  margin: 0 auto;
 }
 
 .xp-window.is-active .xp-window__titlebar {
@@ -315,6 +353,11 @@ body {
   filter: brightness(1.08);
 }
 
+.xp-taskbar__start.is-pressed {
+  filter: brightness(0.92);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
 .xp-taskbar__programs {
   display: flex;
   align-items: stretch;
@@ -379,87 +422,81 @@ body {
   opacity: 0.95;
 }
 
-.xp-taskbar__clock {
-  padding: 0 0.35rem;
-  font-size: 11px;
-  white-space: nowrap;
+.xp-taskbar__program.is-minimized {
+  opacity: 0.85;
 }
 
-/* Download progress bar */
+/* Start menu */
 
-.xp-download {
+.xp-startmenu-backdrop {
   position: fixed;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 40;
-  width: min(320px, 80vw);
-  padding: 0.4rem 0.6rem;
-  background: var(--xp-window-bg);
+  inset: 0;
+  z-index: 60;
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.xp-startmenu {
+  position: fixed;
+  left: 0;
+  bottom: var(--xp-taskbar-height);
+  z-index: 61;
+  width: 280px;
   border: 2px solid;
-  border-color: var(--xp-btn-highlight) var(--xp-btn-dark) var(--xp-btn-dark) var(--xp-btn-highlight);
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-.xp-download__label {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-size: 11px;
-}
-
-.xp-download__track {
-  height: 14px;
-  border: 1px solid var(--xp-btn-shadow);
+  border-color: #fff #404040 #404040 #fff;
   background: #fff;
-  padding: 1px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.45);
 }
 
-.xp-download__bar {
-  height: 100%;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: left center;
-  background: repeating-linear-gradient(
-    90deg,
-    #0058e6 0px,
-    #0058e6 8px,
-    #3a93ff 8px,
-    #3a93ff 16px
-  );
+.xp-startmenu__header {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, #3d80e3, #245edc);
+  color: #fff;
+  font-size: 13px;
 }
 
-/* Scenes */
-
-.scene {
-  position: relative;
-  padding: var(--section-pad);
+.xp-startmenu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0;
 }
 
-.scene__pin {
-  min-height: calc(100vh - var(--xp-taskbar-height) - 2rem);
+.xp-startmenu__item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.45rem 0.85rem;
+  border: none;
+  background: transparent;
+  font-family: var(--xp-font);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
 }
 
-.scene--hero {
-  min-height: 320vh;
+.xp-startmenu__item:hover {
+  background: var(--xp-selection);
+  color: #fff;
 }
 
-.scene--about {
-  min-height: 280vh;
+.xp-startmenu__footer {
+  padding: 0.5rem;
+  border-top: 1px solid #aca899;
+  background: #ece9d8;
 }
 
-.scene--services {
-  min-height: 100vh;
-}
-
-.scene--stack {
-  min-height: 220vh;
-}
-
-.scene--connect {
-  min-height: 160vh;
+.xp-startmenu__shutdown {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #aca899;
+  background: linear-gradient(180deg, #fff, #ece9d8);
+  font-family: var(--xp-font);
+  font-size: 11px;
+  cursor: pointer;
 }
 
 /* Hero */
@@ -471,12 +508,6 @@ body {
 
 .hero__xp-logo {
   margin: 0 auto 1rem;
-  width: 64px;
-  height: 64px;
-  opacity: 0;
-}
-
-.hero__xp-logo svg {
   width: 64px;
   height: 64px;
 }
@@ -503,7 +534,6 @@ body {
   margin: 0.25rem 0 0;
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: bold;
-  opacity: 0;
   color: var(--xp-text);
 }
 
@@ -517,7 +547,6 @@ body {
   margin: 0;
   font-size: 13px;
   color: var(--xp-text-muted);
-  opacity: 0;
 }
 
 .hero__version {
@@ -526,25 +555,11 @@ body {
   gap: 0.15rem;
   font-size: 11px;
   color: var(--xp-text-muted);
-  opacity: 0;
 }
 
 .hero__version strong {
   font-size: 14px;
   color: var(--xp-blue-mid);
-}
-
-.hero__scroll-cue {
-  margin-top: 1.25rem;
-  font-size: 11px;
-  color: var(--xp-blue-mid);
-  animation: xp-blink 1.5s step-end infinite;
-}
-
-@keyframes xp-blink {
-  50% {
-    opacity: 0.3;
-  }
 }
 
 /* About */
@@ -586,6 +601,78 @@ body {
 }
 
 .about__statusbar {
+  margin-top: 1rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid #aca899;
+  font-size: 11px;
+  color: var(--xp-text-muted);
+}
+
+/* Projects explorer */
+
+.explorer-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #aca899;
+  font-size: 11px;
+}
+
+.projects-app__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.projects-app__track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  min-width: 100%;
+  padding-bottom: 0.25rem;
+}
+
+.ie-app__content {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+/* Recycle Bin */
+
+.recycle-bin-app__toolbar {
+  display: flex;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #aca899;
+  font-size: 11px;
+}
+
+.recycle-bin-app__empty {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.recycle-bin-app__empty p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.recycle-bin-app__hint {
+  font-size: 11px;
+  color: var(--xp-text-muted);
+  max-width: 280px;
+}
+
+.recycle-bin-app__statusbar {
   margin-top: 1rem;
   padding-top: 0.35rem;
   border-top: 1px solid #aca899;
@@ -698,7 +785,6 @@ body {
   justify-items: center;
   gap: 0.25rem;
   padding: 0.35rem;
-  opacity: 0;
   text-align: center;
 }
 
@@ -789,7 +875,7 @@ body {
 }
 
 .journey__item {
-  opacity: 0.2;
+  opacity: 1;
 }
 
 .journey__content {
@@ -936,8 +1022,8 @@ body {
 /* Responsive */
 
 @media (max-width: 768px) {
-  .app__main {
-    padding-left: 0;
+  .xp-window-layer {
+    left: 0;
   }
 
   .xp-desktop {
@@ -954,8 +1040,12 @@ body {
     display: none;
   }
 
-  .scene__pin {
-    min-height: calc(100vh - var(--xp-taskbar-height) - 1rem);
+  .xp-desktop-window,
+  .xp-desktop-window.is-maximized {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: calc(100% - var(--xp-taskbar-height)) !important;
   }
 }
 

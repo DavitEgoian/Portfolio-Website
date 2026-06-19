@@ -1,51 +1,20 @@
-import { useCallback, useEffect, useState } from "react";
-import { DESKTOP_SHORTCUTS } from "../data/xpIcons";
+import { useWindows } from "../context/WindowContext";
+import { DESKTOP_SHORTCUTS } from "../data/xpApps";
 import XpIcon from "../data/xpIcons";
-import { scrollToSection } from "../utils/scrollToSection";
 
 function XpDesktop() {
-  const [selectedKey, setSelectedKey] = useState("hero");
-  const [activeSection, setActiveSection] = useState("hero");
-
-  useEffect(() => {
-    const sectionIds = [...new Set(DESKTOP_SHORTCUTS.map(({ id }) => id))];
-    const observers = sectionIds.map((id) => {
-      const element = document.getElementById(id);
-      if (!element) return null;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
-        { threshold: 0.35 }
-      );
-
-      observer.observe(element);
-      return observer;
-    });
-
-    return () => observers.forEach((observer) => observer?.disconnect());
-  }, []);
-
-  const openShortcut = useCallback((shortcut) => {
-    setSelectedKey(shortcut.shortcutKey || shortcut.id);
-    scrollToSection(shortcut.id);
-  }, []);
-
-  const handleIconClick = (shortcut) => {
-    setSelectedKey(shortcut.shortcutKey || shortcut.id);
-  };
+  const { selectedIcon, setSelectedIcon, openApp } = useWindows();
 
   const handleDesktopClick = (event) => {
     if (event.target === event.currentTarget) {
-      setSelectedKey(null);
+      setSelectedIcon(null);
     }
   };
 
-  const handleKeyDown = (event, shortcut) => {
+  const handleKeyDown = (event, appId) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      openShortcut(shortcut);
+      openApp(appId);
     }
   };
 
@@ -54,34 +23,29 @@ function XpDesktop() {
       className="xp-desktop"
       onClick={handleDesktopClick}
       onKeyDown={(event) => {
-        if (event.key === "Escape") setSelectedKey(null);
+        if (event.key === "Escape") setSelectedIcon(null);
       }}
       role="presentation"
     >
-      <p className="xp-desktop__hint">Double-click icons to open</p>
       <ul className="xp-desktop__icons">
         {DESKTOP_SHORTCUTS.map((shortcut) => {
-          const key = shortcut.shortcutKey || shortcut.id;
-          const isSelected = selectedKey === key;
-          const isActive = activeSection === shortcut.id && !shortcut.shortcutKey;
+          const isSelected = selectedIcon === shortcut.appId;
 
           return (
-            <li key={key}>
+            <li key={shortcut.appId}>
               <button
                 type="button"
-                className={`xp-desktop__icon ${isSelected ? "is-selected" : ""} ${
-                  isActive ? "is-active" : ""
-                }`}
+                className={`xp-desktop__icon ${isSelected ? "is-selected" : ""}`}
                 onClick={(event) => {
                   event.stopPropagation();
-                  handleIconClick(shortcut);
+                  setSelectedIcon(shortcut.appId);
                 }}
                 onDoubleClick={(event) => {
                   event.preventDefault();
                   event.stopPropagation();
-                  openShortcut(shortcut);
+                  openApp(shortcut.appId);
                 }}
-                onKeyDown={(event) => handleKeyDown(event, shortcut)}
+                onKeyDown={(event) => handleKeyDown(event, shortcut.appId)}
                 aria-label={`Open ${shortcut.label}`}
                 aria-current={isSelected ? "true" : undefined}
               >

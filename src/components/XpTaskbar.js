@@ -1,35 +1,19 @@
 import { useEffect, useState } from "react";
-import { DESKTOP_SHORTCUTS, XP_ICONS } from "../data/xpIcons";
+import { useWindows } from "../context/WindowContext";
+import { XP_APPS } from "../data/xpApps";
+import { XP_ICONS } from "../data/xpIcons";
 import XpIcon from "../data/xpIcons";
-import { scrollToSection } from "../utils/scrollToSection";
-
-const TASKBAR_PROGRAMS = DESKTOP_SHORTCUTS.filter(
-  (shortcut) => !shortcut.shortcutKey
-);
 
 function XpTaskbar() {
-  const [active, setActive] = useState("hero");
+  const {
+    windows,
+    focusedId,
+    focusWindow,
+    minimizeWindow,
+    toggleStartMenu,
+    startMenuOpen,
+  } = useWindows();
   const [time, setTime] = useState("");
-
-  useEffect(() => {
-    const sectionIds = [...new Set(TASKBAR_PROGRAMS.map(({ id }) => id))];
-    const observers = sectionIds.map((id) => {
-      const element = document.getElementById(id);
-      if (!element) return null;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActive(id);
-        },
-        { threshold: 0.4 }
-      );
-
-      observer.observe(element);
-      return observer;
-    });
-
-    return () => observers.forEach((observer) => observer?.disconnect());
-  }, []);
 
   useEffect(() => {
     const tick = () => {
@@ -47,31 +31,56 @@ function XpTaskbar() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleProgramClick = (instanceId) => {
+    const window = windows.find((entry) => entry.instanceId === instanceId);
+    if (!window) return;
+
+    if (window.minimized || focusedId !== instanceId) {
+      focusWindow(instanceId);
+      return;
+    }
+
+    minimizeWindow(instanceId);
+  };
+
   return (
     <footer className="xp-taskbar" aria-label="Windows taskbar">
-      <button type="button" className="xp-taskbar__start">
+      <button
+        type="button"
+        className={`xp-taskbar__start ${startMenuOpen ? "is-pressed" : ""}`}
+        onClick={toggleStartMenu}
+        aria-expanded={startMenuOpen}
+        aria-haspopup="menu"
+      >
         <XpIcon src={XP_ICONS.startLogo} size={20} className="xp-icon--start" />
         <span>start</span>
       </button>
 
       <div className="xp-taskbar__programs">
-        {TASKBAR_PROGRAMS.map((shortcut) => (
-          <button
-            key={shortcut.id}
-            type="button"
-            className={`xp-taskbar__program ${active === shortcut.id ? "is-active" : ""}`}
-            onClick={() => scrollToSection(shortcut.id)}
-            aria-current={active === shortcut.id ? "true" : undefined}
-          >
-            <XpIcon src={shortcut.icon} size={16} />
-            <span>{shortcut.windowTitle}</span>
-          </button>
-        ))}
+        {windows.map((window) => {
+          const app = XP_APPS[window.appId];
+          const isActive = focusedId === window.instanceId && !window.minimized;
+
+          return (
+            <button
+              key={window.instanceId}
+              type="button"
+              className={`xp-taskbar__program ${isActive ? "is-active" : ""} ${
+                window.minimized ? "is-minimized" : ""
+              }`}
+              onClick={() => handleProgramClick(window.instanceId)}
+              aria-current={isActive ? "true" : undefined}
+            >
+              <XpIcon src={app.icon} size={16} />
+              <span>{app.title}</span>
+            </button>
+          );
+        })}
       </div>
 
       <div className="xp-taskbar__tray">
-        <XpIcon src={XP_ICONS.applicationWindow} size={16} title="Volume" />
-        <XpIcon src={XP_ICONS.internetExplorer} size={16} title="Network" />
+        <XpIcon src={XP_ICONS.applicationWindow} size={16} />
+        <XpIcon src={XP_ICONS.internetExplorer} size={16} />
         <time className="xp-taskbar__clock">{time}</time>
       </div>
     </footer>
