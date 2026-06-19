@@ -1,25 +1,21 @@
-import { useEffect, useRef } from "react";
 import cardsData from "../../data/cardsData";
 import { XP_ICONS } from "../../data/xpIcons";
 
+const FOLDER_ITEMS = [
+  ...cardsData.map((card, index) => ({
+    ...card,
+    folderLabel: `Folder (${index + 1} of ${cardsData.length + 1})`,
+  })),
+  {
+    icon: XP_ICONS.folder,
+    title: "New Folder",
+    desc: "Right-click the desktop to add more projects.",
+    folderLabel: `Folder (${cardsData.length + 1} of ${cardsData.length + 1})`,
+    isPlaceholder: true,
+  },
+];
+
 function ProjectsApp() {
-  const viewportRef = useRef(null);
-
-  useEffect(() => {
-    const viewport = viewportRef.current;
-    if (!viewport) return undefined;
-
-    const onWheel = (event) => {
-      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
-        event.preventDefault();
-        viewport.scrollLeft += event.deltaY;
-      }
-    };
-
-    viewport.addEventListener("wheel", onWheel, { passive: false });
-    return () => viewport.removeEventListener("wheel", onWheel);
-  }, []);
-
   return (
     <div className="projects-app app-panel">
       <div className="explorer-toolbar" aria-hidden="true">
@@ -32,28 +28,30 @@ function ProjectsApp() {
       <p className="services__addressbar">
         Address: <strong>C:\Documents and Settings\Davit\My Projects</strong>
       </p>
-      <p className="services__hint">Use mouse wheel to scroll through folders →</p>
 
-      <div ref={viewportRef} className="projects-app__viewport">
-        <div className="projects-app__track">
-          {cardsData.map(({ icon, title, desc }, index) => (
-            <article key={title} className="service-card xp-folder-item">
-              <div className="service-card__icon-wrap">
-                <img src={icon} alt="" loading="lazy" decoding="async" />
-              </div>
-              <h3>{title}</h3>
-              <p>{desc}</p>
-              <span className="service-card__index">
-                Folder ({index + 1} of {cardsData.length})
-              </span>
-            </article>
-          ))}
-          <article className="service-card xp-folder-item xp-folder-item--empty">
-            <img src={XP_ICONS.folder} alt="" width={48} height={48} />
-            <h3>New Folder</h3>
-            <p>Right-click the desktop to add more projects.</p>
+      <div className="projects-app__grid">
+        {FOLDER_ITEMS.map(({ icon, title, desc, folderLabel, isPlaceholder }) => (
+          <article
+            key={title}
+            className={`service-card xp-folder-item ${
+              isPlaceholder ? "xp-folder-item--empty" : ""
+            }`}
+          >
+            <div className="service-card__icon-wrap">
+              <img
+                src={icon}
+                alt=""
+                width={40}
+                height={40}
+                decoding="async"
+                className="service-card__icon"
+              />
+            </div>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span className="service-card__index">{folderLabel}</span>
           </article>
-        </div>
+        ))}
       </div>
     </div>
   );

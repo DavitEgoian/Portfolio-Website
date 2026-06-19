@@ -45,8 +45,8 @@ export const XP_APPS = {
     icon: XP_ICONS.folder,
     component: ProjectsApp,
     menu: false,
-    defaultPosition: { x: 210, y: 54 },
-    defaultSize: { width: 620, height: 400 },
+    defaultPosition: { x: 180, y: 40 },
+    defaultSize: { width: 780, height: 580 },
   },
   [APP_IDS.CONTROL_PANEL]: {
     id: APP_IDS.CONTROL_PANEL,
