@@ -1,13 +1,16 @@
 import educationTimeline from "../../data/educationTimeline";
 import experienceTimeline from "../../data/experienceTimeline";
 import certificationTimeline from "../../data/certificationTimeline";
+import { getOrganizationLogo } from "../../data/organizationLogos";
 
 const JOURNEY_SECTIONS = [
   {
     key: "education",
     label: "Education",
+    logoOn: "heading",
     items: educationTimeline.map(({ title, highlighted, desc, date }) => ({
-      title,
+      heading: title,
+      organization: title,
       highlight: highlighted,
       desc,
       meta: date,
@@ -16,8 +19,10 @@ const JOURNEY_SECTIONS = [
   {
     key: "experience",
     label: "Experience",
+    logoOn: "organization",
     items: experienceTimeline.map(({ title, highlighted, desc, date }) => ({
-      title,
+      heading: title,
+      organization: highlighted,
       highlight: highlighted,
       desc,
       meta: date,
@@ -26,9 +31,11 @@ const JOURNEY_SECTIONS = [
   {
     key: "certifications",
     label: "Certifications",
+    logoOn: "organization",
     items: certificationTimeline.map(
       ({ name, issueOrganization, desc, issueDate, link }) => ({
-        title: name,
+        heading: name,
+        organization: issueOrganization,
         highlight: issueOrganization,
         desc,
         meta: issueDate,
@@ -37,6 +44,24 @@ const JOURNEY_SECTIONS = [
     ),
   },
 ];
+
+function OrgLogo({ organization }) {
+  const src = getOrganizationLogo(organization);
+  if (!src) return null;
+
+  return (
+    <img
+      src={src}
+      alt=""
+      width={18}
+      height={18}
+      className="journey__org-logo"
+      loading="lazy"
+      decoding="async"
+      draggable={false}
+    />
+  );
+}
 
 function InternetExplorerApp() {
   return (
@@ -54,17 +79,25 @@ function InternetExplorerApp() {
       </p>
 
       <div className="ie-app__content">
-        {JOURNEY_SECTIONS.map(({ key, label, items }) => (
+        {JOURNEY_SECTIONS.map(({ key, label, logoOn, items }) => (
           <div key={key} className="journey__group">
             <h3 className="journey__group-label">📁 {label}</h3>
             <div className="journey__stream">
-              {items.map(({ title, highlight, desc, meta, link }) => (
-                <article key={`${title}-${meta}`} className="journey__item">
+              {items.map(({ heading, organization, highlight, desc, meta, link }) => (
+                <article key={`${heading}-${meta}`} className="journey__item">
                   <div className="journey__content">
                     <time className="journey__date">{meta}</time>
-                    <h4>{title}</h4>
+                    <h4 className="journey__heading">
+                      {logoOn === "heading" && <OrgLogo organization={organization} />}
+                      <span>{heading}</span>
+                    </h4>
                     <p>
-                      <span className="journey__highlight">{highlight}</span>
+                      <span className="journey__org-line">
+                        {logoOn === "organization" && (
+                          <OrgLogo organization={organization} />
+                        )}
+                        <span className="journey__highlight">{highlight}</span>
+                      </span>
                       {desc}
                     </p>
                     {link && (
