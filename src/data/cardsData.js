@@ -6,23 +6,23 @@ import explainableAiIcon from "../images/cards_container_icons/explainable-AI-ic
 const cardsData = [
   {
     icon: dataScienceIcon,
-    title: "Data Science & Analytics",
-    desc: "Advanced statistical modeling, A/B testing, and interactive data visualization to inform strategic business decisions.",
+    title: "Brand Strategy & Identity",
+    desc: "Defining brand vision, voice, and visual systems that stay consistent across every touchpoint.",
   },
   {
     icon: machineLearningIcon,
-    title: "Deep Learning & ML",
-    desc: "Algorithm selection, cross-validation and hyperparameter tuning with PyTorch to maximize predictive power.",
+    title: "Art Direction",
+    desc: "Leading the visual language of campaigns, from concept and mood to final execution across channels.",
   },
   {
     icon: featureEngineeringIcon,
-    title: "MLOps & Feature Engineering",
-    desc: "Automated feature creation, selection, and dimensionality reduction to boost model performance.",
+    title: "Campaign Development",
+    desc: "Shaping integrated campaign ideas, messaging, and creative routes that connect with audiences.",
   },
   {
     icon: explainableAiIcon,
-    title: "Ethical AI & Explainability",
-    desc: "Bias detection, fairness checks and model interpretability with SHAP/LIME to ensure transparent, ethical decision-making.",
+    title: "Creative Team Leadership",
+    desc: "Guiding designers and collaborators, aligning stakeholders, and keeping projects moving from idea to delivery.",
   },
 ];
 

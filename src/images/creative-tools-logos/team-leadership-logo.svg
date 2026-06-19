@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Team Leadership">
+  <rect width="24" height="24" rx="4" fill="#FCE4EC"/>
+  <circle cx="12" cy="9" r="2.2" fill="#C2185B"/>
+  <circle cx="7.5" cy="12.5" r="1.8" fill="#C2185B"/>
+  <circle cx="16.5" cy="12.5" r="1.8" fill="#C2185B"/>
+  <path stroke="#C2185B" stroke-width="1.6" d="M8.5 17c.8-1.4 2-2.2 3.5-2.2s2.7.8 3.5 2.2"/>
+</svg>

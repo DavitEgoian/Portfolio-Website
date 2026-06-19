@@ -1,7 +1,7 @@
 const ABOUT_TEXT =
-  "Hi, I'm Davit, a Data Science and AI student at Georgian National University SEU in Tbilisi, Georgia. " +
-  "I build impactful tech solutions—from statistical models and visualizations to automated feature engineering and explainable AI. " +
-  "Beyond coding, I mentor teams and lead hackathons to drive real-world innovation.";
+  "Hi, I'm Davit, a creative from Tbilisi, Georgia. I do visual concepts and brand experiences that combine strategy, design, and storytelling. " +
+  "My work focuses on shaping campaigns and helping teams turn ideas into real results. " +
+  "I'm especially interested in work that feels both visually memorable and strategically clear.";
 
 function AboutApp() {
   return (

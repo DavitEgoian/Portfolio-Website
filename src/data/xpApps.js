@@ -51,7 +51,7 @@ export const XP_APPS = {
   [APP_IDS.CONTROL_PANEL]: {
     id: APP_IDS.CONTROL_PANEL,
     label: "Control Panel",
-    title: "Control Panel — Installed Programs",
+    title: "Control Panel — Creative Toolkit",
     icon: XP_ICONS.controlPanel,
     component: ControlPanelApp,
     menu: true,

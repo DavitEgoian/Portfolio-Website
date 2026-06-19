@@ -1,28 +1,19 @@
-import githubLogo from "../images/social-media-logos/github-logo.png";
-import kaggleLogo from "../images/social-media-logos/kaggle-logo.png";
-import linkedInLogo from "../images/social-media-logos/linkedin-logo.png";
+import behanceLogo from "../images/social-media-logos/behance-logo.svg";
+import instagramLogo from "../images/social-media-logos/instagram-logo.svg";
 
-const techLogos = [
+const socialLogos = [
   {
-    src: githubLogo,
-    alt: "GitHub Logo",
-    href: "https://github.com/davitegoian",
-    name: "GitHub",
-    mono: true,
+    src: behanceLogo,
+    alt: "Behance Logo",
+    href: "https://www.behance.net/dedgrl",
+    name: "Behance",
   },
   {
-    src: kaggleLogo,
-    alt: "Kaggle Logo",
-    href: "https://www.kaggle.com/davitegoian",
-    name: "Kaggle",
-    mono: true,
-  },
-  {
-    src: linkedInLogo,
-    alt: "LinkedIn Logo",
-    href: "https://www.linkedin.com/in/davitegoian/",
-    name: "LinkedIn",
+    src: instagramLogo,
+    alt: "Instagram Logo",
+    href: "https://www.instagram.com/dedgrl.log/",
+    name: "Instagram",
   },
 ];
 
-export default techLogos;
+export default socialLogos;

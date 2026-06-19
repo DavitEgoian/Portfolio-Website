@@ -4,7 +4,7 @@ function MessengerApp() {
   return (
     <div className="messenger-app app-panel">
       <div className="connect__buddy-list" aria-hidden="true">
-        <p className="connect__buddy-header">Online (3)</p>
+        <p className="connect__buddy-header">Online (2)</p>
       </div>
 
       <h2 className="connect__heading">Send me a message!</h2>

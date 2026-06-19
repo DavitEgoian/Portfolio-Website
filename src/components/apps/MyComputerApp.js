@@ -3,8 +3,8 @@ import gsap from "gsap";
 import XpIcon, { XP_ICONS } from "../../data/xpIcons";
 
 const HERO_LINES = [
-  "Intelligent systems that balance accuracy,",
-  "scalability, and interpretability.",
+  "A creative person shaping brands, campaigns,",
+  "and digital experiences that turn ideas into memorable, high-performing work.",
   "Welcome to my digital workspace.",
 ];
 
@@ -44,7 +44,7 @@ function MyComputerApp() {
         </span>
         <span className="hero__meta-item">
           <XpIcon src={XP_ICONS.floppyDisk} size={16} className="hero__meta-icon" />
-          Data Science &amp; AI Student
+          Creative Director
         </span>
       </p>
 

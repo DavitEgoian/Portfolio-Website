@@ -4,7 +4,7 @@ function ControlPanelApp() {
   return (
     <div className="control-panel-app app-panel">
       <p className="stack__heading">
-        Currently installed technologies on this system:
+        Creative tools and skills installed on this system:
       </p>
 
       <div className="stack__grid">
