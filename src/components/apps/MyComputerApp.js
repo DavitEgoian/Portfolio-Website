@@ -49,7 +49,7 @@ function MyComputerApp() {
       </p>
 
       <h1 className="hero__greeting hero-animate">Hello!</h1>
-      <h2 className="hero__name hero-animate">Davit Egoian</h2>
+      <h2 className="hero__name hero-animate">My name is Davit Egoian</h2>
 
       <div className="hero__lines">
         {HERO_LINES.map((line) => (
