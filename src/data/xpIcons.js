@@ -12,6 +12,8 @@ export const XP_ICONS = {
   windowsMessenger: `${ICON_BASE}/windows-messenger.png`,
   applicationWindow: `${ICON_BASE}/application-window.png`,
   startLogo: `${ICON_BASE}/start-logo.ico`,
+  mapNetwork: `${ICON_BASE}/map-network.png`,
+  floppyDisk: `${ICON_BASE}/floppy-disk.png`,
 };
 
 function XpIcon({ src, size = 32, className = "" }) {

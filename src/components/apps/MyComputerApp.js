@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { XP_ICONS } from "../../data/xpIcons";
+import XpIcon, { XP_ICONS } from "../../data/xpIcons";
 
 const HERO_LINES = [
   "Intelligent systems that balance accuracy,",
@@ -38,8 +38,14 @@ function MyComputerApp() {
       </div>
 
       <p className="hero__meta hero-animate">
-        <span>📍 Tbilisi, Georgia</span>
-        <span>💾 Data Science &amp; AI Student</span>
+        <span className="hero__meta-item">
+          <XpIcon src={XP_ICONS.mapNetwork} size={16} className="hero__meta-icon" />
+          Tbilisi, Georgia
+        </span>
+        <span className="hero__meta-item">
+          <XpIcon src={XP_ICONS.floppyDisk} size={16} className="hero__meta-icon" />
+          Data Science &amp; AI Student
+        </span>
       </p>
 
       <h1 className="hero__greeting hero-animate">Hello!</h1>
