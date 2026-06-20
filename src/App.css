@@ -1091,6 +1091,7 @@ body {
   height: 32px;
   object-fit: contain;
   flex-shrink: 0;
+  image-rendering: auto;
 }
 
 .connect__card-icon--mono {

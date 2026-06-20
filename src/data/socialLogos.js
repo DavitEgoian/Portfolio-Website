@@ -1,4 +1,4 @@
-import behanceLogo from "../images/social-media-logos/behance-logo.svg";
+import behanceLogo from "../images/social-media-logos/behance-logo.png";
 import instagramLogo from "../images/social-media-logos/instagram-logo.svg";
 
 const socialLogos = [
