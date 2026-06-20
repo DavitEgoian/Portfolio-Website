@@ -4,7 +4,6 @@ import illustratorLogo from "../images/creative-tools-logos/illustrator-logo.svg
 import indesignLogo from "../images/creative-tools-logos/indesign-logo.svg";
 import afterEffectsLogo from "../images/creative-tools-logos/after-effects-logo.svg";
 import premiereLogo from "../images/creative-tools-logos/premiere-logo.svg";
-import canvaLogo from "../images/creative-tools-logos/canva-logo.svg";
 import miroLogo from "../images/creative-tools-logos/miro-logo.svg";
 import brandStrategyLogo from "../images/creative-tools-logos/brand-strategy-logo.svg";
 import artDirectionLogo from "../images/creative-tools-logos/art-direction-logo.svg";
@@ -22,7 +21,6 @@ const techLogos = [
   { src: indesignLogo, alt: "Adobe InDesign Logo", name: "InDesign" },
   { src: afterEffectsLogo, alt: "After Effects Logo", name: "After Effects" },
   { src: premiereLogo, alt: "Premiere Pro Logo", name: "Premiere Pro" },
-  { src: canvaLogo, alt: "Canva Logo", name: "Canva" },
   { src: miroLogo, alt: "Miro Logo", name: "Miro" },
   { src: brandStrategyLogo, alt: "Brand Strategy Icon", name: "Brand Strategy" },
   { src: artDirectionLogo, alt: "Art Direction Icon", name: "Art Direction" },
