@@ -815,10 +815,6 @@ body {
   object-position: center;
 }
 
-.xp-folder-item:not(.xp-folder-item--empty) .service-card__icon {
-  filter: brightness(0);
-}
-
 .service-card h3 {
   margin: 0 0 0.5rem;
   font-size: 13px;

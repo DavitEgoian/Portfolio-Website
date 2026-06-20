@@ -1,26 +1,26 @@
-import dataScienceIcon from "../images/cards_container_icons/data-science-icon.png";
-import machineLearningIcon from "../images/cards_container_icons/machine-learning-icon.jpg";
-import featureEngineeringIcon from "../images/cards_container_icons/feature-engineering-icon.png";
-import explainableAiIcon from "../images/cards_container_icons/explainable-AI-icon.png";
+import brandStrategyIcon from "../images/creative-tools-logos/brand-strategy-logo.svg";
+import artDirectionIcon from "../images/creative-tools-logos/art-direction-logo.svg";
+import campaignIcon from "../images/creative-tools-logos/campaign-logo.svg";
+import teamLeadershipIcon from "../images/creative-tools-logos/team-leadership-logo.svg";
 
 const cardsData = [
   {
-    icon: dataScienceIcon,
+    icon: brandStrategyIcon,
     title: "Brand Strategy & Identity",
     desc: "Defining brand vision, voice, and visual systems that stay consistent across every touchpoint.",
   },
   {
-    icon: machineLearningIcon,
+    icon: artDirectionIcon,
     title: "Art Direction",
     desc: "Leading the visual language of campaigns, from concept and mood to final execution across channels.",
   },
   {
-    icon: featureEngineeringIcon,
+    icon: campaignIcon,
     title: "Campaign Development",
     desc: "Shaping integrated campaign ideas, messaging, and creative routes that connect with audiences.",
   },
   {
-    icon: explainableAiIcon,
+    icon: teamLeadershipIcon,
     title: "Creative Team Leadership",
     desc: "Guiding designers and collaborators, aligning stakeholders, and keeping projects moving from idea to delivery.",
   },
