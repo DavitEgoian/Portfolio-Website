@@ -3,8 +3,18 @@ body {
   font-family: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: "Lucida Console", "Courier New", monospace;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
 }

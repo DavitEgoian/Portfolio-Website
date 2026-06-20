@@ -17,7 +17,7 @@
   --xp-btn-highlight: #fff;
   --xp-btn-shadow: #808080;
   --xp-btn-dark: #404040;
-  --xp-taskbar-height: 30px;
+  --xp-taskbar-height: calc(30px + env(safe-area-inset-bottom, 0px));
   --xp-font: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
   --section-pad: clamp(1rem, 3vw, 2.5rem);
 }
@@ -1146,6 +1146,10 @@ body {
     display: none;
   }
 
+  .xp-taskbar {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
   .xp-taskbar__program {
     max-width: 100px;
     font-size: 10px;
@@ -1170,6 +1174,10 @@ body {
 
   .projects-app__grid .xp-folder-item:last-child {
     max-width: 100%;
+  }
+
+  .xp-window__content {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
