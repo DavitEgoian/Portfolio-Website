@@ -3,11 +3,15 @@
 .variable-proximity {
   font-family: "Roboto Flex", sans-serif;
   color: white;
-  font-size: clamp(2.25rem, 6vw, 3.75rem);
-  width: 70% !important;
+  font-size: clamp(1.5rem, 5vw, 3.75rem);
+  width: 85%;
   max-width: 960px;
   line-height: 1.2;
   display: inline-block;
+}
+
+.variable-proximity-word {
+  white-space: nowrap;
 }
 
 .sr-only {
@@ -24,19 +28,25 @@
 
 @media (max-width: 900px) {
   .variable-proximity {
-    width: 85% !important;
-    font-size: clamp(2rem, 7vw, 3rem);
+    width: 92% !important;
+    font-size: clamp(1.25rem, 5.5vw, 2.5rem);
   }
 }
 
 @media (max-width: 640px) {
   .variable-proximity {
     width: 100% !important;
-    font-size: clamp(1rem, 5vw, 1.5rem);
-    line-height: 1.35;
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
+    line-height: 1.4;
   }
 
-  .variable-proximity span:not(.sr-only) {
-    white-space: normal !important;
+  .variable-proximity-word {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 380px) {
+  .variable-proximity {
+    font-size: clamp(0.9rem, 4vw, 1.25rem);
   }
 }

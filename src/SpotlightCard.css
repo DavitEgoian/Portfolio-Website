@@ -9,6 +9,8 @@
   --mouse-y: 50%;
   --spotlight-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.05);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .card-spotlight::before {
@@ -29,15 +31,38 @@
 }
 
 .card-spotlight:hover::before,
-.card-spotlight:focus-within::before {
+.card-spotlight:focus-within::before,
+.card-spotlight.spotlight-active::before {
   opacity: 1;
 }
 
-.card-spotlight:hover {
+.card-spotlight:hover,
+.card-spotlight.spotlight-active {
   box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
 }
+
 .custom-spotlight-card {
   display: block;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  .card-spotlight {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-spotlight {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-spotlight::before {
+    transition: none;
+  }
 }

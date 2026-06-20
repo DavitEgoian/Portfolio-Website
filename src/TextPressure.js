@@ -3,7 +3,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 const TextPressure = ({
   text = "Compressa",
   fontFamily = "Compressa VF",
-  // This font is just an example, you should not use it in commercial projects.
   fontUrl = "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2",
 
   width = true,
@@ -28,6 +27,7 @@ const TextPressure = ({
   const mouseRef = useRef({ x: 0, y: 0 });
   const cursorRef = useRef({ x: 0, y: 0 });
   const isTouchRef = useRef(false);
+  const prefersReducedMotionRef = useRef(false);
 
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
@@ -43,6 +43,9 @@ const TextPressure = ({
 
   useEffect(() => {
     isTouchRef.current = window.matchMedia("(pointer: coarse)").matches;
+    prefersReducedMotionRef.current = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     const handleMouseMove = (e) => {
       cursorRef.current.x = e.clientX;
@@ -50,18 +53,19 @@ const TextPressure = ({
     };
     const handleTouchMove = (e) => {
       const t = e.touches[0];
-      cursorRef.current.x = t.clientX;
-      cursorRef.current.y = t.clientY;
+      if (t) {
+        cursorRef.current.x = t.clientX;
+        cursorRef.current.y = t.clientY;
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
-    // Initialize mouse near center of container if it exists
     if (containerRef.current) {
-      const { left, top, width, height } =
+      const { left, top, width: w, height } =
         containerRef.current.getBoundingClientRect();
-      mouseRef.current.x = left + width / 2;
+      mouseRef.current.x = left + w / 2;
       mouseRef.current.y = top + height / 2;
       cursorRef.current.x = mouseRef.current.x;
       cursorRef.current.y = mouseRef.current.y;
@@ -79,8 +83,14 @@ const TextPressure = ({
     const { width: containerW, height: containerH } =
       containerRef.current.getBoundingClientRect();
 
+    const effectiveMinSize = Math.min(
+      minFontSize,
+      Math.max(18, containerW / chars.length)
+    );
+
     let newFontSize = containerW / (chars.length / 2);
-    newFontSize = Math.max(newFontSize, minFontSize);
+    newFontSize = Math.max(newFontSize, effectiveMinSize);
+    newFontSize = Math.min(newFontSize, containerW / chars.length * 1.1);
 
     setFontSize(newFontSize);
     setScaleY(1);
@@ -107,14 +117,18 @@ const TextPressure = ({
   useEffect(() => {
     let rafId;
     const animate = () => {
+      if (prefersReducedMotionRef.current) {
+        rafId = requestAnimationFrame(animate);
+        return;
+      }
+
       if (isTouchRef.current && containerRef.current) {
-        const { left, top, width, height } =
+        const { left, top, width: w, height } =
           containerRef.current.getBoundingClientRect();
         const time = Date.now() / 1000;
-        const centerX = left + width / 2;
+        const centerX = left + w / 2;
         const centerY = top + height / 2;
-        // Simulate cursor movement in a figure-8 pattern
-        cursorRef.current.x = centerX + (width / 3) * Math.sin(time * 1.5);
+        cursorRef.current.x = centerX + (w / 3) * Math.sin(time * 1.5);
         cursorRef.current.y = centerY + (height / 6) * Math.sin(time * 3);
       }
 
@@ -169,6 +183,7 @@ const TextPressure = ({
   return (
     <div
       ref={containerRef}
+      className="text-pressure-container"
       style={{
         position: "relative",
         width: "100%",
@@ -177,25 +192,21 @@ const TextPressure = ({
       }}
     >
       <style>{`
-        /* Font face if needed */
         @font-face {
           font-family: '${fontFamily}';
           src: url('${fontUrl}');
           font-style: normal;
         }
 
-        /* If flex=true => space out each character span */
         .flex {
           display: flex;
           justify-content: space-between;
         }
 
-        /* Stroke class toggles "stroke" effect on each character */
         .stroke span {
           position: relative;
-          color: ${textColor}; /* normal text color */
+          color: ${textColor};
         }
-        /* The stroke layer sits behind with text-stroke */
         .stroke span::after {
           content: attr(data-char);
           position: absolute;
@@ -203,12 +214,10 @@ const TextPressure = ({
           top: 0;
           color: transparent;
           z-index: -1;
-          /* If you'd like to shift the stroke up/down, you can add transform here */
           -webkit-text-stroke-width: 3px;
           -webkit-text-stroke-color: ${strokeColor};
         }
 
-        /* If stroke=false => no stroke class => normal text color */
         .text-pressure-title {
           color: ${textColor};
         }
@@ -230,6 +239,8 @@ const TextPressure = ({
           whiteSpace: "nowrap",
           fontWeight: 100,
           width: "100%",
+          maxWidth: "100%",
+          overflow: "hidden",
         }}
       >
         {chars.map((char, i) => (
