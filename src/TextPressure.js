@@ -3,8 +3,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 const TextPressure = ({
   text = "Compressa",
   fontFamily = "Compressa VF",
-  // This font is just an example, you should not use it in commercial projects.
-  fontUrl = "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2",
+  fontUrl = `${process.env.PUBLIC_URL}/fonts/CompressaPRO-GX.woff2`,
 
   width = true,
   weight = true,
@@ -28,6 +27,19 @@ const TextPressure = ({
   const mouseRef = useRef({ x: 0, y: 0 });
   const cursorRef = useRef({ x: 0, y: 0 });
   const isTouchRef = useRef(false);
+  const useGyroRef = useRef(false);
+  const touchActiveRef = useRef(false);
+  const reduceMotionRef = useRef(false);
+
+  useEffect(() => {
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    reduceMotionRef.current = motionQuery.matches;
+    const onChange = () => {
+      reduceMotionRef.current = motionQuery.matches;
+    };
+    motionQuery.addEventListener("change", onChange);
+    return () => motionQuery.removeEventListener("change", onChange);
+  }, []);
 
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
@@ -45,8 +57,15 @@ const TextPressure = ({
     isTouchRef.current = window.matchMedia("(pointer: coarse)").matches;
 
     const handleMouseMove = (e) => {
+      if (isTouchRef.current) return;
       cursorRef.current.x = e.clientX;
       cursorRef.current.y = e.clientY;
+    };
+    const handleTouchStart = () => {
+      touchActiveRef.current = true;
+    };
+    const handleTouchEnd = () => {
+      touchActiveRef.current = false;
     };
     const handleTouchMove = (e) => {
       const t = e.touches[0];
@@ -55,9 +74,10 @@ const TextPressure = ({
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: false });
 
-    // Initialize mouse near center of container if it exists
     if (containerRef.current) {
       const { left, top, width, height } =
         containerRef.current.getBoundingClientRect();
@@ -69,7 +89,151 @@ const TextPressure = ({
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
       window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: coarse)").matches) return;
+
+    const baseline = { beta: null, gamma: null };
+    // ~1° of tilt sweeps across the full text width
+    const DEGREES_FOR_FULL_TRAVEL = 1;
+
+    const updateCursorFromTilt = (beta, gamma) => {
+      if (!containerRef.current) return;
+
+      if (baseline.beta === null) {
+        baseline.beta = beta;
+        baseline.gamma = gamma;
+        return;
+      }
+
+      const deltaBeta = beta - baseline.beta;
+      const deltaGamma = gamma - baseline.gamma;
+      const { left, top, width, height } =
+        containerRef.current.getBoundingClientRect();
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
+      const travelX = width / DEGREES_FOR_FULL_TRAVEL;
+      const travelY = height / DEGREES_FOR_FULL_TRAVEL;
+      const paddingX = width * 0.35;
+      const paddingY = height * 0.5;
+
+      cursorRef.current.x = Math.max(
+        left - paddingX,
+        Math.min(left + width + paddingX, centerX + deltaGamma * travelX)
+      );
+      cursorRef.current.y = Math.max(
+        top - paddingY,
+        Math.min(top + height + paddingY, centerY + deltaBeta * travelY)
+      );
+      useGyroRef.current = true;
+    };
+
+    const handleOrientation = (e) => {
+      if (touchActiveRef.current) return;
+      if (e.beta == null || e.gamma == null) return;
+      updateCursorFromTilt(e.beta, e.gamma);
+    };
+
+    const handleMotion = (e) => {
+      if (touchActiveRef.current || !containerRef.current) return;
+      const rate = e.rotationRate;
+      if (!rate) return;
+
+      const { left, top, width, height } =
+        containerRef.current.getBoundingClientRect();
+      const microScale = width / 25;
+      const paddingX = width * 0.35;
+      const paddingY = height * 0.5;
+
+      cursorRef.current.x = Math.max(
+        left - paddingX,
+        Math.min(
+          left + width + paddingX,
+          cursorRef.current.x + (rate.gamma || 0) * microScale
+        )
+      );
+      cursorRef.current.y = Math.max(
+        top - paddingY,
+        Math.min(
+          top + height + paddingY,
+          cursorRef.current.y + (rate.beta || 0) * microScale
+        )
+      );
+      useGyroRef.current = true;
+    };
+
+    const resetBaseline = () => {
+      baseline.beta = null;
+      baseline.gamma = null;
+    };
+
+    const startGyro = () => {
+      window.addEventListener("deviceorientation", handleOrientation);
+      window.addEventListener("devicemotion", handleMotion);
+    };
+
+    const requestGyroAccess = async () => {
+      let granted = true;
+
+      if (
+        window.DeviceOrientationEvent &&
+        typeof window.DeviceOrientationEvent.requestPermission === "function"
+      ) {
+        granted = false;
+        try {
+          granted =
+            (await window.DeviceOrientationEvent.requestPermission()) ===
+            "granted";
+        } catch (_) {
+          /* permission denied */
+        }
+      }
+
+      if (
+        granted &&
+        window.DeviceMotionEvent &&
+        typeof window.DeviceMotionEvent.requestPermission === "function"
+      ) {
+        try {
+          const motionState = await window.DeviceMotionEvent.requestPermission();
+          if (motionState !== "granted") granted = false;
+        } catch (_) {
+          granted = false;
+        }
+      }
+
+      if (granted) startGyro();
+    };
+
+    if (
+      (window.DeviceOrientationEvent &&
+        typeof window.DeviceOrientationEvent.requestPermission ===
+          "function") ||
+      (window.DeviceMotionEvent &&
+        typeof window.DeviceMotionEvent.requestPermission === "function")
+    ) {
+      window.addEventListener("touchstart", requestGyroAccess, {
+        once: true,
+        passive: true,
+      });
+      window.addEventListener("click", requestGyroAccess, { once: true });
+    } else {
+      startGyro();
+    }
+
+    window.addEventListener("orientationchange", resetBaseline);
+
+    return () => {
+      window.removeEventListener("deviceorientation", handleOrientation);
+      window.removeEventListener("devicemotion", handleMotion);
+      window.removeEventListener("touchstart", requestGyroAccess);
+      window.removeEventListener("click", requestGyroAccess);
+      window.removeEventListener("orientationchange", resetBaseline);
     };
   }, []);
 
@@ -107,19 +271,20 @@ const TextPressure = ({
   useEffect(() => {
     let rafId;
     const animate = () => {
-      if (isTouchRef.current && containerRef.current) {
-        const { left, top, width, height } =
-          containerRef.current.getBoundingClientRect();
-        const time = Date.now() / 1000;
-        const centerX = left + width / 2;
-        const centerY = top + height / 2;
-        // Simulate cursor movement in a figure-8 pattern
-        cursorRef.current.x = centerX + (width / 3) * Math.sin(time * 1.5);
-        cursorRef.current.y = centerY + (height / 6) * Math.sin(time * 3);
+      if (reduceMotionRef.current) {
+        rafId = requestAnimationFrame(animate);
+        return;
       }
 
-      mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
-      mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
+      const smoothing =
+        isTouchRef.current && useGyroRef.current && !touchActiveRef.current
+          ? 5
+          : 15;
+
+      mouseRef.current.x +=
+        (cursorRef.current.x - mouseRef.current.x) / smoothing;
+      mouseRef.current.y +=
+        (cursorRef.current.y - mouseRef.current.y) / smoothing;
 
       if (titleRef.current) {
         const titleRect = titleRef.current.getBoundingClientRect();
@@ -160,8 +325,8 @@ const TextPressure = ({
 
   const dynamicClassName = [
     className,
-    flex ? "flex" : "",
-    stroke ? "stroke" : "",
+    flex ? "text-pressure-flex" : "",
+    stroke ? "text-pressure-stroke" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -169,6 +334,7 @@ const TextPressure = ({
   return (
     <div
       ref={containerRef}
+      className="text-pressure-root"
       style={{
         position: "relative",
         width: "100%",
@@ -177,38 +343,33 @@ const TextPressure = ({
       }}
     >
       <style>{`
-        /* Font face if needed */
         @font-face {
           font-family: '${fontFamily}';
-          src: url('${fontUrl}');
+          src: url('${fontUrl}') format('woff2');
           font-style: normal;
+          font-display: swap;
         }
 
-        /* If flex=true => space out each character span */
-        .flex {
+        .text-pressure-flex {
           display: flex;
           justify-content: space-between;
         }
 
-        /* Stroke class toggles "stroke" effect on each character */
-        .stroke span {
+        .text-pressure-stroke span {
           position: relative;
-          color: ${textColor}; /* normal text color */
+          color: ${textColor};
         }
-        /* The stroke layer sits behind with text-stroke */
-        .stroke span::after {
+        .text-pressure-stroke span::after {
           content: attr(data-char);
           position: absolute;
           left: 0;
           top: 0;
           color: transparent;
           z-index: -1;
-          /* If you'd like to shift the stroke up/down, you can add transform here */
           -webkit-text-stroke-width: 3px;
           -webkit-text-stroke-color: ${strokeColor};
         }
 
-        /* If stroke=false => no stroke class => normal text color */
         .text-pressure-title {
           color: ${textColor};
         }

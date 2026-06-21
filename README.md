@@ -2,126 +2,76 @@
 
 ![Portfolio Screenshot](screenshot.jpg)
 
-A modern, interactive portfolio website designed to showcase skills, experience, and projects through custom animations and responsive layouts.
+A modern, interactive portfolio for **Davit Egoian** — Data Science and AI student — featuring custom typography animations, project showcases, and responsive layouts.
 
-## ✨ Key Features
+Live site: [davitegoian.tech](https://davitegoian.tech)
 
-- **Dynamic Typography**
-  - Variable font properties for interactive text
-  - Proximity-based transformations on mouse hover
-- **Spotlight Cards**
-  - Dynamic spotlight positioning on hover
-  - Fully customizable spotlight colors
-- **Adaptive Layout**
-  - Seamlessly responsive across all device sizes
-  - Smooth transitions between viewports
-- **Interactive Timelines**
-  - Visual history for education, experience, and certifications
-  - Elegantly styled, responsive timeline components
-- **Tech Stack Showcase**
-  - Auto-scrolling carousel for technologies
-  - Interactive hover effects on logos
-- **Social Integration**
-  - Animated links with engaging hover effects
+## Key Features
 
-## 🛠 Technologies Used
+- **Dynamic hero typography** — TextPressure and VariableProximity variable-font animations
+- **Projects section** — Curated from [LinkedIn](https://www.linkedin.com/in/davitegoian/) and [GitHub](https://github.com/davitegoian)
+- **Spotlight cards** — Interactive hover effects across services, resume, and projects
+- **Sticky navigation** — Section jump links with mobile menu
+- **Tech stack carousel** — Auto-scrolling Splide slider
+- **Fully responsive** — Optimized from 380px to large desktop
+- **SEO** — Open Graph meta tags, JSON-LD, and sitemap
+- **Accessibility** — Reduced-motion support, semantic headings, screen-reader labels
 
-- **React v18+** – Core framework
-- **Framer Motion** – Advanced animations
-- **Splide.js** – Touch-friendly carousels
-- **CSS3** – Masks, gradients, and variables
-- **Variable Fonts** – Dynamic typography
-- **Flexbox & Grid** – Modern layouts
+## Technologies
 
-## 🚀 Getting Started
+- React 19
+- Splide.js (carousel)
+- CSS Grid & Flexbox
+- Variable fonts (Compressa VF, Roboto Flex, Satoshi)
+- web-vitals (performance monitoring)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/DavitEgoian/Portfolio-Website.git
-   cd Portfolio-Website
-   ```
+## Getting Started
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # React components
-│   │   ├── SpotlightCard.js
-│   │   ├── TextPressure.js
-│   │   └── VariableProximity.js
-│   ├── data/           # Data files
-│   │   ├── cardsData.js
-│   │   ├── educationTimeline.js
-│   │   ├── experienceTimeline.js
-│   │   ├── certificationTimeline.js
-│   │   ├── socialLogos.js
-│   │   └── techLogos.js
-│   ├── App.js          # Main application component
-│   ├── App.css         # Global styles
-│   └── index.js        # Entry point
-├── package.json
-└── README.md
+```bash
+git clone https://github.com/DavitEgoian/Portfolio-Website.git
+cd Portfolio-Website
+npm install
+npm start
 ```
 
-## 🧪 Testing
+Open [http://localhost:3000](http://localhost:3000).
 
-Run the test suite with:
+## Project Structure
+
+```
+src/
+├── components/       # Section components (Hero, Projects, Navigation, …)
+├── data/             # Content data (education, experience, projects, …)
+├── hooks/            # Shared hooks (useViewport)
+├── images/           # Icons and logos
+├── App.js            # Root layout
+├── App.css           # Global styles
+└── index.js          # Entry point
+```
+
+## Customization
+
+1. Edit content in `src/data/` — education, experience, certifications, projects, social links
+2. Update section copy in `src/components/`
+3. Adjust colors in `src/App.css`
+
+## Testing
+
 ```bash
 npm test
 ```
 
-## 🔧 Customization
+## Deployment
 
-Personalize the portfolio with your own content:
-
-1. Update the data files in `/src/data` with your:
-   - Education history
-   - Work experience
-   - Certifications
-   - Social media links
-   - Technology stack
-
-2. Modify the text content in `/src/App.js`
-
-3. Adjust colors in `/src/App.css` by searching for color variables like:
-   ```css
-   --primary-color: rgb(150, 110, 250);
-   --highlight-yellow: rgb(255, 200, 120);
-   --highlight-teal: rgb(20, 230, 200);
-   ```
-
-## 📱 Responsive Breakpoints
-
-The portfolio is optimized for:
-- Desktop (1920px+)
-- Laptop (1400px-1920px)
-- Tablet (768px-1400px)
-- Mobile (480px-768px)
-- Small mobile devices (<480px)
-
-## 🌐 Deployment
-
-Deploy to any static hosting service:
 ```bash
 npm run build
+npm run deploy   # gh-pages to davitegoian.tech
 ```
 
-The build folder will contain production-ready static files.
+## Contact
 
-## 📄 License
+**Davit Egoian** — [dato.egoyan@gmail.com](mailto:dato.egoyan@gmail.com)
 
-This project is licensed under the MIT License.
+## License
+
+MIT License

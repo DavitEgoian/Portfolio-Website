@@ -1,4 +1,4 @@
-const educationTimeline = [
+const experienceTimeline = [
   {
     title: "IT Business Analysis",
     highlighted: "TBC Bank",
@@ -31,4 +31,4 @@ const educationTimeline = [
   },
 ];
 
-export default educationTimeline;
+export default experienceTimeline;

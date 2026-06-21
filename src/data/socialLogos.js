@@ -1,8 +1,9 @@
 import githubLogo from "../images/social-media-logos/github-logo.png";
 import kaggleLogo from "../images/social-media-logos/kaggle-logo.png";
 import linkedInLogo from "../images/social-media-logos/linkedin-logo.png";
+import emailLogo from "../images/social-media-logos/email-logo.png";
 
-const techLogos = [
+const socialLogos = [
   {
     src: githubLogo,
     alt: "GitHub Logo",
@@ -21,6 +22,12 @@ const techLogos = [
     href: "https://www.linkedin.com/in/davitegoian/",
     name: "LinkedIn",
   },
+  {
+    src: emailLogo,
+    alt: "Email Logo",
+    href: "mailto:dato.egoyan@gmail.com",
+    name: "Email",
+  },
 ];
 
-export default techLogos;
+export default socialLogos;
