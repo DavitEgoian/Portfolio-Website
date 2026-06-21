@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd4bbf3a.css",
-    "main.js": "/static/js/main.8e015186.js",
+    "main.css": "/static/css/main.2db82c52.css",
+    "main.js": "/static/js/main.ec21e9b5.js",
+    "static/js/453.3a7d470b.chunk.js": "/static/js/453.3a7d470b.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
     "static/media/prometheus-logo.png": "/static/media/prometheus-logo.c80f83eb0f5b431b9818.png",
@@ -22,6 +23,7 @@
     "static/media/aws-logo.png": "/static/media/aws-logo.3a754d5bb12d007d1b4e.png",
     "static/media/machine-learning-icon.jpg": "/static/media/machine-learning-icon.48be5986ae85f73de977.jpg",
     "static/media/mongoDB-logo.png": "/static/media/mongoDB-logo.b723bb18907da666f951.png",
+    "static/media/email-logo.png": "/static/media/email-logo.7d6d1f97f055680a3f6d.png",
     "static/media/redis-logo.png": "/static/media/redis-logo.a969f38a808895547570.png",
     "static/media/mlflow-logo.png": "/static/media/mlflow-logo.ad373f8dc36625e1892f.png",
     "static/media/github-logo.png": "/static/media/github-logo.cc7d438083610e33e8f7.png",
@@ -33,11 +35,12 @@
     "static/media/kubernetes-logo.png": "/static/media/kubernetes-logo.79f5acd191c9ebc0ac9e.png",
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
-    "main.bd4bbf3a.css.map": "/static/css/main.bd4bbf3a.css.map",
-    "main.8e015186.js.map": "/static/js/main.8e015186.js.map"
+    "main.2db82c52.css.map": "/static/css/main.2db82c52.css.map",
+    "main.ec21e9b5.js.map": "/static/js/main.ec21e9b5.js.map",
+    "453.3a7d470b.chunk.js.map": "/static/js/453.3a7d470b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd4bbf3a.css",
-    "static/js/main.8e015186.js"
+    "static/css/main.2db82c52.css",
+    "static/js/main.ec21e9b5.js"
   ]
 }

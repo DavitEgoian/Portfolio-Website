@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Davit Egoian",
+  "name": "Davit Egoian — Data Science & AI Portfolio",
   "icons": [
     {
       "src": "star.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0b0b0d",
+  "background_color": "#0b0b0d"
 }
