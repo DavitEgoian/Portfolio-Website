@@ -28,6 +28,7 @@ const TextPressure = ({
   const cursorRef = useRef({ x: 0, y: 0 });
   const isTouchRef = useRef(false);
   const useGyroRef = useRef(false);
+  const autoAnimateRef = useRef(false);
   const touchActiveRef = useRef(false);
   const reduceMotionRef = useRef(false);
 
@@ -104,6 +105,22 @@ const TextPressure = ({
     const tiltTarget = { x: 0, y: 0 };
     let tiltTargetInitialized = false;
 
+    const needsMotionPermission =
+      (window.DeviceOrientationEvent &&
+        typeof window.DeviceOrientationEvent.requestPermission === "function") ||
+      (window.DeviceMotionEvent &&
+        typeof window.DeviceMotionEvent.requestPermission === "function");
+
+    // On iOS, motion requires a user gesture — auto-animate until permission is granted
+    if (needsMotionPermission) {
+      autoAnimateRef.current = true;
+    }
+
+    const enableGyroMode = () => {
+      autoAnimateRef.current = false;
+      useGyroRef.current = true;
+    };
+
     const updateCursorFromTilt = (beta, gamma) => {
       if (!containerRef.current) return;
 
@@ -146,7 +163,7 @@ const TextPressure = ({
 
       cursorRef.current.x = tiltTarget.x;
       cursorRef.current.y = tiltTarget.y;
-      useGyroRef.current = true;
+      enableGyroMode();
     };
 
     const handleOrientation = (e) => {
@@ -195,7 +212,11 @@ const TextPressure = ({
         }
       }
 
-      if (granted) startGyro();
+      if (granted) {
+        startGyro();
+      } else {
+        autoAnimateRef.current = true;
+      }
     };
 
     if (
@@ -266,7 +287,31 @@ const TextPressure = ({
       const smoothing =
         isTouchRef.current && useGyroRef.current && !touchActiveRef.current
           ? 42
-          : 15;
+          : isTouchRef.current &&
+              autoAnimateRef.current &&
+              !touchActiveRef.current
+            ? 20
+            : 15;
+
+      if (
+        isTouchRef.current &&
+        autoAnimateRef.current &&
+        !touchActiveRef.current &&
+        !reduceMotionRef.current &&
+        containerRef.current
+      ) {
+        const { left, top, width, height } =
+          containerRef.current.getBoundingClientRect();
+        const elapsed = performance.now() / 1000;
+        const period = 5.5;
+        const progress = (Math.sin((elapsed * Math.PI * 2) / period) + 1) / 2;
+        const paddingX = width * 0.25;
+        const minX = left - paddingX;
+        const maxX = left + width + paddingX;
+
+        cursorRef.current.x = minX + progress * (maxX - minX);
+        cursorRef.current.y = top + height / 2;
+      }
 
       mouseRef.current.x +=
         (cursorRef.current.x - mouseRef.current.x) / smoothing;
