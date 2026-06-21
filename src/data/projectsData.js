@@ -46,7 +46,7 @@ const projectsData = [
       "Personal portfolio built in React with custom variable-font animations, spotlight cards, and an infinite-loop tech stack carousel.",
     tags: ["React", "JavaScript", "Splide"],
     githubUrl: "https://github.com/DavitEgoian/Portfolio-Website",
-    liveUrl: "https://davitegoian.tech",
+    liveUrl: "https://davit-egoian.tech",
     source: "linkedin",
   },
   {

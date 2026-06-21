@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://davitegoian.tech";
+const SITE_URL = "https://davit-egoian.tech";
 const CONTACT_EMAIL = "dato.egoyan@gmail.com";
 
 const personSchema = {

@@ -4,7 +4,7 @@
 
 A modern, interactive portfolio for **Davit Egoian** — Data Science and AI student — featuring custom typography animations, project showcases, and responsive layouts.
 
-Live site: [davitegoian.tech](https://davitegoian.tech)
+Live site: [davit-egoian.tech](https://davit-egoian.tech)
 
 ## Key Features
 
@@ -65,7 +65,7 @@ npm test
 
 ```bash
 npm run build
-npm run deploy   # gh-pages to davitegoian.tech
+npm run deploy   # gh-pages to davit-egoian.tech
 ```
 
 ## Contact
