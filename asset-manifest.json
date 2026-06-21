@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2db82c52.css",
-    "main.js": "/static/js/main.ec21e9b5.js",
+    "main.js": "/static/js/main.9e665d06.js",
     "static/js/453.3a7d470b.chunk.js": "/static/js/453.3a7d470b.chunk.js",
     "static/media/feature-engineering-icon.png": "/static/media/feature-engineering-icon.10a7af3822e59de771ea.png",
     "static/media/explainable-AI-icon.png": "/static/media/explainable-AI-icon.be0e494388c7bec74ca9.png",
@@ -36,11 +36,11 @@
     "static/media/fastapi-logo.png": "/static/media/fastapi-logo.2c6359719d2ac212dd15.png",
     "index.html": "/index.html",
     "main.2db82c52.css.map": "/static/css/main.2db82c52.css.map",
-    "main.ec21e9b5.js.map": "/static/js/main.ec21e9b5.js.map",
+    "main.9e665d06.js.map": "/static/js/main.9e665d06.js.map",
     "453.3a7d470b.chunk.js.map": "/static/js/453.3a7d470b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2db82c52.css",
-    "static/js/main.ec21e9b5.js"
+    "static/js/main.9e665d06.js"
   ]
 }
