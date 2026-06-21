@@ -32,12 +32,17 @@ function Navigation() {
         </a>
         <button
           type="button"
-          className="site-nav-toggle"
+          className={`site-nav-toggle${menuOpen ? " is-active" : ""}`}
           aria-expanded={menuOpen}
           aria-controls="site-nav-menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          {menuOpen ? "Close" : "Menu"}
+          <span className="site-nav-toggle-bars" aria-hidden="true">
+            <span className="site-nav-toggle-bar" />
+            <span className="site-nav-toggle-bar" />
+            <span className="site-nav-toggle-bar" />
+          </span>
         </button>
         <ul
           id="site-nav-menu"

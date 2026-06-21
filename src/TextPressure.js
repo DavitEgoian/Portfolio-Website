@@ -99,8 +99,10 @@ const TextPressure = ({
     if (!window.matchMedia("(pointer: coarse)").matches) return;
 
     const baseline = { beta: null, gamma: null };
-    // ~1° of tilt sweeps across the full text width
-    const DEGREES_FOR_FULL_TRAVEL = 1;
+    // Degrees of tilt needed to sweep across the full text width
+    const DEGREES_FOR_FULL_TRAVEL = 28;
+    const tiltTarget = { x: 0, y: 0 };
+    let tiltTargetInitialized = false;
 
     const updateCursorFromTilt = (beta, gamma) => {
       if (!containerRef.current) return;
@@ -119,17 +121,31 @@ const TextPressure = ({
       const centerY = top + height / 2;
       const travelX = width / DEGREES_FOR_FULL_TRAVEL;
       const travelY = height / DEGREES_FOR_FULL_TRAVEL;
-      const paddingX = width * 0.35;
-      const paddingY = height * 0.5;
+      const paddingX = width * 0.25;
+      const paddingY = height * 0.35;
 
-      cursorRef.current.x = Math.max(
+      const rawX = Math.max(
         left - paddingX,
         Math.min(left + width + paddingX, centerX + deltaGamma * travelX)
       );
-      cursorRef.current.y = Math.max(
+      const rawY = Math.max(
         top - paddingY,
         Math.min(top + height + paddingY, centerY + deltaBeta * travelY)
       );
+
+      if (!tiltTargetInitialized) {
+        tiltTarget.x = rawX;
+        tiltTarget.y = rawY;
+        tiltTargetInitialized = true;
+      } else {
+        // Low-pass filter on tilt input so rotation feels gradual, not jumpy
+        const inputSmoothing = 0.12;
+        tiltTarget.x += (rawX - tiltTarget.x) * inputSmoothing;
+        tiltTarget.y += (rawY - tiltTarget.y) * inputSmoothing;
+      }
+
+      cursorRef.current.x = tiltTarget.x;
+      cursorRef.current.y = tiltTarget.y;
       useGyroRef.current = true;
     };
 
@@ -139,42 +155,14 @@ const TextPressure = ({
       updateCursorFromTilt(e.beta, e.gamma);
     };
 
-    const handleMotion = (e) => {
-      if (touchActiveRef.current || !containerRef.current) return;
-      const rate = e.rotationRate;
-      if (!rate) return;
-
-      const { left, top, width, height } =
-        containerRef.current.getBoundingClientRect();
-      const microScale = width / 25;
-      const paddingX = width * 0.35;
-      const paddingY = height * 0.5;
-
-      cursorRef.current.x = Math.max(
-        left - paddingX,
-        Math.min(
-          left + width + paddingX,
-          cursorRef.current.x + (rate.gamma || 0) * microScale
-        )
-      );
-      cursorRef.current.y = Math.max(
-        top - paddingY,
-        Math.min(
-          top + height + paddingY,
-          cursorRef.current.y + (rate.beta || 0) * microScale
-        )
-      );
-      useGyroRef.current = true;
-    };
-
     const resetBaseline = () => {
       baseline.beta = null;
       baseline.gamma = null;
+      tiltTargetInitialized = false;
     };
 
     const startGyro = () => {
       window.addEventListener("deviceorientation", handleOrientation);
-      window.addEventListener("devicemotion", handleMotion);
     };
 
     const requestGyroAccess = async () => {
@@ -230,7 +218,6 @@ const TextPressure = ({
 
     return () => {
       window.removeEventListener("deviceorientation", handleOrientation);
-      window.removeEventListener("devicemotion", handleMotion);
       window.removeEventListener("touchstart", requestGyroAccess);
       window.removeEventListener("click", requestGyroAccess);
       window.removeEventListener("orientationchange", resetBaseline);
@@ -278,7 +265,7 @@ const TextPressure = ({
 
       const smoothing =
         isTouchRef.current && useGyroRef.current && !touchActiveRef.current
-          ? 5
+          ? 42
           : 15;
 
       mouseRef.current.x +=
