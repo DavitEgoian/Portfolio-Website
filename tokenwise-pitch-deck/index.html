@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TokenWise — Pitch Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="deck" id="deck">
+
+    <!-- Slide 1 — სათაური -->
+    <section class="slide slide--navy slide--hero" data-slide="1">
+      <div class="slide__inner">
+        <div class="hero">
+          <div class="hero__brand">
+            <div class="logo logo--lg" aria-hidden="true">
+              <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="60" cy="52" rx="38" ry="42" fill="#1a2744"/>
+                <ellipse cx="60" cy="58" rx="28" ry="30" fill="#243352"/>
+                <path d="M30 38 C38 18, 82 18, 90 38 L85 48 C78 32, 42 32, 35 48 Z" fill="#1a2744"/>
+                <circle cx="44" cy="52" r="14" fill="#0d1b2e" stroke="#3b9eff" stroke-width="2"/>
+                <circle cx="76" cy="52" r="14" fill="#0d1b2e" stroke="#3b9eff" stroke-width="2"/>
+                <circle cx="44" cy="52" r="6" fill="#5ec8ff"/>
+                <circle cx="76" cy="52" r="6" fill="#5ec8ff"/>
+                <path d="M38 50 h4 M42 46 v8 M46 50 h4" stroke="#3b9eff" stroke-width="1.2"/>
+                <path d="M70 50 h4 M74 46 v8 M78 50 h4" stroke="#3b9eff" stroke-width="1.2"/>
+                <path d="M48 68 C52 78, 68 78, 72 68" stroke="#3b9eff" stroke-width="2" fill="none"/>
+                <rect x="32" y="96" width="12" height="28" rx="3" fill="#2563eb" opacity="0.5"/>
+                <rect x="48" y="84" width="12" height="40" rx="3" fill="#3b82f6"/>
+                <rect x="64" y="72" width="12" height="52" rx="3" fill="#60a5fa"/>
+                <rect x="80" y="60" width="12" height="64" rx="3" fill="#93c5fd"/>
+              </svg>
+            </div>
+            <div class="hero__text">
+              <h1 class="hero__title">TokenWise</h1>
+              <p class="hero__tagline">AI Cost Optimization Platform</p>
+            </div>
+          </div>
+          <p class="hero__subtitle">რეალურ დროში მონიტორინგი, prompt-ის ავტომატური ოპტიმიზაცია და მულტი-პროვაიდერული routing — თქვენი LLM/AI API ხარჯის კონტროლისა და შემცირებისთვის</p>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 2 — პრობლემა -->
+    <section class="slide slide--light-blue" data-slide="2">
+      <div class="slide__inner">
+        <h2 class="slide__title">პრობლემა</h2>
+        <div class="problem-grid">
+          <div class="stat-card">
+            <span class="stat-card__value">~30%</span>
+            <p class="stat-card__label">LLM ხარჯის დაახლოებით ეს წილი იხარჯება არაეფექტურად — ზედმეტი ტოკენები, ოპტიმიზაციის გარეშე და ერთ პროვაიდერზე ფიქსირებული გადაწყვეტილებები</p>
+          </div>
+          <div class="problem-cards">
+            <div class="card">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3>არავიდანობა</h3>
+              <p>ბევრ კომპანიას არ აქვს გამჭვირვალე სურათი AI ხარჯებზე — ვერ ხედავენ სად მიდის ბიუჯეტი</p>
+            </div>
+            <div class="card">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3>ხელით ოპტიმიზაცია</h3>
+              <p>prompt-ების ხელით გაუმჯობესება დროში, რესურსებში და ექსპერტიზაში მძიმეა</p>
+            </div>
+            <div class="card">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3>ერთ პროვაიდერზე დამოკიდებულება</h3>
+              <p>vendor lock-in ზრდის ხარჯს, ამცირებს მოქნილობას და ზღუდავს ოპტიმალური ფასის არჩევას</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 3 — გადაწყვეტა -->
+    <section class="slide slide--navy" data-slide="3">
+      <div class="slide__inner">
+        <h2 class="slide__title slide__title--light">გადაწყვეტა</h2>
+        <div class="solution-cards">
+          <div class="card card--glass">
+            <div class="icon-circle icon-circle--glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>მონიტორინგი</h3>
+            <p>რეალურ დროში API გამოყენების თვალყურის დევნება, დეტალური ანალიტიკა და ხარჯის გაფრთხილებები</p>
+          </div>
+          <div class="card card--glass">
+            <div class="icon-circle icon-circle--glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>ავტომატური ოპტიმიზაცია</h3>
+            <p>AI-ზე დაფუძნებული prompt-ის ოპტიმიზაცია ტოკენების დაზოგვისთვის ხარისხის დაკარგვის გარეშე</p>
+          </div>
+          <div class="card card--glass">
+            <div class="icon-circle icon-circle--glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="3"/><circle cx="19" cy="6" r="3"/><circle cx="19" cy="18" r="3"/><line x1="7.5" y1="10.5" x2="16.5" y2="7.5"/><line x1="7.5" y1="13.5" x2="16.5" y2="16.5"/></svg>
+            </div>
+            <h3>Multi-Provider Routing</h3>
+            <p>ავტომატური მარშრუტიზაცია საუკეთესო ფას-ხარისხის თანაფარდობის მიღწევისთვის OpenAI, Anthropic, Google და სხვა პროვაიდერებს შორის</p>
+          </div>
+        </div>
+        <div class="banner banner--highlight">
+          <span class="banner__icon">✦</span>
+          <p>ერთადერთი პლატფორმა, რომელიც აერთიანებს მონიტორინგს, ავტომატურ ოპტიმიზაციას და მულტი-პროვაიდერულ routing-ს ერთ სივრცეში</p>
+        </div>
+      </div>
+      <footer class="slide__footer slide__footer--light">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 4 — როგორ მუშაობს -->
+    <section class="slide slide--mint" data-slide="4">
+      <div class="slide__inner">
+        <h2 class="slide__title">როგორ მუშაობს</h2>
+        <div class="process">
+          <div class="process__step">
+            <div class="process__num">01</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h3>დააკავშირე</h3>
+            <p>დაამონტაჟე TokenWise SDK ან API ინტეგრაცია — 5 წუთში მზად ხარ</p>
+          </div>
+          <div class="process__arrow">→</div>
+          <div class="process__step">
+            <div class="process__num">02</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3>ანალიზი</h3>
+            <p>პლატფორმა ავტომატურად აანალიზებს გამოყენების ნიმუშებს და გამოვლენის ზონებს</p>
+          </div>
+          <div class="process__arrow">→</div>
+          <div class="process__step">
+            <div class="process__num">03</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>ავტომატური დაზოგვა</h3>
+            <p>ოპტიმიზებული prompt-ები და ჭკვიანი routing ავტომატურად ამცირებს ხარჯს</p>
+          </div>
+        </div>
+        <div class="features-row">
+          <div class="feature-check"><span class="check">✓</span> 5 წუთში ინტეგრაცია SDK-ით</div>
+          <div class="feature-check"><span class="check">✓</span> რეალურ დროში ანალიტიკა და ალერტები</div>
+          <div class="feature-check"><span class="check">✓</span> 20–40% საშუალო ხარჯის დაზოგვა</div>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 5 — ბაზარი -->
+    <section class="slide slide--lavender" data-slide="5">
+      <div class="slide__inner">
+        <h2 class="slide__title">ბაზარი</h2>
+        <div class="market-grid">
+          <div class="market-bullets">
+            <ul>
+              <li>გლობალური AI SaaS ბაზარი იზრდება <strong>35%+ CAGR</strong>-ით</li>
+              <li><strong>80%+</strong> კომპანია იყენებს LLM API-ებს წარმოებაში</li>
+              <li>ხარჯების ოპტიმიზაციის ინსტრუმენტების ბაზარი სწრაფად მზარდია</li>
+              <li>სამიზნე: AI-ზე დამოკიდებული სტარტაპები, SaaS კომპანიები და Enterprise</li>
+            </ul>
+          </div>
+          <div class="chart-card card">
+            <h3>ბაზრის ზომა</h3>
+            <div class="bar-chart">
+              <div class="bar-chart__item">
+                <div class="bar-chart__bar" style="--h: 100%"><span>$45B</span></div>
+                <label>TAM</label>
+              </div>
+              <div class="bar-chart__item">
+                <div class="bar-chart__bar bar-chart__bar--mid" style="--h: 55%"><span>$8B</span></div>
+                <label>SAM</label>
+              </div>
+              <div class="bar-chart__item">
+                <div class="bar-chart__bar bar-chart__bar--sm" style="--h: 22%"><span>$320M</span></div>
+                <label>SOM</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="segment-row">
+          <div class="card segment-card">
+            <div class="icon-circle icon-circle--sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+            </div>
+            <h4>სტარტაპები</h4>
+            <p>AI-პროდუქტების სწრაფი განვითარება მცირე ბიუჯეტით</p>
+          </div>
+          <div class="card segment-card">
+            <div class="icon-circle icon-circle--sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h4>საშუალო ბიზნესი</h4>
+            <p>გუნდები, რომლებიც მასშტაბავენ LLM ინტეგრაციებს</p>
+          </div>
+          <div class="card segment-card">
+            <div class="icon-circle icon-circle--sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h4>Enterprise</h4>
+            <p>დიდი ორგანიზაციები მრავალპროვაიდერული AI ინფრასტრუქტურით</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 6 — მომხმარებლის პროფილი -->
+    <section class="slide slide--white" data-slide="6">
+      <div class="slide__inner">
+        <h2 class="slide__title">მომხმარებლის პროფილი</h2>
+        <div class="persona-grid">
+          <div class="persona-card card">
+            <div class="persona-card__avatar">ნბ</div>
+            <h3>ნინო ბერიძე</h3>
+            <p class="persona-card__role">CTO · 38 წლის</p>
+            <p class="persona-card__budget">ბიუჯეტი: <strong>$50K/თვე</strong> AI API-ზე</p>
+            <blockquote class="persona-card__quote">„ვიცი რომ ვხარჯავ ბევრს, მაგრამ არ ვიცი სად და როგორ შევამცირო"</blockquote>
+          </div>
+          <div class="persona-details">
+            <div class="persona-col card">
+              <h4>მიზნები</h4>
+              <ul>
+                <li>AI ხარჯის სრული კონტროლი</li>
+                <li>გუნდის წარმადომნობა ROI-ით</li>
+                <li>უსაფრთხო მასშტაბირება</li>
+              </ul>
+            </div>
+            <div class="persona-col card">
+              <h4>სირთულეები</h4>
+              <ul>
+                <li>ხელით ანალიზი და რეპორტინგი</li>
+                <li>პროვაიდერების შედარების სირთულე</li>
+                <li>დროის ნაკარნოვი ოპტიმიზაციაზე</li>
+              </ul>
+            </div>
+            <div class="persona-col card">
+              <h4>მოტივაცია</h4>
+              <ul>
+                <li>გამჭვირვალე ROI</li>
+                <li>ავტომატიზაცია</li>
+                <li>სწრაფი იმპლემენტაცია</li>
+              </ul>
+            </div>
+            <div class="persona-fit card">
+              <h4>რატომ ჯდება TokenWise?</h4>
+              <p>ერთი დაფა მონიტორინგის, ოპტიმიზაციისა და routing-ისთვის — არ სჭირდება 3 სხვადასხვა ინსტრუმენტი</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 7 — კონკურენტული უპირატესობა -->
+    <section class="slide slide--gray-blue" data-slide="7">
+      <div class="slide__inner">
+        <h2 class="slide__title">კონკურენტული უპირატესობა</h2>
+        <div class="table-wrap card">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>მახასიათებელი</th>
+                <th class="col-highlight">TokenWise</th>
+                <th>Helicone</th>
+                <th>Langfuse</th>
+                <th>OpenMeter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>რეალურ დროში მონიტორინგი</td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>ავტომატური prompt ოპტიმიზაცია</td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td>Multi-Provider Routing</td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td>ხარჯის პროგნოზირება</td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>SaaS ტარიფირება</td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>SDK / API ინტეგრაცია</td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 8 — ბიზნეს მოდელი -->
+    <section class="slide slide--navy" data-slide="8">
+      <div class="slide__inner">
+        <h2 class="slide__title slide__title--light">ბიზნეს მოდელი</h2>
+        <p class="slide__subtitle slide__subtitle--light">SaaS გამოწერა — მასშტაბირებადი ტარიფები ყველა ზომის გუნდისთვის</p>
+        <div class="pricing-cards">
+          <div class="card card--glass pricing-card">
+            <h3>Starter</h3>
+            <div class="pricing-card__price">$99<span>/თვე</span></div>
+            <ul>
+              <li>რეალურ დროში მონიტორინგი</li>
+              <li>1 პროექტი</li>
+              <li>ძირითადი ანალიტიკა</li>
+            </ul>
+          </div>
+          <div class="card card--glass pricing-card pricing-card--featured">
+            <div class="pricing-card__badge">პოპულარული</div>
+            <h3>Growth</h3>
+            <div class="pricing-card__price">$499<span>/თვე</span></div>
+            <ul>
+              <li>ავტომატური prompt ოპტიმიზაცია</li>
+              <li>Multi-Provider Routing</li>
+              <li>10 პროექტი + პრიორიტეტული მხარდაჭერა</li>
+            </ul>
+          </div>
+          <div class="card card--glass pricing-card">
+            <h3>Enterprise</h3>
+            <div class="pricing-card__price">საკონტაქტო</div>
+            <ul>
+              <li>შეუზღუდავი პროექტები</li>
+              <li>SLA და dedicated მხარდაჭერა</li>
+              <li>On-premise და custom ინტეგრაცია</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide__footer slide__footer--light">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 9 — გუნდი -->
+    <section class="slide slide--sky" data-slide="9">
+      <div class="slide__inner">
+        <h2 class="slide__title">გუნდი</h2>
+        <div class="team-row">
+          <div class="card team-card">
+            <div class="team-card__avatar">გკ</div>
+            <h3>გიორგი ქართველიშვილი</h3>
+            <p class="team-card__role">CEO & თანად-დამფუძნებელი</p>
+            <p class="team-card__bio">10+ წელი SaaS და AI პროდუქტების განვითარებაში. ყოფილი პროდუქტის ლიდერი ფინტექ კომპანიაში.</p>
+          </div>
+          <div class="card team-card">
+            <div class="team-card__avatar">მდ</div>
+            <h3>მარიამ დოლიძე</h3>
+            <p class="team-card__role">CTO & თანად-დამფუძნებელი</p>
+            <p class="team-card__bio">ML ინჟინერი და არქიტექტორი. გამოცდილება LLM ინფრასტრუქტურასა და მასშტაბირებად სისტემებში.</p>
+          </div>
+          <div class="card team-card">
+            <div class="team-card__avatar">ლნ</div>
+            <h3>ლუკა ნათაძე</h3>
+            <p class="team-card__role">Head of Growth</p>
+            <p class="team-card__bio">B2B SaaS გაყიდვებისა და მარკეტინგის ექსპერტი. 3 წარმატებული სტარტაპის გამოცდილება.</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide__footer">info@tokenwise.com</footer>
+    </section>
+
+    <!-- Slide 10 — დასასრული -->
+    <section class="slide slide--navy slide--closing" data-slide="10">
+      <div class="slide__inner">
+        <div class="closing">
+          <div class="logo logo--xl" aria-hidden="true">
+            <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="60" cy="52" rx="38" ry="42" fill="#1a2744"/>
+              <ellipse cx="60" cy="58" rx="28" ry="30" fill="#243352"/>
+              <path d="M30 38 C38 18, 82 18, 90 38 L85 48 C78 32, 42 32, 35 48 Z" fill="#1a2744"/>
+              <circle cx="44" cy="52" r="14" fill="#0d1b2e" stroke="#3b9eff" stroke-width="2"/>
+              <circle cx="76" cy="52" r="14" fill="#0d1b2e" stroke="#3b9eff" stroke-width="2"/>
+              <circle cx="44" cy="52" r="6" fill="#5ec8ff"/>
+              <circle cx="76" cy="52" r="6" fill="#5ec8ff"/>
+              <path d="M38 50 h4 M42 46 v8 M46 50 h4" stroke="#3b9eff" stroke-width="1.2"/>
+              <path d="M70 50 h4 M74 46 v8 M78 50 h4" stroke="#3b9eff" stroke-width="1.2"/>
+              <path d="M48 68 C52 78, 68 78, 72 68" stroke="#3b9eff" stroke-width="2" fill="none"/>
+              <rect x="32" y="96" width="12" height="28" rx="3" fill="#2563eb" opacity="0.5"/>
+              <rect x="48" y="84" width="12" height="40" rx="3" fill="#3b82f6"/>
+              <rect x="64" y="72" width="12" height="52" rx="3" fill="#60a5fa"/>
+              <rect x="80" y="60" width="12" height="64" rx="3" fill="#93c5fd"/>
+            </svg>
+          </div>
+          <h1 class="closing__title">TokenWise</h1>
+          <p class="closing__tagline">AI Cost Optimization Platform</p>
+          <p class="closing__thanks">მადლობა</p>
+        </div>
+      </div>
+      <footer class="slide__footer slide__footer--light">info@tokenwise.com</footer>
+    </section>
+
+  </div>
+
+  <nav class="nav" aria-label="სლაიდების ნავიგაცია">
+    <button id="prev" aria-label="წინა">←</button>
+    <span id="counter">1 / 10</span>
+    <button id="next" aria-label="შემდეგი">→</button>
+  </nav>
+
+  <script src="deck.js"></script>
+</body>
+</html>
