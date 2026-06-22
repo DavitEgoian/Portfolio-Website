@@ -1,0 +1,16 @@
+{
+  "name": "tokenwise-pitch-deck",
+  "version": "1.0.0",
+  "description": "10-slide investor pitch deck for **TokenWise** — AI cost optimization platform.",
+  "main": "deck.js",
+  "scripts": {
+    "start": "npx --yes serve -p 3456",
+    "export": "node export-screenshots.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}
