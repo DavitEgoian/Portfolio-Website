@@ -4,7 +4,8 @@
   "description": "10-slide investor pitch deck for **TokenWise** — AI cost optimization platform.",
   "main": "deck.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx --yes serve -p 3456",
+    "export": "node export-screenshots.js"
   },
   "keywords": [],
   "author": "",
